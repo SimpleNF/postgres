@@ -1,0 +1,16 @@
+# https://www.postgresql.org/docs/17/sql-alteroperator.html
+
+ALTER OPERATOR name ( { left | NONE } , right ) SET ( 
+  {  
+    RESTRICT = { restrict | NONE } |
+    JOIN = { join | NONE } |
+    COMMUTATOR = commutator |
+    NEGATOR = negator |
+    HASHES |
+    MERGES
+  } [, ... ] 
+)
+
+ALTER OPERATOR name ( { left | NONE } , right ) SET SCHEMA schema
+
+ALTER OPERATOR name ( { left | NONE } , right ) OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

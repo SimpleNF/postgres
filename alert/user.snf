@@ -1,0 +1,26 @@
+# https://www.postgresql.org/docs/17/sql-alteruser.html
+
+ALTER USER user [ WITH ]
+    [ SUPERUSER | NOSUPERUSER ]
+    [ CREATEDB | NOCREATEDB ]
+    [ CREATEROLE | NOCREATEROLE ]
+    [ INHERIT | NOINHERIT ]
+    [ LOGIN | NOLOGIN ]
+    [ REPLICATION | NOREPLICATION ]
+    [ BYPASSRLS | NOBYPASSRLS ]
+    [ CONNECTION LIMIT connlimit ]
+    [ [ ENCRYPTED ] PASSWORD 'password' | PASSWORD NULL ]
+    [ VALID UNTIL 'timestamp' ]
+
+ALTER USER name RENAME TO new_name
+
+ALTER USER { user | ALL } [ IN DATABASE database ] SET parameter { TO | = } { value | DEFAULT }
+
+ALTER USER { user | ALL } [ IN DATABASE database ] SET parameter FROM CURRENT
+
+ALTER USER { user | ALL } [ IN DATABASE database ] RESET parameter
+
+ALTER USER { user | ALL } [ IN DATABASE database ] RESET ALL
+
+# where user
+{ role | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

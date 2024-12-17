@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-createdomain.html
+
+CREATE DOMAIN name [ AS ] type
+    [ COLLATE collate ]
+    [ DEFAULT default ]
+    [ constraint [ ... ] ]
+
+# where constraint
+[ CONSTRAINT constraint ] { NOT NULL | NULL | CHECK (check) }

@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-createtsparser.html
+
+CREATE TEXT SEARCH PARSER name (
+    START = start,
+    GETTOKEN = gettoken,
+    END = end,
+    LEXTYPES = lextypes
+    [, HEADLINE = headline ]
+)

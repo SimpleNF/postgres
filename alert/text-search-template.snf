@@ -1,0 +1,5 @@
+# https://www.postgresql.org/docs/17/sql-altertstemplate.html
+
+ALTER TEXT SEARCH TEMPLATE name RENAME TO new_name
+
+ALTER TEXT SEARCH TEMPLATE name SET SCHEMA schema

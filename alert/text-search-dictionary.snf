@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-altertsdictionary.html
+
+ALTER TEXT SEARCH DICTIONARY name ( { option [ = value ] } [, ... ] )
+
+ALTER TEXT SEARCH DICTIONARY name RENAME TO new_name
+
+ALTER TEXT SEARCH DICTIONARY name SET SCHEMA schema
+
+ALTER TEXT SEARCH DICTIONARY name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

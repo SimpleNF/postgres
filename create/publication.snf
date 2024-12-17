@@ -1,0 +1,11 @@
+# https://www.postgresql.org/docs/17/sql-createpublication.html
+
+CREATE PUBLICATION name
+    [ FOR ALL TABLES | FOR table [, ... ] ]
+    [ WITH ( { parameter [= value] } [, ... ] ) ]
+
+# where table
+{
+    TABLE [ ONLY ] table [ * ] [ ( colname [, ... ] ) ] [ WHERE ( where ) ] |
+    TABLES IN SCHEMA { schema | CURRENT_SCHEMA }
+}

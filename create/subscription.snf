@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-createsubscription.html
+
+CREATE SUBSCRIPTION name
+    CONNECTION 'connection'
+    PUBLICATION publication [, ...]
+    [ WITH ( { parameter [= value] } [, ... ] ) ]

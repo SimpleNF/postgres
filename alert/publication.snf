@@ -1,0 +1,19 @@
+# https://www.postgresql.org/docs/17/sql-alterpublication.html
+
+ALTER PUBLICATION name ADD table [, ...]
+
+ALTER PUBLICATION name DROP table [, ...]
+
+ALTER PUBLICATION name RENAME TO new_name
+
+ALTER PUBLICATION name SET table [, ...]
+
+ALTER PUBLICATION name SET ( { parameter [= value] } [, ... ] )
+
+ALTER PUBLICATION name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+
+# where table
+{
+    TABLE [ ONLY ] table [ * ] [ ( colname [, ... ] ) ] [ WHERE ( where ) ] |
+    TABLES IN SCHEMA { schema | CURRENT_SCHEMA }
+}

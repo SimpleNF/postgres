@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-createtsconfig.html
+
+CREATE TEXT SEARCH CONFIGURATION name (
+    PARSER = parser
+)
+
+CREATE TEXT SEARCH CONFIGURATION name (
+    COPY = copy
+)

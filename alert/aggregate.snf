@@ -1,0 +1,17 @@
+# https://www.postgresql.org/docs/17/sql-alteraggregate.html
+
+ALTER AGGREGATE name ( signature ) RENAME TO new_name
+
+ALTER AGGREGATE name ( signature ) SET SCHEMA schema
+
+ALTER AGGREGATE name ( signature ) OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+
+# where signature
+{
+    * |
+    arg [, ... ] |
+    [ arg [, ... ] ] ORDER BY { arg as orders} [, ... ]
+}
+
+# where arg
+[ argmode ] [ argname ] argtype

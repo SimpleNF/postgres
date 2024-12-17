@@ -1,0 +1,8 @@
+# https://www.postgresql.org/docs/17/sql-creatematerializedview.html
+
+CREATE MATERIALIZED VIEW [ IF NOT EXISTS ] name [ (colname [, ... ] ) ]
+    [ USING using ]
+    [ WITH ( { parameter [= value] } [, ... ] ) ]
+    [ TABLESPACE tablespace ]
+    AS query
+    [ WITH [ NO ] DATA ]

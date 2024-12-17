@@ -1,0 +1,28 @@
+# https://www.postgresql.org/docs/17/sql-alterroutine.html
+
+ALTER ROUTINE name [ ( [ arg [, ...] ] ) ] action [ ... ] [ RESTRICT ]
+
+ALTER ROUTINE name [ ( [ arg [, ...] ] ) ] RENAME TO new_name
+
+ALTER ROUTINE name [ ( [ arg [, ...] ] ) ] SET SCHEMA schema
+
+ALTER ROUTINE name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+
+ALTER ROUTINE name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
+
+# where action
+{
+    [ IMMUTABLE | STABLE | VOLATILE ] |
+    [ [ NOT ] LEAKPROOF ] |
+    [ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ] |
+    [ PARALLEL { UNSAFE | RESTRICTED | SAFE } ] |
+    [ COST cost ] |
+    [ ROWS rows ] |
+    [ SET parameter { TO | = } { value | DEFAULT } ] |
+    [ SET parameter FROM CURRENT ] |
+    [ RESET parameter ] |
+    [ RESET ALL ]
+}
+
+# where arg
+[ argmode ] [ argname ] argtype

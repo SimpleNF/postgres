@@ -1,0 +1,4 @@
+# https://www.postgresql.org/docs/17/sql-createextension.html
+CREATE EXTENSION [ IF NOT EXISTS ] name [ WITH ] [ SCHEMA schema ]
+    [ VERSION version ]
+    [ CASCADE ]

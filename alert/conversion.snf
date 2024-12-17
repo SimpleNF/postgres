@@ -1,0 +1,7 @@
+# https://www.postgresql.org/docs/17/sql-alterconversion.html
+
+ALTER CONVERSION name RENAME TO new_name
+
+ALTER CONVERSION name SET SCHEMA schema
+
+ALTER CONVERSION name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

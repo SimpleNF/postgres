@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-altereventtrigger.html
+
+ALTER EVENT TRIGGER name ENABLE [ REPLICA | ALWAYS ]
+
+ALTER EVENT TRIGGER name DISABLE
+
+ALTER EVENT TRIGGER name RENAME TO new_name
+
+ALTER EVENT TRIGGER name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

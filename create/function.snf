@@ -1,0 +1,19 @@
+# https://www.postgresql.org/docs/17/sql-createfunction.html
+
+CREATE [ OR REPLACE ] FUNCTION name ( [ { [ argmode ] [ argname ] argtype [ { DEFAULT | = } default ] as arg } [, ... ] ] )
+    [ RETURNS returns | RETURNS TABLE ( { colname coltype as column } [, ... ] ) ]
+    [ LANGUAGE language ]
+    [ TRANSFORM { FOR TYPE type } [, ... ] ]
+    [ WINDOW ]
+    [ { IMMUTABLE | STABLE | VOLATILE } ]
+    [ [ NOT ] LEAKPROOF ]
+    [ { STRICT | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT } ]
+    [ { [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER } ]
+    [ PARALLEL { UNSAFE | RESTRICTED | SAFE } ]
+    [ COST cost ]
+    [ ROWS rows ]
+    [ SUPPORT support ]
+    [ SET parameter { TO value | = value | FROM CURRENT } ]
+    [ AS 'definition' ]
+    [ AS 'obj_file', 'link_symbol' ]
+    [ sql_body ]

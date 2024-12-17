@@ -1,0 +1,5 @@
+# https://www.postgresql.org/docs/17/sql-altertrigger.html
+
+ALTER TRIGGER name ON table RENAME TO new_name
+
+ALTER TRIGGER name ON table [ NO ] DEPENDS ON EXTENSION extension

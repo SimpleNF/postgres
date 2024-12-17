@@ -1,0 +1,3 @@
+# POSTGRES SNF
+
+`POSTGRES` 语句的 `SNF` 定义。

@@ -1,0 +1,30 @@
+# https://www.postgresql.org/docs/17/sql-alterfunction.html
+
+ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] action [ ... ] [ RESTRICT ]
+
+ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] RENAME TO new_name
+
+ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] SET SCHEMA schema
+
+ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+
+ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
+
+# where action
+{
+    [ STRICT | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT ] |
+    [ IMMUTABLE | STABLE | VOLATILE ] |
+    [ [ NOT ] LEAKPROOF ] |
+    [ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ] |
+    [ PARALLEL { UNSAFE | RESTRICTED | SAFE } ] |
+    [ COST cost ] |
+    [ ROWS rows ] |
+    [ SUPPORT support ] |
+    [ SET parameter { TO | = } { value | DEFAULT } ] |
+    [ SET parameter FROM CURRENT ] |
+    [ RESET parameter ] |
+    [ RESET ALL ]
+}
+
+# where arg
+[ argmode ] [ argname ] argtype

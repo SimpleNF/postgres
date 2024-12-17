@@ -1,0 +1,11 @@
+# https://www.postgresql.org/docs/17/sql-createsequence.html
+
+CREATE [ { TEMPORARY | TEMP } | UNLOGGED ] SEQUENCE [ IF NOT EXISTS ] name
+    [ AS as ]
+    [ INCREMENT [ BY ] increment ]
+    [ MINVALUE minvalue | NO MINVALUE ] 
+    [ MAXVALUE maxvalue | NO MAXVALUE ]
+    [ START [ WITH ] start ] 
+    [ CACHE cache ] 
+    [ [ NO ] CYCLE ]
+    [ OWNED BY { table.colname | NONE } ]

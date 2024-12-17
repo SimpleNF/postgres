@@ -1,0 +1,5 @@
+# https://www.postgresql.org/docs/17/sql-alterlanguage.html
+
+ALTER [ PROCEDURAL ] LANGUAGE name RENAME TO new_name
+
+ALTER [ PROCEDURAL ] LANGUAGE name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

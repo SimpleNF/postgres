@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-createconversion.html
+
+CREATE [ DEFAULT ] CONVERSION name
+    FOR source
+    TO target
+    FROM function

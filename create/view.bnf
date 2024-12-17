@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-createview.html
+
+CREATE [ OR REPLACE ] [ TEMP | TEMPORARY ] [ RECURSIVE ] VIEW name [ ( colname [, ...] ) ]
+    [ WITH ( { parameter [= value] } [, ... ] ) ]
+    AS query
+    [ WITH [ CASCADED | LOCAL ] CHECK OPTION ]

@@ -1,0 +1,19 @@
+# https://www.postgresql.org/docs/17/sql-createindex.html
+
+CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ IF NOT EXISTS ] [ name ] ON [ ONLY ] table [ USING using ]
+    ( 
+        { 
+            { colname | ( expression ) }
+            [ COLLATE collate ]
+            [ operator [ ( { parameter = value } [, ... ] ) ] ]
+            [ ASC | DESC ]
+            [ NULLS { FIRST | LAST } ]
+            as column 
+        }
+        [, ... ]
+    )
+    [ INCLUDE ( include [, ... ] ) ]
+    [ NULLS [ NOT ] DISTINCT ]
+    [ WITH ( { parameter [= value ] } [, ... ] ) ]
+    [ TABLESPACE tablespace ]
+    [ WHERE where ]

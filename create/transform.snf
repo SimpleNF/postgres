@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-createtransform.html
+
+CREATE [ OR REPLACE ] TRANSFORM FOR transform LANGUAGE language (
+    FROM SQL WITH FUNCTION from [ (argtype [, ...]) ],
+      TO SQL WITH FUNCTION   to [ (argtype [, ...]) ]
+);

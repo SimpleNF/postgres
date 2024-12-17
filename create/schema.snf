@@ -1,0 +1,12 @@
+# https://www.postgresql.org/docs/17/sql-createschema.html
+
+CREATE SCHEMA name [ AUTHORIZATION role ] [ element [ ... ] ]
+
+CREATE SCHEMA AUTHORIZATION role [ element [ ... ] ]
+
+CREATE SCHEMA IF NOT EXISTS name [ AUTHORIZATION role ]
+
+CREATE SCHEMA IF NOT EXISTS AUTHORIZATION role
+
+# where role
+{ role | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

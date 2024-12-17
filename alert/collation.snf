@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-altercollation.html
+
+ALTER COLLATION name REFRESH VERSION
+
+ALTER COLLATION name RENAME TO new_name
+
+ALTER COLLATION name SET SCHEMA schema
+
+ALTER COLLATION name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

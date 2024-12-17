@@ -1,0 +1,5 @@
+# https://www.postgresql.org/docs/17/sql-createeventtrigger.html
+
+CREATE EVENT TRIGGER name ON event
+    [ { WHEN variable IN ( value [, ... ] ) as when } [AND ... ] ]
+    EXECUTE { FUNCTION | PROCEDURE } function()

@@ -1,0 +1,7 @@
+# https://www.postgresql.org/docs/17/sql-createrule.html
+
+CREATE [ OR REPLACE ] RULE name AS 
+    ON { SELECT | INSERT | UPDATE | DELETE }
+    TO to
+    [ WHERE where ]
+    DO [ ALSO | INSTEAD ] { NOTHING | ( command [; ... ] ) }

@@ -1,0 +1,31 @@
+# https://www.postgresql.org/docs/17/sql-alterrole.html
+
+ALTER ROLE role [ WITH ] 
+    [ SUPERUSER | NOSUPERUSER ]
+    [ CREATEDB | NOCREATEDB ]
+    [ CREATEROLE | NOCREATEROLE ]
+    [ INHERIT | NOINHERIT ]
+    [ LOGIN | NOLOGIN ]
+    [ REPLICATION | NOREPLICATION ]
+    [ BYPASSRLS | NOBYPASSRLS ]
+    [ CONNECTION LIMIT connection_limit ]
+    [ [ ENCRYPTED ] PASSWORD 'password' | PASSWORD NULL ]
+    [ VALID UNTIL 'timestamp' ]
+
+ALTER ROLE name RENAME TO new_name
+
+ALTER ROLE { role | ALL } [ IN DATABASE database ] SET parameter { TO | = } { value | DEFAULT }
+
+ALTER ROLE { role | ALL } [ IN DATABASE database ] SET parameter FROM CURRENT
+
+ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET parameter
+
+ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET ALL
+
+# where role
+{
+    role |
+    CURRENT_ROLE |
+    CURRENT_USER |
+    SESSION_USER
+}

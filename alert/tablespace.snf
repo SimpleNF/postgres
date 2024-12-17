@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-altertablespace.html
+
+ALTER TABLESPACE name RENAME TO new_name
+
+ALTER TABLESPACE name SET ( { option = value } [, ... ] )
+
+ALTER TABLESPACE name RESET ( option [, ... ] )
+
+ALTER TABLESPACE name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-createforeigndatawrapper.html
+
+CREATE FOREIGN DATA WRAPPER name
+    [ HANDLER handler | NO HANDLER ]
+    [ VALIDATOR validator | NO VALIDATOR ]
+    [ OPTIONS ( { option 'value' } [, ... ] ) ]

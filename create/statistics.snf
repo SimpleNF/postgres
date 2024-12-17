@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-createstatistics.html
+
+CREATE STATISTICS [ [ IF NOT EXISTS ] name ]
+    ON ( on )
+    FROM table
+
+CREATE STATISTICS [ [ IF NOT EXISTS ] name ] [ ( kind [, ... ] ) ]
+    ON { colname | ( expression ) } [, ...]
+    FROM table

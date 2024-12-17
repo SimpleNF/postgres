@@ -1,0 +1,8 @@
+# https://www.postgresql.org/docs/17/sql-createpolicy.html
+
+CREATE POLICY name ON table
+    [ AS { PERMISSIVE | RESTRICTIVE } ]
+    [ FOR { ALL | SELECT | INSERT | UPDATE | DELETE } ]
+    [ TO { role | PUBLIC | CURRENT_ROLE | CURRENT_USER | SESSION_USER } [, ... ] ]
+    [ USING ( using ) ]
+    [ WITH CHECK ( check ) ]

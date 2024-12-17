@@ -1,0 +1,48 @@
+# https://www.postgresql.org/docs/17/sql-createforeigntable.html
+
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( [
+    {
+        colname coltype
+        [ OPTIONS ( { option 'value' } [, ... ] ) ]
+        [ COLLATE collation ]
+        [ col_constraint [ ... ] ]
+      | table_constraint
+        as column
+    } [, ... ]
+] )
+[ INHERITS ( inherit [, ... ] ) ]
+SERVER server
+[ OPTIONS ( { option 'value' } [, ... ] ) ]
+
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] name 
+PARTITION OF parent [ (
+    { 
+        colname
+        [ WITH OPTIONS ]
+        [ col_constraint [ ... ] ]
+      | table_constraint
+        as column
+    } [, ... ]
+) ]
+{ FOR VALUES partition | DEFAULT }
+SERVER server
+[ OPTIONS ( { option 'value' } [, ... ] ) ]
+
+# where col_constraint
+[ CONSTRAINT constraint ]
+{
+  NOT NULL |
+  NULL |
+  CHECK ( check ) [ NO INHERIT ] |
+  DEFAULT default |
+  GENERATED ALWAYS AS ( generation ) STORED 
+}
+
+# where table_constraint
+[ CONSTRAINT constraint ] CHECK ( check ) [ NO INHERIT ]
+
+# where partition
+  IN ( in [, ...] ) |
+FROM ( { from | MINVALUE | MAXVALUE } [, ... ] )
+  TO ( { to | MINVALUE | MAXVALUE } [, ... ] ) |
+WITH ( MODULUS modulus, REMAINDER premainder )

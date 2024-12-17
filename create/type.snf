@@ -1,0 +1,40 @@
+# https://www.postgresql.org/docs/17/sql-createtype.html
+
+CREATE TYPE name AS
+    ( [ { argname argtype [ COLLATE collation ] } [, ... ] ] )
+
+CREATE TYPE name AS ENUM
+    ( [ 'label' [, ... ] ] )
+
+CREATE TYPE name AS RANGE (
+    SUBTYPE = subtype
+    [, SUBTYPE_OPCLASS = subtype_opclass ]
+    [, COLLATION = collation ]
+    [, CANONICAL = canonical ]
+    [, SUBTYPE_DIFF = subtype_diff ]
+    [, MULTIRANGE_TYPE_NAME = multirange_type_name ]
+)
+
+CREATE TYPE name (
+    INPUT = input,
+    OUTPUT = output
+    [, RECEIVE = receive ]
+    [, SEND = send ]
+    [, TYPMOD_IN = typmod_in ]
+    [, TYPMOD_OUT = typmod_out ]
+    [, ANALYZE = analyze ]
+    [, SUBSCRIPT = subscript ]
+    [, INTERNALLENGTH = { internallength | VARIABLE } ]
+    [, PASSEDBYVALUE ]
+    [, ALIGNMENT = alignment ]
+    [, STORAGE = storage ]
+    [, LIKE = like ]
+    [, CATEGORY = category ]
+    [, PREFERRED = preferred ]
+    [, DEFAULT = default ]
+    [, ELEMENT = element ]
+    [, DELIMITER = delimiter ]
+    [, COLLATABLE = collatable ]
+)
+
+CREATE TYPE name

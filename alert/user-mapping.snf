@@ -1,0 +1,5 @@
+# https://www.postgresql.org/docs/17/sql-alterusermapping.html
+
+ALTER USER MAPPING FOR { user | USER | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC }
+    SERVER server
+    OPTIONS ( { [ ADD | SET | DROP ] option ['value'] } [, ... ] )

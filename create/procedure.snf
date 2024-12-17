@@ -1,0 +1,10 @@
+# https://www.postgresql.org/docs/17/sql-createprocedure.html
+
+CREATE [ OR REPLACE ] PROCEDURE name ( [ { [ argmode ] [ argname ] argtype [ { DEFAULT | = } default ] as arg } [, ... ] ] )
+    [ LANGUAGE language ]
+    [ TRANSFORM { FOR TYPE type } [, ... ] ]
+    [ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ]
+    [ SET parameter { TO value | = value | FROM CURRENT } ]
+    [ AS 'definition' ]
+    [ AS 'obj_file', 'link_symbol' ]
+    [ sql_body ]

@@ -1,0 +1,64 @@
+# https://www.postgresql.org/docs/17/sql-createaggregate.html
+
+CREATE [ OR REPLACE ] AGGREGATE name ( arg [, ... ] ) (
+    SFUNC = sfunc,
+    STYPE = stype
+    [, SSPACE = sspace ]
+    [, FINALFUNC = ffunc ]
+    [, FINALFUNC_EXTRA as ffextra ]
+    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as ffmidify } ]
+    [, COMBINEFUNC = combinefunc ]
+    [, SERIALFUNC = serialfunc ]
+    [, DESERIALFUNC = deserialfunc ]
+    [, INITCOND = initcond ]
+    [, MSFUNC = msfunc ]
+    [, MINVFUNC = minvfunc ]
+    [, MSTYPE = mstype ]
+    [, MSSPACE = msspace ]
+    [, MFINALFUNC = mffunc ]
+    [, MFINALFUNC_EXTRA as mffextra ]
+    [, MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as mffmodify } ]
+    [, MINITCOND = minitcond ]
+    [, SORTOP = sortop ]
+    [, PARALLEL = { SAFE | RESTRICTED | UNSAFE } ]
+)
+
+CREATE [ OR REPLACE ] AGGREGATE name ( [ arg [, ... ] ]
+ORDER BY { arg as order } [, ... ] ) (
+    SFUNC = sfunc,
+    STYPE = stype
+    [, SSPACE = sspace ]
+    [, FINALFUNC = ffunc ]
+    [, FINALFUNC_EXTRA as ffextra ]
+    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as ffmidify } ]
+    [, INITCOND = initcond ]
+    [, PARALLEL = { SAFE | RESTRICTED | UNSAFE } ]
+    [, HYPOTHETICAL as hypothetical ]
+)
+
+# old syntax
+CREATE [ OR REPLACE ] AGGREGATE name (
+    BASETYPE = basetype,
+    SFUNC = sfunc,
+    STYPE = stype
+    [, SSPACE = sspace ]
+    [, FINALFUNC = ffunc ]
+    [, FINALFUNC_EXTRA as ffextra ]
+    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as ffmidify } ]
+    [, COMBINEFUNC = combinefunc ]
+    [, SERIALFUNC = serialfunc ]
+    [, DESERIALFUNC = deserialfunc ]
+    [, INITCOND = initcond ]
+    [, MSFUNC = msfunc ]
+    [, MINVFUNC = minvfunc ]
+    [, MSTYPE = mstype ]
+    [, MSSPACE = msspace ]
+    [, MFINALFUNC = mffunc ]
+    [, MFINALFUNC_EXTRA as mffextra ]
+    [, MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as mffmidify } ]
+    [, MINITCOND = minitcond ]
+    [, SORTOP = sortop ]
+)
+
+# where arg
+[ argmode ] [ argname ] argtype

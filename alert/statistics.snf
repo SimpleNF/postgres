@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-alterstatistics.html
+
+ALTER STATISTICS name RENAME TO new_name
+
+ALTER STATISTICS name SET STATISTICS { target | DEFAULT }
+
+ALTER STATISTICS name SET SCHEMA schema
+
+ALTER STATISTICS name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

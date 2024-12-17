@@ -1,0 +1,10 @@
+# https://www.postgresql.org/docs/17/sql-alterforeigndatawrapper.html
+
+ALTER FOREIGN DATA WRAPPER name
+    [ HANDLER handler | NO HANDLER ]
+    [ VALIDATOR validator | NO VALIDATOR ]
+    [ OPTIONS ( { [ ADD | SET | DROP ] option ['value'] } [, ... ]) ]
+
+ALTER FOREIGN DATA WRAPPER name RENAME TO new_name
+
+ALTER FOREIGN DATA WRAPPER name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

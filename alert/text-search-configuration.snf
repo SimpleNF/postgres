@@ -1,0 +1,22 @@
+# https://www.postgresql.org/docs/17/sql-altertsconfig.html
+
+ALTER TEXT SEARCH CONFIGURATION name
+    ADD MAPPING FOR token [, ... ] WITH dictionary [, ... ]
+
+ALTER TEXT SEARCH CONFIGURATION name
+    ALTER MAPPING FOR token [, ... ] WITH dictionary [, ... ]
+
+ALTER TEXT SEARCH CONFIGURATION name
+    ALTER MAPPING REPLACE old_dictionary WITH new_dictionary
+
+ALTER TEXT SEARCH CONFIGURATION name
+    ALTER MAPPING FOR token [, ... ] REPLACE old_dictionary WITH new_dictionary
+
+ALTER TEXT SEARCH CONFIGURATION name
+    DROP MAPPING [ IF EXISTS ] FOR token [, ... ]
+
+ALTER TEXT SEARCH CONFIGURATION name RENAME TO new_name
+
+ALTER TEXT SEARCH CONFIGURATION name SET SCHEMA schema
+
+ALTER TEXT SEARCH CONFIGURATION name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

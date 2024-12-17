@@ -1,0 +1,17 @@
+# https://www.postgresql.org/docs/17/sql-alterindex.html
+
+ALTER INDEX name ATTACH PARTITION partition
+
+ALTER INDEX [ IF EXISTS ] name ALTER [ COLUMN ] colnum SET STATISTICS statistics
+
+ALTER INDEX [ IF EXISTS ] name RENAME TO new_name
+
+ALTER INDEX [ IF EXISTS ] name SET TABLESPACE tablespace
+
+ALTER INDEX [ IF EXISTS ] name SET ( { parameter [= value] } [, ... ] )
+
+ALTER INDEX [ IF EXISTS ] name RESET ( parameter [, ... ] )
+
+ALTER INDEX ALL IN TABLESPACE name [ OWNED BY role [, ... ] ] SET TABLESPACE tablespace [ NOWAIT ]
+
+ALTER INDEX name [ NO ] DEPENDS ON EXTENSION extension

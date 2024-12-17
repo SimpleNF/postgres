@@ -1,0 +1,5 @@
+# https://www.postgresql.org/docs/17/sql-alterschema.html
+
+ALTER SCHEMA name RENAME TO new_name
+
+ALTER SCHEMA name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
