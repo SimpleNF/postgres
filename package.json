@@ -1,0 +1,14 @@
+{
+  "name": "@zebra/snf-postgres",
+  "version": "0.0.1",
+  "description": "postgres snf define",
+  "type": "module",
+  "author": {
+    "name": "baskwind",
+    "email": "baskwind@163.com"
+  },
+  "keywords": [
+    "snf",
+    "postgres"
+  ]
+}

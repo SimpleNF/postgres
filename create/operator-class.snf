@@ -3,7 +3,7 @@
 CREATE OPERATOR CLASS name [ DEFAULT ] 
     FOR TYPE type USING using [ FAMILY family ] AS
     {
-        OPERATOR operator_number operator [ ( left, right ) ] [ FOR SEARCH | FOR ORDER BY order ] |
-        FUNCTION function_number [ ( left [, right ] ) ] function ( argtype [, ...] ) |
+        OPERATOR number operator [ ( left, right ) ] [ FOR SEARCH | FOR ORDER BY order ] |
+        FUNCTION number [ ( left [, right ] ) ] function ( argtype [, ...] ) |
         STORAGE storage
     } [, ... ]

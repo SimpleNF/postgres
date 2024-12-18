@@ -4,9 +4,9 @@ CREATE [ OR REPLACE ] AGGREGATE name ( arg [, ... ] ) (
     SFUNC = sfunc,
     STYPE = stype
     [, SSPACE = sspace ]
-    [, FINALFUNC = ffunc ]
-    [, FINALFUNC_EXTRA as ffextra ]
-    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as ffmidify } ]
+    [, FINALFUNC = finalfunc ]
+    [, FINALFUNC_EXTRA ]
+    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
     [, COMBINEFUNC = combinefunc ]
     [, SERIALFUNC = serialfunc ]
     [, DESERIALFUNC = deserialfunc ]
@@ -15,9 +15,9 @@ CREATE [ OR REPLACE ] AGGREGATE name ( arg [, ... ] ) (
     [, MINVFUNC = minvfunc ]
     [, MSTYPE = mstype ]
     [, MSSPACE = msspace ]
-    [, MFINALFUNC = mffunc ]
-    [, MFINALFUNC_EXTRA as mffextra ]
-    [, MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as mffmodify } ]
+    [, MFINALFUNC = mfinalfunc ]
+    [, MFINALFUNC_EXTRA ]
+    [, MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
     [, MINITCOND = minitcond ]
     [, SORTOP = sortop ]
     [, PARALLEL = { SAFE | RESTRICTED | UNSAFE } ]
@@ -28,12 +28,12 @@ ORDER BY { arg as order } [, ... ] ) (
     SFUNC = sfunc,
     STYPE = stype
     [, SSPACE = sspace ]
-    [, FINALFUNC = ffunc ]
-    [, FINALFUNC_EXTRA as ffextra ]
-    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as ffmidify } ]
+    [, FINALFUNC = finalfunc ]
+    [, FINALFUNC_EXTRA ]
+    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
     [, INITCOND = initcond ]
     [, PARALLEL = { SAFE | RESTRICTED | UNSAFE } ]
-    [, HYPOTHETICAL as hypothetical ]
+    [, HYPOTHETICAL ]
 )
 
 # old syntax
@@ -42,9 +42,9 @@ CREATE [ OR REPLACE ] AGGREGATE name (
     SFUNC = sfunc,
     STYPE = stype
     [, SSPACE = sspace ]
-    [, FINALFUNC = ffunc ]
-    [, FINALFUNC_EXTRA as ffextra ]
-    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as ffmidify } ]
+    [, FINALFUNC = finalfunc ]
+    [, FINALFUNC_EXTRA ]
+    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
     [, COMBINEFUNC = combinefunc ]
     [, SERIALFUNC = serialfunc ]
     [, DESERIALFUNC = deserialfunc ]
@@ -54,8 +54,8 @@ CREATE [ OR REPLACE ] AGGREGATE name (
     [, MSTYPE = mstype ]
     [, MSSPACE = msspace ]
     [, MFINALFUNC = mffunc ]
-    [, MFINALFUNC_EXTRA as mffextra ]
-    [, MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE as mffmidify } ]
+    [, MFINALFUNC_EXTRA ]
+    [, MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
     [, MINITCOND = minitcond ]
     [, SORTOP = sortop ]
 )

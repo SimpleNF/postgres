@@ -6,4 +6,4 @@ CREATE DOMAIN name [ AS ] type
     [ constraint [ ... ] ]
 
 # where constraint
-[ CONSTRAINT constraint ] { NOT NULL | NULL | CHECK (check) }
+[ CONSTRAINT name ] { NOT NULL | NULL | CHECK (check) }
