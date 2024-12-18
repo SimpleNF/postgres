@@ -5,7 +5,7 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( [
         colname coltype
         [ OPTIONS ( { option 'value' } [, ... ] ) ]
         [ COLLATE collation ]
-        [ col_constraint [ ... ] ]
+        [ constraint_def [ ... ] ]
       | table_constraint
         as column
     } [, ... ]
@@ -19,7 +19,7 @@ PARTITION OF parent [ (
     { 
         colname
         [ WITH OPTIONS ]
-        [ col_constraint [ ... ] ]
+        [ constraint_def [ ... ] ]
       | table_constraint
         as column
     } [, ... ]
@@ -28,7 +28,7 @@ PARTITION OF parent [ (
 SERVER server
 [ OPTIONS ( { option 'value' } [, ... ] ) ]
 
-# where col_constraint
+# where constraint_def
 [ CONSTRAINT constraint ]
 {
   NOT NULL |
