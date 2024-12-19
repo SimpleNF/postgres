@@ -15,7 +15,7 @@ CREATE [ OR REPLACE ] FUNCTION name ( [ arg [, ... ] ] )
     [ SUPPORT support ]
     [ SET parameter { TO value | = value | FROM CURRENT } ]
     [ AS 'definition' ]
-    [ AS 'obj_file', 'link_symbol' ]
+    [ AS 'file', 'link' ]
     [ sql_body ]
 
 # where arg

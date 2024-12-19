@@ -4,9 +4,28 @@ import { glob } from 'glob';
 import { SBNFFileParser, cleanBlank, addEnumName, addRepeatName, walk } from '@zebra/snf-parser';
 import { Node, NodeType } from '@zebra/snf-parser/src/type';
 
-const testPath = path.resolve(import.meta.dirname, '../create/aggregate.snf');
+const testPath = path.resolve(import.meta.dirname, '../create/*.snf');
 const files = await glob(testPath);
 const fileParser = new SBNFFileParser();
+
+const addRepeatNode = (root: Node) => {
+  return walk(root, {
+    exchange(node, parent) {
+      if (node.type !== NodeType.REPEAT_WRAP) return node;
+      if (!parent.children) return node;
+      const rwIndex = parent.children.findIndex((each) => each.type === NodeType.REPEAT_WRAP);
+      if (rwIndex < 0) return node;
+      const prevNode = parent.children[rwIndex - 1];
+      node.ast = node.children;
+      node.children = prevNode.children ?? [{ ...prevNode }];
+      prevNode.ignore = true;
+      return node;
+    },
+    filter(node) {
+      return !node.ignore;
+    },
+  });
+};
 
 const collectName = (node: Node) => {
   let pathList: string[][] = [];
@@ -15,7 +34,11 @@ const collectName = (node: Node) => {
   walk(node, {
     exchange(node) {
       if (node.name) {
-        namePath.push(node.name);
+        let name = node.name;
+        if (node.type === NodeType.REPEAT_WRAP) {
+          name += '[]';
+        }
+        namePath.push(name);
         pathList.push([...namePath]);
       }
 
@@ -33,14 +56,7 @@ const collectName = (node: Node) => {
   const set = new Set();
   return pathList
     .map((namePath) => {
-      const temp: string[] = [];
-      for (const name of namePath) {
-        if (temp.length && temp[temp.length - 1] === name) {
-          continue;
-        }
-        temp.push(name);
-      }
-      return temp.join('.');
+      return namePath.join('.');
     })
     .filter((name) => {
       if (set.has(name)) return false;
@@ -51,7 +67,7 @@ const collectName = (node: Node) => {
 
 for (const file of files) {
   try {
-    const result = await fileParser.parse(file, cleanBlank, addEnumName, addRepeatName);
+    const result = await fileParser.parse(file, cleanBlank, addEnumName, addRepeatName, addRepeatNode);
     for (const each of result) {
       const names = collectName(each.ast);
       each.names = names;

@@ -6,5 +6,5 @@ CREATE [ OR REPLACE ] PROCEDURE name ( [ { [ argmode ] [ argname ] argtype [ { D
     [ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ]
     [ SET parameter { TO value | = value | FROM CURRENT } ]
     [ AS 'definition' ]
-    [ AS 'obj_file', 'link_symbol' ]
+    [ AS 'file', 'link' ]
     [ sql_body ]
