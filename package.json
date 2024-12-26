@@ -10,14 +10,5 @@
   "keywords": [
     "snf",
     "postgres"
-  ],
-  "scripts": {
-    "test": "tsx scripts/test.ts"
-  },
-  "dependencies": {
-    "glob": "^11.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^22.10.2"
-  }
+  ]
 }
