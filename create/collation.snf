@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/17/sql-createcollation.html
 
 CREATE COLLATION [ IF NOT EXISTS ] name (
-    [ LOCALE = locale, ]
+    [ LOCALE = locale ]
     [ LC_COLLATE = lc_collate, ]
     [ LC_CTYPE = lc_ctype, ]
     [ PROVIDER = provider, ]

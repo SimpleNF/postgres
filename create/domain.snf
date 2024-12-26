@@ -3,7 +3,7 @@
 CREATE DOMAIN name [ AS ] type
     [ COLLATE collate ]
     [ DEFAULT default ]
-    [ constraint_def [ ... ] ]
+    [ constraint [ ... ] ]
 
-# where constraint_def
-[ CONSTRAINT constraint ] { NOT NULL | NULL | CHECK (check) }
+# where constraint
+[ CONSTRAINT name ] { NOT NULL | NULL | CHECK (check) }

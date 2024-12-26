@@ -1,25 +1,25 @@
 # https://www.postgresql.org/docs/17/sql-createtable.html
 
-CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name ( [
-  { 
-      colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] [ constraint_def [ ... ] ]
+CREATE [ { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name ( [
+  {
+      colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] [ constraint [ ... ] ]
     | table_constraint
-    | LIKE like [ like_option [ ... ] ]
+    | LIKE like [ option [ ... ] ]
   } [, ... ]
 ] )
 [ INHERITS ( inherits [, ... ] ) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( { colname | ( expression ) } [ COLLATE collate ] [ opclass ] [, ... ] ) ]
 [ USING using ]
-[ WITH ( { parameter [= value ] } [, ... ] ) | WITHOUT OIDS ]
+[ WITH ( { parameter [ = value ] } [, ... ] ) | WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
-# where like_option
+# where option
 { INCLUDING | EXCLUDING } { COMMENTS | COMPRESSION | CONSTRAINTS | DEFAULTS | GENERATED | IDENTITY | INDEXES | STATISTICS | STORAGE | ALL }
 
-CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name OF type [ (
-  { 
-      colname [ WITH OPTIONS ] [ constraint_def [ ... ] ]
+CREATE [ { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name OF type [ (
+  {
+      colname [ WITH OPTIONS ] [ constraint [ ... ] ]
     | table_constraint 
   } [, ... ]
 ) ]
@@ -29,9 +29,9 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXI
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
-CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name PARTITION OF parent [ (
-  { 
-      colname [ WITH OPTIONS ] [ constraint_def [ ... ] ]
+CREATE [ { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name PARTITION OF parent [ (
+  {
+      colname [ WITH OPTIONS ] [ constraint [ ... ] ]
     | table_constraint 
   } [, ... ]
 ) ]
@@ -48,8 +48,8 @@ FROM ( { from | MINVALUE | MAXVALUE } [, ...] )
   TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
 WITH ( MODULUS modulus, REMAINDER remainder )
 
-# where constraint_def
-[ CONSTRAINT constraint ]
+# where constraint
+[ CONSTRAINT name ]
 {
   NOT NULL |
   NULL |
@@ -68,7 +68,7 @@ WITH ( MODULUS modulus, REMAINDER remainder )
 [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
 # where table_constraint
-[ CONSTRAINT constraint ]
+[ CONSTRAINT name ]
 {
   CHECK ( check ) [ NO INHERIT ] |
   UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ... ] ) unique |
