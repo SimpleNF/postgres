@@ -5,7 +5,7 @@ ALTER DEFAULT PRIVILEGES
     [ IN SCHEMA schema [, ...] ]
     grant_or_revoke
 
-# where grant_or_revoke
+# WHERE grant_or_revoke
 GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN as method } [, ...] | ALL [ PRIVILEGES ] }
     ON TABLES
     TO { [ GROUP ] role | PUBLIC } [, ...] 

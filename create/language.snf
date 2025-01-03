@@ -1,4 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-createlanguage.html
 
 CREATE [ OR REPLACE ] [ TRUSTED ] [ PROCEDURAL ] LANGUAGE name
-    [ HANDLER handler [ INLINE inline ] [ VALIDATOR validator ] ]
+    [ HANDLER handler ]
+    [ INLINE inline ]
+    [ VALIDATOR validator ]

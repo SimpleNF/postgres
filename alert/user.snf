@@ -22,5 +22,5 @@ ALTER USER { user | ALL } [ IN DATABASE database ] RESET parameter
 
 ALTER USER { user | ALL } [ IN DATABASE database ] RESET ALL
 
-# where user
+# WHERE user
 { role | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

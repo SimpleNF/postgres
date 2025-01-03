@@ -10,7 +10,7 @@ ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | CU
 
 ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
-# where action
+# WHERE action
 {
     [ STRICT | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT ] |
     [ IMMUTABLE | STABLE | VOLATILE ] |
@@ -26,5 +26,5 @@ ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extensio
     [ RESET ALL ]
 }
 
-# where arg
+# WHERE arg
 [ argmode ] [ argname ] argtype

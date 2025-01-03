@@ -22,5 +22,5 @@ ALTER DOMAIN name SET SCHEMA schema
 
 ALTER DOMAIN name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
 
-# where constraint_def
+# WHERE constraint_def
 [ CONSTRAINT constraint ] { NOT NULL | CHECK (check) }

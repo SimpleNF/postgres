@@ -10,7 +10,7 @@ ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | C
 
 ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
-# where action
+# WHERE action
 {
     [ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ] |
     [ SET parameter { TO | = } { value | DEFAULT } ] |
@@ -19,5 +19,5 @@ ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extensi
     RESET ALL
 }
 
-# where arg
+# WHERE arg
 [ argmode ] [ argname ] argtype
