@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-createtable.html
 
-CREATE [ GLOBAL | LOCAL | TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name ( [ {
+CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name ( [ {
     colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] [ constraint [...] ] |
     table_constraint |
     LIKE like [ option [...] ]
@@ -8,7 +8,8 @@ CREATE [ GLOBAL | LOCAL | TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] 
 [ INHERITS ( inherits [, ...] ) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
 [ USING using ]
-[ WITH ( { parameter [ = value] } [, ...] ) | WITHOUT OIDS ]
+[ WITH ( { parameter [ = value] } [, ...] ) ]
+[ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
@@ -23,12 +24,13 @@ OF type [ ( {
 } [, ...] ) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
 [ USING using ]
-[ WITH ( { parameter [= value] } [, ...] ) | WITHOUT OIDS ]
+[ WITH ( { parameter [= value] } [, ...] ) ]
+[ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
 # CASE PARTITION
-CREATE [ GLOBAL | LOCAL | TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name 
+CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL  ] TABLE [ IF NOT EXISTS ] name 
 PARTITION OF parent [ ( {
     colname [ WITH OPTIONS ] [ constraint [...] ] |
     table_constraint 
@@ -36,7 +38,8 @@ PARTITION OF parent [ ( {
 { FOR VALUES partition | DEFAULT }
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ... ] ) ]
 [ USING using ]
-[ WITH ( { parameter [= value] } [, ... ] ) | WITHOUT OIDS ]
+[ WITH ( { parameter [= value] } [, ... ] ) ]
+[ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
