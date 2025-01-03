@@ -1,48 +1,40 @@
 # https://www.postgresql.org/docs/17/sql-createforeigntable.html
 
-CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( [
-    {
-        colname coltype
-        [ OPTIONS ( { option 'value' } [, ... ] ) ]
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ([ {
+    colname coltype
+        [ OPTIONS ( { option 'value' } [, ...] ) ]
         [ COLLATE collation ]
-        [ constraint_def [ ... ] ]
-      | table_constraint
-        as column
-    } [, ... ]
-] )
-[ INHERITS ( inherit [, ... ] ) ]
+        [ constraint [...] ] |
+    table_constraint
+} [, ...] ])
+[ INHERITS ( inherit [, ...] ) ]
 SERVER server
-[ OPTIONS ( { option 'value' } [, ... ] ) ]
+[ OPTIONS ( { option 'value' } [, ...] ) ]
 
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name 
-PARTITION OF parent [ (
-    { 
-        colname
+PARTITION OF parent [ ({
+    colname
         [ WITH OPTIONS ]
-        [ constraint_def [ ... ] ]
-      | table_constraint
-        as column
-    } [, ... ]
-) ]
+        [ constraint [...] ] |
+    table_constraint
+} [, ...]) ]
 { FOR VALUES partition | DEFAULT }
 SERVER server
-[ OPTIONS ( { option 'value' } [, ... ] ) ]
+[ OPTIONS ( { option 'value' } [, ...] ) ]
 
-# where constraint_def
-[ CONSTRAINT constraint ]
-{
-  NOT NULL |
-  NULL |
-  CHECK ( check ) [ NO INHERIT ] |
-  DEFAULT default |
-  GENERATED ALWAYS AS ( generation ) STORED 
-}
+# WHERE constraint
+[ CONSTRAINT name ] {
+NOT NULL |
+NULL |
+CHECK ( check ) [ NO INHERIT ] |
+DEFAULT default |
+GENERATED ALWAYS AS ( generation ) STORED }
 
-# where table_constraint
+# WHERE table_constraint
 [ CONSTRAINT constraint ] CHECK ( check ) [ NO INHERIT ]
 
-# where partition
+# WHERE partition
   IN ( in [, ...] ) |
-FROM ( { from | MINVALUE | MAXVALUE } [, ... ] )
-  TO ( { to | MINVALUE | MAXVALUE } [, ... ] ) |
+FROM ( { from | MINVALUE | MAXVALUE } [, ...] )
+  TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
 WITH ( MODULUS modulus, REMAINDER premainder )

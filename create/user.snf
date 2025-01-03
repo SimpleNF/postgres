@@ -1,5 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-createuser.html
-CREATE USER name [ WITH ] 
+
+CREATE USER name [ WITH ]
     [ SUPERUSER | NOSUPERUSER ]
     [ CREATEDB | NOCREATEDB ]
     [ CREATEROLE | NOCREATEROLE ]

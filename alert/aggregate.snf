@@ -6,12 +6,12 @@ ALTER AGGREGATE name ( signature ) SET SCHEMA schema
 
 ALTER AGGREGATE name ( signature ) OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
 
-# where signature
+# WHERE signature
 {
     * |
     arg [, ... ] |
     [ arg [, ... ] ] ORDER BY { arg as orders} [, ... ]
 }
 
-# where arg
+# WHERE arg
 [ argmode ] [ argname ] argtype

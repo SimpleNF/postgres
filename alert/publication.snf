@@ -12,7 +12,7 @@ ALTER PUBLICATION name SET ( { parameter [= value] } [, ... ] )
 
 ALTER PUBLICATION name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
 
-# where table
+# WHERE table
 {
     TABLE [ ONLY ] table [ * ] [ ( colname [, ... ] ) ] [ WHERE ( where ) ] |
     TABLES IN SCHEMA { schema | CURRENT_SCHEMA }

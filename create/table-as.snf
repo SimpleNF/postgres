@@ -1,9 +1,10 @@
 # https://www.postgresql.org/docs/17/sql-createtableas.html
 
-CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name
-    [ (colname [, ...] ) ]
+CREATE [ GLOBAL | LOCAL | TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name
+    [ ( colname [, ...] ) ]
     [ USING using ]
-    [ WITH ( parameter [= value] [, ... ] ) | WITHOUT OIDS ]
+    [ WITH ( parameter [= value] [, ... ] ) ]
+    [ WITHOUT OIDS ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ TABLESPACE tablespace ]
     AS as

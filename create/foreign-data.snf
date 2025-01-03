@@ -3,4 +3,4 @@
 CREATE FOREIGN DATA WRAPPER name
     [ HANDLER handler | NO HANDLER ]
     [ VALIDATOR validator | NO VALIDATOR ]
-    [ OPTIONS ( { option 'value' } [, ... ] ) ]
+    [ OPTIONS ( { option 'value' } [, ...] ) ]

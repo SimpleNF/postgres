@@ -6,5 +6,5 @@ ALTER GROUP group DROP USER user [, ... ]
 
 ALTER GROUP name RENAME TO new_name
 
-# where group
+# WHERE group
 { group | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

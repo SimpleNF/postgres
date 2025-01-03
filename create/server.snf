@@ -2,4 +2,4 @@
 
 CREATE SERVER [ IF NOT EXISTS ] name [ TYPE 'type' ] [ VERSION 'version' ]
     FOREIGN DATA WRAPPER fdw
-    [ OPTIONS ( { option 'value' } [, ... ] ) ]
+    [ OPTIONS ( { option 'value' } [, ...] ) ]

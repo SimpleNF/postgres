@@ -8,7 +8,7 @@ ALTER EXTENSION name UPDATE [ TO version ]
 
 ALTER EXTENSION name SET SCHEMA schema
 
-# where member
+# WHERE member
 {
     ACCESS METHOD access_method |
     AGGREGATE aggregate ( signature ) |
@@ -40,12 +40,12 @@ ALTER EXTENSION name SET SCHEMA schema
     VIEW view
 }
 
-# where signature
+# WHERE signature
 {
     * |
     arg [, ... ] |
     [ arg [, ... ] ] ORDER BY { arg as orders} [, ... ]
 }
 
-# where arg
+# WHERE arg
 [ argmode ] [ argname ] argtype

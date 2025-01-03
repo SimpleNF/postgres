@@ -18,7 +18,7 @@ ALTER DATABASE name RESET ALL
 
 ALTER DATABASE name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
 
-# where option
+# WHERE option
 {
     ALLOW_CONNECTIONS allowconn |
     CONNECTION LIMIT connlimit |

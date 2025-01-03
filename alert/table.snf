@@ -16,7 +16,7 @@ ALTER TABLE [ IF EXISTS ] name SET SCHEMA schema
 
 ALTER TABLE ALL IN TABLESPACE name [ OWNED BY owner [, ... ] ] SET TABLESPACE tablespace [ NOWAIT ]
 
-# where action one of
+# WHERE action one of
   ADD [ COLUMN ] [ IF NOT EXISTS ] colname type [ COLLATE collate ] [ constraint_def [ ... ] ]
  DROP [ COLUMN ] [ IF EXISTS ] colname [ RESTRICT | CASCADE ]
 ALTER [ COLUMN ] colname [ SET DATA ] TYPE type [ COLLATE collate ] [ USING using ]
@@ -65,13 +65,13 @@ NOT OF
 OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
 REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 
-# where partition_def
+# WHERE partition_def
   IN ( in [, ...] ) |
 FROM ( { from | MINVALUE | MAXVALUE } [, ...] )
   TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
 WITH ( MODULUS modulus, REMAINDER remainder )
 
-# where constraint_def
+# WHERE constraint_def
 [ CONSTRAINT constraint ]
 { NOT NULL |
   NULL |
@@ -87,7 +87,7 @@ WITH ( MODULUS modulus, REMAINDER remainder )
     [ ON UPDATE on_update ] }
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
-# where table_constraint
+# WHERE table_constraint
 [ CONSTRAINT constraint ]
 { CHECK ( check ) [ NO INHERIT ] |
   UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ... ] ) unique |
@@ -107,13 +107,13 @@ WITH ( MODULUS modulus, REMAINDER remainder )
 { UNIQUE | PRIMARY KEY } USING INDEX index
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
-# where unique,primary_key,exclude
+# WHERE unique,primary_key,exclude
 [ INCLUDE ( colname [, ... ] ) ]
 [ WITH ( parameter [= value] [, ... ] ) ]
 [ USING INDEX TABLESPACE index ]
 
-# where exclude_element
+# WHERE exclude_element
 { colname | ( expression ) } [ COLLATE collate ] [ opclass [ ( parameter = value [, ... ] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
-# where on_delete,on_update
+# WHERE on_delete,on_update
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ... ] ) ] | SET DEFAULT [ ( colname [, ... ] ) ] }

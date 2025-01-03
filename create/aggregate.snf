@@ -1,64 +1,68 @@
 # https://www.postgresql.org/docs/17/sql-createaggregate.html
 
-CREATE [ OR REPLACE ] AGGREGATE name ( arg [, ... ] ) (
+CREATE [ OR REPLACE ] AGGREGATE name (
+    arg [, ...]
+) (
     SFUNC = sfunc,
-    STYPE = stype
-    [, SSPACE = sspace ]
-    [, FINALFUNC = finalfunc ]
-    [, FINALFUNC_EXTRA ]
-    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
-    [, COMBINEFUNC = combinefunc ]
-    [, SERIALFUNC = serialfunc ]
-    [, DESERIALFUNC = deserialfunc ]
-    [, INITCOND = initcond ]
-    [, MSFUNC = msfunc ]
-    [, MINVFUNC = minvfunc ]
-    [, MSTYPE = mstype ]
-    [, MSSPACE = msspace ]
-    [, MFINALFUNC = mfinalfunc ]
-    [, MFINALFUNC_EXTRA ]
-    [, MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
-    [, MINITCOND = minitcond ]
-    [, SORTOP = sortop ]
-    [, PARALLEL = { SAFE | RESTRICTED | UNSAFE } ]
+    STYPE = stype,
+    [ SSPACE = sspace, ]
+    [ FINALFUNC = finalfunc, ]
+    [ FINALFUNC_EXTRA, ]
+    [ FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE }, ]
+    [ COMBINEFUNC = combinefunc, ]
+    [ SERIALFUNC = serialfunc, ]
+    [ DESERIALFUNC = deserialfunc, ]
+    [ INITCOND = initcond, ]
+    [ MSFUNC = msfunc, ]
+    [ MINVFUNC = minvfunc, ]
+    [ MSTYPE = mstype, ]
+    [ MSSPACE = msspace, ]
+    [ MFINALFUNC = mfinalfunc, ]
+    [ MFINALFUNC_EXTRA, ]
+    [ MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE }, ]
+    [ MINITCOND = minitcond, ]
+    [ SORTOP = sortop, ]
+    [ PARALLEL = { SAFE | RESTRICTED | UNSAFE } ]
 )
 
-CREATE [ OR REPLACE ] AGGREGATE name ( [ arg [, ... ] ]
-ORDER BY { arg as order } [, ... ] ) (
+CREATE [ OR REPLACE ] AGGREGATE name ( 
+    [ arg [, ... ] ]
+    ORDER BY order [, ... ] 
+) (
     SFUNC = sfunc,
-    STYPE = stype
-    [, SSPACE = sspace ]
-    [, FINALFUNC = finalfunc ]
-    [, FINALFUNC_EXTRA ]
-    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
-    [, INITCOND = initcond ]
-    [, PARALLEL = { SAFE | RESTRICTED | UNSAFE } ]
-    [, HYPOTHETICAL ]
+    STYPE = stype,
+    [ SSPACE = sspace, ]
+    [ FINALFUNC = finalfunc, ]
+    [ FINALFUNC_EXTRA, ]
+    [ FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE }, ]
+    [ INITCOND = initcond, ]
+    [ PARALLEL = { SAFE | RESTRICTED | UNSAFE }, ]
+    [ HYPOTHETICAL ]
 )
 
 # old syntax
 CREATE [ OR REPLACE ] AGGREGATE name (
     BASETYPE = basetype,
     SFUNC = sfunc,
-    STYPE = stype
-    [, SSPACE = sspace ]
-    [, FINALFUNC = finalfunc ]
-    [, FINALFUNC_EXTRA ]
-    [, FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
-    [, COMBINEFUNC = combinefunc ]
-    [, SERIALFUNC = serialfunc ]
-    [, DESERIALFUNC = deserialfunc ]
-    [, INITCOND = initcond ]
-    [, MSFUNC = msfunc ]
-    [, MINVFUNC = minvfunc ]
-    [, MSTYPE = mstype ]
-    [, MSSPACE = msspace ]
-    [, MFINALFUNC = mffunc ]
-    [, MFINALFUNC_EXTRA ]
-    [, MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE } ]
-    [, MINITCOND = minitcond ]
-    [, SORTOP = sortop ]
+    STYPE = stype,
+    [ SSPACE = sspace, ]
+    [ FINALFUNC = finalfunc, ]
+    [ FINALFUNC_EXTRA, ]
+    [ FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE }, ]
+    [ COMBINEFUNC = combinefunc, ]
+    [ SERIALFUNC = serialfunc, ]
+    [ DESERIALFUNC = deserialfunc, ]
+    [ INITCOND = initcond, ]
+    [ MSFUNC = msfunc, ]
+    [ MINVFUNC = minvfunc, ]
+    [ MSTYPE = mstype, ]
+    [ MSSPACE = msspace, ]
+    [ MFINALFUNC = mffunc, ]
+    [ MFINALFUNC_EXTRA, ]
+    [ MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE }, ]
+    [ MINITCOND = minitcond, ]
+    [ SORTOP = sortop ]
 )
 
-# where arg
+# WHERE arg,order
 [ argmode ] [ argname ] argtype

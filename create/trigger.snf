@@ -1,13 +1,14 @@
 # https://www.postgresql.org/docs/17/sql-createtrigger.html
 
-CREATE [ OR REPLACE ] [ CONSTRAINT ] TRIGGER name { BEFORE | AFTER | INSTEAD OF } { event [ OR ... ] }
-    ON on
+CREATE [ OR REPLACE ] [ CONSTRAINT ] TRIGGER name { BEFORE | AFTER | INSTEAD OF } event [OR ...]
+    ON table
     [ FROM from ]
-    [ NOT DEFERRABLE | [ DEFERRABLE ] [ INITIALLY IMMEDIATE | INITIALLY DEFERRED ] ]
-    [ REFERENCING { { OLD | NEW } TABLE [ AS ] referencing } [ ... ] ]
+    [ DEFERRABLE | NOT DEFERRABLE ]
+    [ INITIALLY IMMEDIATE | INITIALLY DEFERRED ]
+    [ REFERENCING { { OLD | NEW } TABLE [ AS ] referencing } [...] ]
     [ FOR [ EACH ] { ROW | STATEMENT } ]
     [ WHEN ( when ) ]
-    EXECUTE { FUNCTION | PROCEDURE } function ( args )
+    EXECUTE { FUNCTION | PROCEDURE } function ( [ args ] )
 
-# where event
-{ INSERT | UPDATE [ OF colname [, ... ] ] | DELETE | TRUNCATE }
+# WHERE event
+{ INSERT | UPDATE [ OF colname [, ...] ] | DELETE | TRUNCATE }

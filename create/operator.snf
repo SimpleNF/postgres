@@ -1,13 +1,13 @@
 # https://www.postgresql.org/docs/17/sql-createoperator.html
 
 CREATE OPERATOR name (
-    { FUNCTION | PROCEDURE } = function
-    [, LEFTARG = leftarg ]
-    [, RIGHTARG = rightarg ]
-    [, COMMUTATOR = commutator ]
-    [, NEGATOR = negator ]
-    [, RESTRICT = restrict ]
-    [, JOIN = join ]
-    [, HASHES ]
-    [, MERGES ]
+    { FUNCTION | PROCEDURE } = function,
+    [ LEFTARG = leftarg, ]
+    [ RIGHTARG = rightarg, ]
+    [ COMMUTATOR = commutator, ]
+    [ NEGATOR = negator, ]
+    [ RESTRICT = restrict, ]
+    [ JOIN = join, ]
+    [ HASHES, ]
+    [ MERGES ]
 )

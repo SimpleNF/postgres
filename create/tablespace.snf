@@ -2,5 +2,5 @@
 
 CREATE TABLESPACE name
     [ OWNER { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER } ]
-    LOCATION 'location'
-    [ WITH ( { option = value } [, ... ] ) ]
+    [ LOCATION 'location' ]
+    [ WITH ( { parameter [= value] } [, ...] ) ]

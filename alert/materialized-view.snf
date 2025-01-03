@@ -12,7 +12,7 @@ ALTER MATERIALIZED VIEW ALL IN TABLESPACE name [ OWNED BY owner [, ... ] ] SET T
 
 ALTER MATERIALIZED VIEW name [ NO ] DEPENDS ON EXTENSION extension
 
-# where action is:
+# WHERE action is:
 {
     ALTER [ COLUMN ] colname SET STATISTICS statistics |
     ALTER [ COLUMN ] colname SET ( { option = value } [, ... ] ) |

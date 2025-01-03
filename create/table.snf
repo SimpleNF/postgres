@@ -1,95 +1,96 @@
 # https://www.postgresql.org/docs/17/sql-createtable.html
 
-CREATE [ { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name ( [
-  {
-      colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] [ constraint [ ... ] ]
-    | table_constraint
-    | LIKE like [ option [ ... ] ]
-  } [, ... ]
-] )
-[ INHERITS ( inherits [, ... ] ) ]
-[ PARTITION BY { RANGE | LIST | HASH } ( { colname | ( expression ) } [ COLLATE collate ] [ opclass ] [, ... ] ) ]
+CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name ( [ {
+    colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] [ constraint [...] ] |
+    table_constraint |
+    LIKE like [ option [...] ]
+} [, ...] ]
+)
+[ INHERITS ( inherits [, ...] ) ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
 [ USING using ]
-[ WITH ( { parameter [ = value ] } [, ... ] ) | WITHOUT OIDS ]
+[ WITH ( { parameter [ = value] } [, ...] ) ]
+[ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
-# where option
+# WHERE option
 { INCLUDING | EXCLUDING } { COMMENTS | COMPRESSION | CONSTRAINTS | DEFAULTS | GENERATED | IDENTITY | INDEXES | STATISTICS | STORAGE | ALL }
 
-CREATE [ { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name OF type [ (
-  {
-      colname [ WITH OPTIONS ] [ constraint [ ... ] ]
-    | table_constraint 
-  } [, ... ]
+# CASE TYPE
+CREATE [ TEMPORARY | TEMP | UNLOGGED |GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name 
+OF type [ ( {
+    colname [ WITH OPTIONS ] [ constraint [...] ] |
+    table_constraint 
+} [, ...] 
 ) ]
-[ PARTITION BY { RANGE | LIST | HASH } ( { colname | ( expression ) } [ COLLATE collate ] [ opclass ] [, ... ] ) ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
 [ USING using ]
-[ WITH ( { parameter [= value ] } [, ... ] ) | WITHOUT OIDS ]
+[ WITH ( { parameter [= value] } [, ...] ) ]
+[ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
-CREATE [ { TEMPORARY | TEMP } | UNLOGGED ] TABLE [ IF NOT EXISTS ] name PARTITION OF parent [ (
-  {
-      colname [ WITH OPTIONS ] [ constraint [ ... ] ]
-    | table_constraint 
-  } [, ... ]
-) ]
+# CASE PARTITION
+CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name 
+PARTITION OF parent [ ( {
+    colname [ WITH OPTIONS ] [ constraint [...] ] |
+    table_constraint
+} [, ... ] ) ]
 { FOR VALUES partition | DEFAULT }
-[ PARTITION BY { RANGE | LIST | HASH } ( { colname | ( expression ) } [ COLLATE collate ] [ opclass ] [, ... ] ) ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ... ] ) ]
 [ USING using ]
-[ WITH ( { parameter [= value] } [, ... ] ) | WITHOUT OIDS ]
+[ WITH ( { parameter [= value] } [, ... ] ) ]
+[ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
-# where partition
-  IN ( in [, ...] ) |
-FROM ( { from | MINVALUE | MAXVALUE } [, ...] )
-  TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
-WITH ( MODULUS modulus, REMAINDER remainder )
+# WHERE partition_by
+{ colname | ( expression ) } [ COLLATE collate ] [ opclass ]
 
-# where constraint
-[ CONSTRAINT name ]
-{
-  NOT NULL |
-  NULL |
-  CHECK ( check ) [ NO INHERIT ] |
-  DEFAULT default |
-  GENERATED ALWAYS AS ( generated ) STORED |
-  GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
-  UNIQUE [ NULLS [ NOT ] DISTINCT ] unique |
-  PRIMARY KEY primary_key |
-  REFERENCES references [ ( colname ) ]
-    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-    [ ON DELETE on_delete ] 
-    [ ON UPDATE on_update ]
-}
-[ DEFERRABLE | NOT DEFERRABLE ]
-[ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+# WHERE partition
+{ IN ( in [, ...] ) |
+FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
+WITH ( MODULUS modulus, REMAINDER remainder ) }
 
-# where table_constraint
-[ CONSTRAINT name ]
-{
-  CHECK ( check ) [ NO INHERIT ] |
-  UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ... ] ) unique |
-  PRIMARY KEY ( colname [, ... ] ) primary_key |
-  EXCLUDE [ USING using ] ( exclude_element WITH operator [, ... ] ) exclude [ WHERE ( where ) ] |
-  FOREIGN KEY ( colname [, ... ] ) 
-    REFERENCES references [ ( colname [, ... ] ) ]
+# WHERE constraint
+[ CONSTRAINT name ] {
+NULL |
+NOT NULL |
+DEFAULT default |
+GENERATED ALWAYS AS ( generated ) STORED |
+GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
+PRIMARY KEY primary_key |
+UNIQUE [ NULLS [ NOT ] DISTINCT ] unique |
+CHECK ( check ) [ NO INHERIT ] |
+REFERENCES references [ ( colname ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
     [ ON DELETE on_delete ]
-    [ ON UPDATE on_update ]
-}
+    [ ON UPDATE on_update ] }
 [ DEFERRABLE | NOT DEFERRABLE ]
 [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
-# where unique,primary_key,exclude
-[ INCLUDE ( include [, ... ] ) ]
-[ WITH ( parameter [= value] [, ... ] ) ]
+# WHERE table_constraint
+[ CONSTRAINT name ] {
+CHECK ( check ) [ NO INHERIT ] |
+UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique |
+PRIMARY KEY ( colname [, ...] ) primary_key |
+EXCLUDE [ USING using ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( where ) ] |
+FOREIGN KEY ( colname [, ...] )
+    REFERENCES references [ ( colname [, ...] ) ]
+    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+    [ ON DELETE on_delete ]
+    [ ON UPDATE on_update ] }
+[ DEFERRABLE | NOT DEFERRABLE ]
+[ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+
+# WHERE unique,primary_key,exclude
+[ INCLUDE ( include [, ...] ) ]
+[ WITH ( parameter [= value] [, ...] ) ]
 [ USING INDEX TABLESPACE index ]
 
-# where exclude_element
-{ colname | ( expression ) } [ COLLATE collate ] [ opclass [ ( { parameter = value } [, ... ] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
+# WHERE exclude_element
+{ colname | ( expression ) } [ COLLATE collate ] [ opclass [ ( { parameter = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
-# where on_delete,on_update
-{ NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ... ] ) ] | SET DEFAULT [ ( colname [, ... ] ) ] }
+# WHERE on_delete,on_update
+{ NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }
