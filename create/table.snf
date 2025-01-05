@@ -4,7 +4,8 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] 
     colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] [ constraint [...] ] |
     table_constraint |
     LIKE like [ option [...] ]
-} [, ...] ] )
+} [, ...] ]
+)
 [ INHERITS ( inherits [, ...] ) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
 [ USING using ]
