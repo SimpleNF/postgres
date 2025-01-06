@@ -3,4 +3,4 @@
 CREATE SCHEMA [ IF NOT EXISTS ] [ name ] [ AUTHORIZATION role ] [ element [...] ]
 
 # WHERE role
-{ role | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+{ owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

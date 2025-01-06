@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/17/sql-createaggregate.html
 
 CREATE [ OR REPLACE ] AGGREGATE name (
-    arg [, ... ]
+    arg [, ...]
 ) (
     SFUNC = sfunc,
     STYPE = stype,
