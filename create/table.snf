@@ -18,11 +18,12 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] 
 { INCLUDING | EXCLUDING } { COMMENTS | COMPRESSION | CONSTRAINTS | DEFAULTS | GENERATED | IDENTITY | INDEXES | STATISTICS | STORAGE | ALL }
 
 # CASE TYPE
-CREATE [ GLOBAL | LOCAL | TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name 
+CREATE [ TEMPORARY | TEMP | UNLOGGED |GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name 
 OF type [ ( {
-    colname [ WITH OPTIONS ] [ constraint [...] ] | 
+    colname [ WITH OPTIONS ] [ constraint [...] ] |
     table_constraint 
-} [, ...] ) ]
+} [, ...] 
+) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
 [ USING using ]
 [ WITH ( { parameter [= value] } [, ...] ) ]
@@ -31,10 +32,10 @@ OF type [ ( {
 [ TABLESPACE tablespace ]
 
 # CASE PARTITION
-CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL  ] TABLE [ IF NOT EXISTS ] name 
+CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name 
 PARTITION OF parent [ ( {
     colname [ WITH OPTIONS ] [ constraint [...] ] |
-    table_constraint 
+    table_constraint
 } [, ... ] ) ]
 { FOR VALUES partition | DEFAULT }
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ... ] ) ]
