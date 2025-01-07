@@ -49,10 +49,9 @@ PARTITION OF parent [ ( {
 { colname | ( expression ) } [ COLLATE collate ] [ opclass ]
 
 # WHERE partition
-  IN ( in [, ...] ) |
-FROM ( { from | MINVALUE | MAXVALUE } [, ...] )
-  TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
-WITH ( MODULUS modulus, REMAINDER remainder )
+{ IN ( in [, ...] ) |
+FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
+WITH ( MODULUS modulus, REMAINDER remainder ) }
 
 # WHERE constraint
 [ CONSTRAINT name ] {
