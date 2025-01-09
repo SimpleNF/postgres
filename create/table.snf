@@ -36,11 +36,11 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] 
 PARTITION OF parent [ ( {
     colname [ WITH OPTIONS ] [ constraint [...] ] |
     table_constraint
-} [, ... ] ) ]
+} [, ...] ) ]
 { FOR VALUES partition | DEFAULT }
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ... ] ) ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
 [ USING using ]
-[ WITH ( { parameter [= value] } [, ... ] ) ]
+[ WITH ( { parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]

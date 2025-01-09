@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-altermaterializedview.html
 
-ALTER MATERIALIZED VIEW [ IF EXISTS ] name action [, ... ]
+ALTER MATERIALIZED VIEW [ IF EXISTS ] name action [, ...]
 
 ALTER MATERIALIZED VIEW [ IF EXISTS ] name RENAME [ COLUMN ] colname TO new_colname
 
@@ -8,22 +8,20 @@ ALTER MATERIALIZED VIEW [ IF EXISTS ] name RENAME TO new_name
 
 ALTER MATERIALIZED VIEW [ IF EXISTS ] name SET SCHEMA schema
 
-ALTER MATERIALIZED VIEW ALL IN TABLESPACE name [ OWNED BY owner [, ... ] ] SET TABLESPACE tablespace [ NOWAIT ]
+ALTER MATERIALIZED VIEW ALL IN TABLESPACE name [ OWNED BY owner [, ...] ] SET TABLESPACE tablespace [ NOWAIT ]
 
 ALTER MATERIALIZED VIEW name [ NO ] DEPENDS ON EXTENSION extension
 
-# WHERE action is:
-{
-    ALTER [ COLUMN ] colname SET STATISTICS statistics |
-    ALTER [ COLUMN ] colname SET ( { option = value } [, ... ] ) |
-    ALTER [ COLUMN ] colname RESET ( option [, ... ] ) |
-    ALTER [ COLUMN ] colname SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } |
-    ALTER [ COLUMN ] colname SET COMPRESSION compression |
-    CLUSTER ON cluster_on |
-    SET WITHOUT CLUSTER |
-    SET ACCESS METHOD access_method |
-    SET TABLESPACE tablespace |
-    SET ( { parameter [= value] } [, ... ] ) |
-    RESET ( parameter [, ... ] ) |
-    OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
-}
+# WHERE action ONEOF
+ALTER [ COLUMN ] colname SET STATISTICS statistics
+ALTER [ COLUMN ] colname SET ( { option = value } [, ...] )
+ALTER [ COLUMN ] colname RESET ( option [, ...] )
+ALTER [ COLUMN ] colname SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT }
+ALTER [ COLUMN ] colname SET COMPRESSION compression
+CLUSTER ON cluster_on
+SET WITHOUT CLUSTER
+SET ACCESS METHOD access_method
+SET TABLESPACE tablespace
+SET ( { parameter [= value] } [, ...] )
+RESET ( parameter [, ...] )
+OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

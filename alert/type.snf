@@ -14,7 +14,7 @@ ALTER TYPE name RENAME VALUE enum TO new_enum
 
 ALTER TYPE name RENAME TO new_name
 
-ALTER TYPE name SET ( { property = value } [, ... ] )
+ALTER TYPE name SET ( { parameter = value } [, ...] )
 
 ALTER TYPE name SET SCHEMA schema
 

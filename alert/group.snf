@@ -1,8 +1,8 @@
 # https://www.postgresql.org/docs/17/sql-altergroup.html
 
-ALTER GROUP group ADD USER user [, ... ]
+ALTER GROUP group ADD USER user [, ...]
 
-ALTER GROUP group DROP USER user [, ... ]
+ALTER GROUP group DROP USER user [, ...]
 
 ALTER GROUP name RENAME TO new_name
 

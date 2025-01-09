@@ -1,10 +1,7 @@
 # https://www.postgresql.org/docs/17/sql-createforeigntable.html
 
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ([ {
-    colname coltype
-        [ OPTIONS ( { option 'value' } [, ...] ) ]
-        [ COLLATE collation ]
-        [ constraint [...] ] |
+    colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ] [ COLLATE collation ] [ constraint [...] ] |
     table_constraint
 } [, ...] ])
 [ INHERITS ( inherit [, ...] ) ]
@@ -13,9 +10,7 @@ SERVER server
 
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name 
 PARTITION OF parent [ ({
-    colname
-        [ WITH OPTIONS ]
-        [ constraint [...] ] |
+    colname [ WITH OPTIONS ] [ constraint [...] ] |
     table_constraint
 } [, ...]) ]
 { FOR VALUES partition | DEFAULT }
@@ -23,12 +18,7 @@ SERVER server
 [ OPTIONS ( { option 'value' } [, ...] ) ]
 
 # WHERE constraint
-[ CONSTRAINT name ] {
-NOT NULL |
-NULL |
-CHECK ( check ) [ NO INHERIT ] |
-DEFAULT default |
-GENERATED ALWAYS AS ( generation ) STORED }
+[ CONSTRAINT name ] { NOT NULL | NULL | CHECK ( check ) [ NO INHERIT ] | DEFAULT default | GENERATED ALWAYS AS ( generation ) STORED }
 
 # WHERE table_constraint
 [ CONSTRAINT constraint ] CHECK ( check ) [ NO INHERIT ]

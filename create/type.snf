@@ -1,11 +1,14 @@
 # https://www.postgresql.org/docs/17/sql-createtype.html
 
+# CASE COMPOSITE
 CREATE TYPE name AS
-    ( [ { argname argtype [ COLLATE collation ] } [, ...] ] )
+    ( [ arg [, ...] ] )
 
+# CASE ENUM
 CREATE TYPE name AS ENUM
     ( [ 'label' [, ...] ] )
 
+# CASE RANGE
 CREATE TYPE name AS RANGE (
     SUBTYPE = subtype,
     [ SUBTYPE_OPCLASS = subtype_opclass, ]
@@ -15,6 +18,7 @@ CREATE TYPE name AS RANGE (
     [ MULTIRANGE_TYPE_NAME = multirange_type_name ]
 )
 
+# CASE FUNCTION
 CREATE TYPE name (
     INPUT = input,
     OUTPUT = output,
@@ -37,4 +41,8 @@ CREATE TYPE name (
     [ COLLATABLE = collatable ]
 )
 
+# CASE BASE
 CREATE TYPE name
+
+# WHERE arg
+argname argtype [ COLLATE collation ]

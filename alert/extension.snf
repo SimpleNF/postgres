@@ -8,44 +8,38 @@ ALTER EXTENSION name UPDATE [ TO version ]
 
 ALTER EXTENSION name SET SCHEMA schema
 
-# WHERE member
-{
-    ACCESS METHOD access_method |
-    AGGREGATE aggregate ( signature ) |
-    CAST (source AS target) |
-    COLLATION collation |
-    CONVERSION conversion |
-    DOMAIN domain |
-    EVENT TRIGGER event_trigger |
-    FOREIGN DATA WRAPPER fdw |
-    FOREIGN TABLE foreign_table |
-    FUNCTION function [ ( [ argtype [, ...] ] ) ] |
-    MATERIALIZED VIEW m_view |
-    OPERATOR operator (left, right) |
-    OPERATOR CLASS operator_class USING using |
-    OPERATOR FAMILY operator_family USING using |
-    [ PROCEDURAL ] LANGUAGE language |
-    PROCEDURE procedure [ ( [ argtype [, ...] ] ) ] |
-    ROUTINE routine [ ( [ argtype [, ...] ] ) ] |
-    SCHEMA schema |
-    SEQUENCE sequence |
-    SERVER server |
-    TABLE table |
-    TEXT SEARCH CONFIGURATION tsc |
-    TEXT SEARCH DICTIONARY tsd |
-    TEXT SEARCH PARSER tsp |
-    TEXT SEARCH TEMPLATE tst |
-    TRANSFORM FOR transform LANGUAGE language |
-    TYPE type |
-    VIEW view
-}
+# WHERE member ONEOF
+ACCESS METHOD access_method
+AGGREGATE aggregate ( signature )
+CAST (source AS target)
+COLLATION collation
+CONVERSION conversion
+DOMAIN domain
+EVENT TRIGGER event_trigger
+FOREIGN DATA WRAPPER fdw
+FOREIGN TABLE foreign_table
+FUNCTION function [ ( [ argtype [, ...] ] ) ]
+MATERIALIZED VIEW m_view
+OPERATOR operator (left, right)
+OPERATOR CLASS operator_class USING using
+OPERATOR FAMILY operator_family USING using
+[ PROCEDURAL ] LANGUAGE language
+PROCEDURE procedure [ ( [ argtype [, ...] ] ) ]
+ROUTINE routine [ ( [ argtype [, ...] ] ) ]
+SCHEMA schema
+SEQUENCE sequence
+SERVER server
+TABLE table
+TEXT SEARCH CONFIGURATION tsc
+TEXT SEARCH DICTIONARY tsd
+TEXT SEARCH PARSER tsp
+TEXT SEARCH TEMPLATE tst
+TRANSFORM FOR transform LANGUAGE language
+TYPE type
+VIEW view
 
 # WHERE signature
-{
-    * |
-    arg [, ... ] |
-    [ arg [, ... ] ] ORDER BY { arg as orders} [, ... ]
-}
+{ * | arg [, ...] | [ arg [, ...] ] ORDER BY { orders } [, ...] }
 
-# WHERE arg
+# WHERE arg,orders
 [ argmode ] [ argname ] argtype

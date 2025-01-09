@@ -6,18 +6,18 @@ ALTER SUBSCRIPTION name ENABLE
 
 ALTER SUBSCRIPTION name DISABLE
 
-ALTER SUBSCRIPTION name ADD PUBLICATION publication [, ...] [ WITH ( { parameter [= value] } [, ... ] ) ]
+ALTER SUBSCRIPTION name ADD PUBLICATION publication [, ...] [ WITH ( { parameter [= value] } [, ...] ) ]
 
-ALTER SUBSCRIPTION name DROP PUBLICATION publication [, ...] [ WITH ( { parameter [= value] } [, ... ] ) ]
+ALTER SUBSCRIPTION name DROP PUBLICATION publication [, ...] [ WITH ( { parameter [= value] } [, ...] ) ]
 
 ALTER SUBSCRIPTION name RENAME TO new_name
 
-ALTER SUBSCRIPTION name REFRESH PUBLICATION [ WITH ( { parameter [= value] } [, ... ] ) ]
+ALTER SUBSCRIPTION name REFRESH PUBLICATION [ WITH ( { parameter [= value] } [, ...] ) ]
 
 ALTER SUBSCRIPTION name SKIP ( option = value )
 
-ALTER SUBSCRIPTION name SET PUBLICATION publication [, ...] [ WITH ( { parameter [= value] } [, ... ] ) ]
+ALTER SUBSCRIPTION name SET PUBLICATION publication [, ...] [ WITH ( { parameter [= value] } [, ...] ) ]
 
-ALTER SUBSCRIPTION name SET ( { parameter [= value] } [, ... ] )
+ALTER SUBSCRIPTION name SET ( { parameter [= value] } [, ...] )
 
 ALTER SUBSCRIPTION name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

@@ -4,8 +4,6 @@ CREATE PUBLICATION name
     [ FOR ALL TABLES | FOR table [, ...] ]
     [ WITH ( { parameter [= value] } [, ...] ) ]
 
-# WHERE table
-{
-TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( where ) ] |
+# WHERE table ONEOF
+TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( where ) ]
 TABLES IN SCHEMA { schema | CURRENT_SCHEMA }
-}

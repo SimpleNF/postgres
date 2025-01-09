@@ -26,8 +26,8 @@ CREATE [ OR REPLACE ] AGGREGATE name (
 )
 
 CREATE [ OR REPLACE ] AGGREGATE name ( 
-    [ arg [, ... ] ]
-    ORDER BY order [, ... ] 
+    [ arg [, ...] ]
+    ORDER BY order [, ...] 
 ) (
     SFUNC = sfunc,
     STYPE = stype,

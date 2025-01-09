@@ -1,4 +1,5 @@
 # https://www.postgresql.org/docs/17/sql-createrole.html
+
 CREATE ROLE name [ WITH ]
     [ SUPERUSER | NOSUPERUSER ]
     [ CREATEDB | NOCREATEDB ]
