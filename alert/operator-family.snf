@@ -4,13 +4,13 @@ ALTER OPERATOR FAMILY name USING using ADD
   {
     OPERATOR operator_number operator ( left, right ) [ FOR SEARCH | FOR ORDER BY order ] |
     FUNCTION function_number [ ( left [, right ] ) ] function [ ( argtype [, ...] ) ]
-  } [, ... ]
+  } [, ...]
 
 ALTER OPERATOR FAMILY name USING using DROP
   {
     OPERATOR operator_number ( left [, right ] ) |
     FUNCTION function_number ( left [, right ] )
-  } [, ... ]
+  } [, ...]
 
 ALTER OPERATOR FAMILY name USING using RENAME TO new_name
 

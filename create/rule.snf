@@ -2,6 +2,6 @@
 
 CREATE [ OR REPLACE ] RULE name AS 
     ON { SELECT | UPDATE | INSERT | DELETE }
-    TO to
+    TO table
     [ WHERE where ]
     DO [ ALSO | INSTEAD ] { NOTHING | ( command [; ...] ) }

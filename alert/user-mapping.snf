@@ -2,4 +2,4 @@
 
 ALTER USER MAPPING FOR { user | USER | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC }
     SERVER server
-    OPTIONS ( { [ ADD | SET | DROP ] option ['value'] } [, ... ] )
+    OPTIONS ( { [ ADD | SET | DROP ] option ['value'] } [, ...] )

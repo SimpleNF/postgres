@@ -2,5 +2,5 @@
 
 CREATE TEXT SEARCH DICTIONARY name (
     TEMPLATE = template,
-    [ { option = value } [, ...] ]
+    [ { parameter [= value] } [, ...] ]
 )

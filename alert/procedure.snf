@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-alterprocedure.html
 
-ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] action [ ... ] [ RESTRICT ]
+ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] action [...] [ RESTRICT ]
 
 ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] RENAME TO new_name
 
@@ -10,14 +10,12 @@ ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | C
 
 ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
-# WHERE action
-{
-    [ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ] |
-    [ SET parameter { TO | = } { value | DEFAULT } ] |
-    [ SET parameter FROM CURRENT ] |
-    [ RESET parameter ] |
-    RESET ALL
-}
+# WHERE action ONEOF
+[ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ]
+[ SET parameter { TO | = } { value | DEFAULT } ]
+[ SET parameter FROM CURRENT ]
+[ RESET parameter ]
+RESET ALL
 
 # WHERE arg
 [ argmode ] [ argname ] argtype

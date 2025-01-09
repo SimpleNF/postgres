@@ -23,9 +23,4 @@ ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET parameter
 ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET ALL
 
 # WHERE role
-{
-    role |
-    CURRENT_ROLE |
-    CURRENT_USER |
-    SESSION_USER
-}
+{ role | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

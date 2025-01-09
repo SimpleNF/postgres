@@ -1,18 +1,18 @@
 # https://www.postgresql.org/docs/17/sql-alterdomain.html
 
-ALTER DOMAIN name ADD constraint_def [ NOT VALID ]
+ALTER DOMAIN name ADD constraint [ NOT VALID ]
 
 ALTER DOMAIN name DROP DEFAULT
 
 ALTER DOMAIN name DROP NOT NULL
 
-ALTER DOMAIN name DROP CONSTRAINT [ IF EXISTS ] constraint [ RESTRICT | CASCADE ]
+ALTER DOMAIN name DROP CONSTRAINT [ IF EXISTS ] consname [ RESTRICT | CASCADE ]
 
-ALTER DOMAIN name RENAME CONSTRAINT constraint TO new_consname
+ALTER DOMAIN name RENAME CONSTRAINT consname TO new_consname
 
 ALTER DOMAIN name RENAME TO new_name
 
-ALTER DOMAIN name VALIDATE CONSTRAINT constraint
+ALTER DOMAIN name VALIDATE CONSTRAINT consname
 
 ALTER DOMAIN name SET DEFAULT default
 
@@ -22,5 +22,5 @@ ALTER DOMAIN name SET SCHEMA schema
 
 ALTER DOMAIN name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
 
-# WHERE constraint_def
-[ CONSTRAINT constraint ] { NOT NULL | CHECK (check) }
+# WHERE constraint
+[ CONSTRAINT name ] { NOT NULL | CHECK (check) }

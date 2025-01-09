@@ -3,7 +3,7 @@
 ALTER FOREIGN DATA WRAPPER name
     [ HANDLER handler | NO HANDLER ]
     [ VALIDATOR validator | NO VALIDATOR ]
-    [ OPTIONS ( { [ ADD | SET | DROP ] option ['value'] } [, ... ]) ]
+    [ OPTIONS ( { [ ADD | SET | DROP ] option ['value'] } [, ...]) ]
 
 ALTER FOREIGN DATA WRAPPER name RENAME TO new_name
 

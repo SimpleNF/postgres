@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-altertsdictionary.html
 
-ALTER TEXT SEARCH DICTIONARY name ( { option [ = value] } [, ... ] )
+ALTER TEXT SEARCH DICTIONARY name ( { parameter [= value] } [, ...] )
 
 ALTER TEXT SEARCH DICTIONARY name RENAME TO new_name
 
