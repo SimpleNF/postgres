@@ -14,7 +14,8 @@ CREATE [ OR REPLACE ] FUNCTION name ( [ arg [, ...] ] )
     [ ROWS rows ]
     [ SUPPORT support ]
     [ SET parameter { TO value | = value | FROM CURRENT } [, ...] ]
-    [ AS 'definition' [, 'link' ] ]
+    [ AS definition ]
+    [ AS 'file', 'link' ]
     [ sql ]
 
 # WHERE arg

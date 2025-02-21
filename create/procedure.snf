@@ -5,7 +5,8 @@ CREATE [ OR REPLACE ] PROCEDURE name ( [ arg [, ...] ] )
     [ TRANSFORM { FOR TYPE type } [, ...] ]
     [ [ EXTERNAL ] SECURITY { INVOKER | DEFINER } ]
     [ SET parameter { TO value | = value | FROM CURRENT } [, ...] ]
-    [ AS 'definition' [, 'link' ] ]
+    [ AS definition ]
+    [ AS 'file', 'link' ]
     [ sql ]
 
 # WHERE arg
