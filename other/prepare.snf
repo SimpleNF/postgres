@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-prepare.html
+
+PREPARE name [ ( type [, ...] ) ] AS statement

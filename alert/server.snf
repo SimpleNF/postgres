@@ -1,8 +1,11 @@
 # https://www.postgresql.org/docs/17/sql-alterserver.html
 
 ALTER SERVER name [ VERSION 'version' ]
-    [ OPTIONS ( { [ ADD | SET | DROP ] option ['value']} [, ...] ) ]
+    [ OPTIONS ( option [, ...] ) ]
 
 ALTER SERVER name RENAME TO new_name
 
 ALTER SERVER name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+
+# WHERE option
+[ ADD | SET | DROP ] name ['value']

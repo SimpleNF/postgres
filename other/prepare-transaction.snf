@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-prepare-transaction.html
+
+PREPARE TRANSACTION transaction

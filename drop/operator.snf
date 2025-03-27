@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-dropoperator.html
+
+DROP OPERATOR [ IF EXISTS ] { name ( { left | NONE } , right ) } [, ...] [ CASCADE | RESTRICT ]

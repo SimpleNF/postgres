@@ -1,0 +1,28 @@
+# https://www.postgresql.org/docs/17/sql-merge.html
+
+[ WITH query [, ...] ]
+MERGE INTO [ ONLY ] target [ * ] [ [ AS ] alias ]
+USING source ON condition
+when_clause [...]
+[ RETURNING { * | expression [ [ AS ] output ] } [, ...] ]
+
+# WHERE source
+{ [ ONLY ] table [ * ] | ( query ) } [ [ AS ] alias ]
+
+# ONEOFIS when_clause
+WHEN MATCHED [ AND condition ] THEN { merge_update | DELETE | DO NOTHING }
+WHEN NOT MATCHED BY SOURCE [ AND condition ] THEN { merge_update | DELETE | DO NOTHING }
+WHEN NOT MATCHED [ BY TARGET ] [ AND condition ] THEN { merge_insert | DO NOTHING } 
+
+# WHERE merge_insert
+INSERT [( column [, ...] )]
+[ OVERRIDING { SYSTEM | USER } VALUE ]
+{ VALUES ( { expression | DEFAULT } [, ...] ) | DEFAULT VALUES }
+
+# WHERE merge_update
+UPDATE SET 
+{
+  column = { expression | DEFAULT } |
+  ( column [, ...] ) = [ ROW ] ( { expression | DEFAULT } [, ...] ) |
+  ( column [, ...] ) = ( sub_select )
+} [, ...]

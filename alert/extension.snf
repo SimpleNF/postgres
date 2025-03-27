@@ -1,17 +1,17 @@
 # https://www.postgresql.org/docs/17/sql-alterextension.html
 
-ALTER EXTENSION name ADD member [, ...]
+ALTER EXTENSION name ADD action [, ...]
 
-ALTER EXTENSION name DROP member [, ...]
+ALTER EXTENSION name DROP action [, ...]
 
 ALTER EXTENSION name UPDATE [ TO version ]
 
 ALTER EXTENSION name SET SCHEMA schema
 
-# WHERE member ONEOF
+# ONEOFIS action
 ACCESS METHOD access_method
 AGGREGATE aggregate ( signature )
-CAST (source AS target)
+CAST ( source AS target )
 COLLATION collation
 CONVERSION conversion
 DOMAIN domain
@@ -39,7 +39,7 @@ TYPE type
 VIEW view
 
 # WHERE signature
-{ * | arg [, ...] | [ arg [, ...] ] ORDER BY { orders } [, ...] }
+{ * | arg [, ...] | [ arg [, ...] ] ORDER BY orders [, ...] }
 
 # WHERE arg,orders
 [ argmode ] [ argname ] argtype

@@ -10,17 +10,17 @@ ALTER ROUTINE name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | CUR
 
 ALTER ROUTINE name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
-# WHERE action ONEOF
-[ IMMUTABLE | STABLE | VOLATILE ]
-[ [ NOT ] LEAKPROOF ]
-[ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ]
-[ PARALLEL { UNSAFE | RESTRICTED | SAFE } ]
-[ COST cost ]
-[ ROWS rows ]
-[ SET parameter { TO | = } { value | DEFAULT } ]
-[ SET parameter FROM CURRENT ]
-[ RESET parameter ]
-[ RESET ALL ]
+# ONEOFIS action
+IMMUTABLE | STABLE | VOLATILE
+[ NOT ] LEAKPROOF
+[ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER
+PARALLEL { UNSAFE | RESTRICTED | SAFE }
+COST cost
+ROWS rows
+SET parameter FROM CURRENT
+SET parameter { TO | = } { value | DEFAULT }
+RESET parameter
+RESET ALL
 
 # WHERE arg
 [ argmode ] [ argname ] argtype

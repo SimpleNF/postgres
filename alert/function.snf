@@ -10,19 +10,19 @@ ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | CU
 
 ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
-# WHERE action ONEOF
-[ STRICT | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT ]
-[ IMMUTABLE | STABLE | VOLATILE ]
-[ [ NOT ] LEAKPROOF ]
-[ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ]
-[ PARALLEL { UNSAFE | RESTRICTED | SAFE } ]
-[ COST cost ]
-[ ROWS rows ]
-[ SUPPORT support ]
-[ SET parameter { TO | = } { value | DEFAULT } ]
-[ SET parameter FROM CURRENT ]
-[ RESET parameter ]
-[ RESET ALL ]
+# ONEOFIS action
+STRICT | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT
+IMMUTABLE | STABLE | VOLATILE
+[ NOT ] LEAKPROOF
+[ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER
+PARALLEL { UNSAFE | RESTRICTED | SAFE }
+COST cost
+ROWS rows
+SUPPORT support
+SET parameter FROM CURRENT
+SET parameter { TO | = } { value | DEFAULT }
+RESET parameter
+RESET ALL
 
 # WHERE arg
 [ argmode ] [ argname ] argtype

@@ -1,0 +1,17 @@
+# https://www.postgresql.org/docs/17/sql-selectinto.html
+
+[ WITH [ RECURSIVE ] query [, ...] ]
+SELECT [ ALL | DISTINCT [ ON ( expression [, ...] ) ] ]
+    [ { * | expression [ [ AS ] output ] } [, ...] ]
+    INTO [ TEMPORARY | TEMP | UNLOGGED ] [ TABLE ] new_table
+    [ FROM from_item [, ...] ]
+    [ WHERE where ]
+    [ GROUP BY group_by [, ...] ]
+    [ HAVING having ]
+    [ WINDOW window AS ( definition ) [, ...] ]
+    [ { UNION | INTERSECT | EXCEPT } [ ALL | DISTINCT ] select ]
+    [ ORDER BY { order_by [ ASC | DESC | USING using ] [ NULLS { FIRST | LAST } ] } [, ...] ]
+    [ LIMIT { limit | ALL } ]
+    [ OFFSET offset [ ROW | ROWS ] ]
+    [ FETCH { FIRST | NEXT } [ fetch ] { ROW | ROWS } ONLY ]
+    [ FOR { UPDATE | SHARE } [ OF table [, ...] ] [ NOWAIT ] [...] ]

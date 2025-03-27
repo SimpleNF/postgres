@@ -10,11 +10,11 @@ ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | C
 
 ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
-# WHERE action ONEOF
-[ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ]
-[ SET parameter { TO | = } { value | DEFAULT } ]
-[ SET parameter FROM CURRENT ]
-[ RESET parameter ]
+# ONEOFIS action
+[ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER
+SET parameter FROM CURRENT
+SET parameter { TO | = } { value | DEFAULT }
+RESET parameter
 RESET ALL
 
 # WHERE arg

@@ -1,0 +1,10 @@
+# https://www.postgresql.org/docs/17/sql-set-transaction.html
+
+SET TRANSACTION transaction [, ...]
+SET TRANSACTION SNAPSHOT snapshot
+SET SESSION CHARACTERISTICS AS TRANSACTION transaction [, ...]
+
+# ONEOFIS transaction
+ISOLATION LEVEL { SERIALIZABLE | REPEATABLE READ | READ COMMITTED | READ UNCOMMITTED }
+READ WRITE | READ ONLY
+[ NOT ] DEFERRABLE

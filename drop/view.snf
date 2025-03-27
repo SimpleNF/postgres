@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-dropview.html
+
+DROP VIEW [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]

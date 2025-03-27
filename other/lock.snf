@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-lock.html
+
+LOCK [ TABLE ] [ ONLY ] name [ * ] [, ...] [ IN mode MODE ] [ NOWAIT ]
+
+# WHERE mode
+{ ACCESS SHARE | ROW SHARE | ROW EXCLUSIVE | SHARE UPDATE EXCLUSIVE | SHARE | SHARE ROW EXCLUSIVE | EXCLUSIVE | ACCESS EXCLUSIVE }

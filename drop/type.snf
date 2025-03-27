@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-droptype.html
+
+DROP TYPE [ IF EXISTS ] name [, ...] [ CASCADE | RESTRICT ]

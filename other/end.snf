@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-end.html
+
+END [ WORK | TRANSACTION ] [ AND [ NO ] CHAIN ]

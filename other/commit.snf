@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-commit.html
+
+COMMIT [ WORK | TRANSACTION ] [ AND [ NO ] CHAIN ]

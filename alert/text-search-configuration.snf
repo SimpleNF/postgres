@@ -7,10 +7,10 @@ ALTER TEXT SEARCH CONFIGURATION name
     ALTER MAPPING FOR token [, ...] WITH dictionary [, ...]
 
 ALTER TEXT SEARCH CONFIGURATION name
-    ALTER MAPPING REPLACE old_dictionary WITH new_dictionary
+    ALTER MAPPING REPLACE dictionary WITH new_dictionary
 
 ALTER TEXT SEARCH CONFIGURATION name
-    ALTER MAPPING FOR token [, ...] REPLACE old_dictionary WITH new_dictionary
+    ALTER MAPPING FOR token [, ...] REPLACE dictionary WITH new_dictionary
 
 ALTER TEXT SEARCH CONFIGURATION name
     DROP MAPPING [ IF EXISTS ] FOR token [, ...]

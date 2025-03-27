@@ -86,7 +86,7 @@ FOREIGN KEY ( colname [, ...] )
 
 # WHERE unique,primary_key,exclude
 [ INCLUDE ( include [, ...] ) ]
-[ WITH ( parameter [= value] [, ...] ) ]
+[ WITH ( { parameter [= value] } [, ...] ) ]
 [ USING INDEX TABLESPACE index ]
 
 # WHERE exclude_element

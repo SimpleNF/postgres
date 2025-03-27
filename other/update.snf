@@ -1,0 +1,11 @@
+# https://www.postgresql.org/docs/17/sql-update.html
+
+[ WITH [ RECURSIVE ] query [, ...] ]
+UPDATE [ ONLY ] table [ * ] [ [ AS ] alias ]
+    SET { column = { expression | DEFAULT } |
+          ( column [, ...] ) = [ ROW ] ( { expression | DEFAULT } [, ...] ) |
+          ( column [, ...] ) = ( sub_select )
+        } [, ...]
+    [ FROM from_item [, ...] ]
+    [ WHERE condition | WHERE CURRENT OF cursor ]
+    [ RETURNING { * | expression [ [ AS ] output ] } [, ...] ]
