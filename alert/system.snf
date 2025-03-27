@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-altersystem.html
 
-ALTER SYSTEM SET parameter { TO | = } { value [, ...] | DEFAULT }
+ALTER SYSTEM SET parameter { TO | = } { value | DEFAULT }
 
 ALTER SYSTEM RESET parameter
 

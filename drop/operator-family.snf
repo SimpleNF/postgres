@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-dropopfamily.html
+
+DROP OPERATOR FAMILY [ IF EXISTS ] name USING index_method [ CASCADE | RESTRICT ]

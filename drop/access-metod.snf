@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-drop-access-method.html
+
+DROP ACCESS METHOD [ IF EXISTS ] name [ CASCADE | RESTRICT ]

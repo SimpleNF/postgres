@@ -3,6 +3,12 @@
 CREATE POLICY name ON table
     [ AS { PERMISSIVE | RESTRICTIVE } ]
     [ FOR { ALL | SELECT | INSERT | UPDATE | DELETE } ]
-    [ TO { role | PUBLIC | CURRENT_ROLE | CURRENT_USER | SESSION_USER } [, ...] ]
-    [ USING ( using ) ]
-    [ WITH CHECK ( check ) ]
+    [ TO role [, ...] ]
+    [ USING ( using_expression ) ]
+    [ WITH CHECK ( check_expression ) ]
+
+# WHERE role_public
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
+
+# RETURN using_expression,check_expression
+BOOLEAN

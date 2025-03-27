@@ -2,10 +2,16 @@
 
 CREATE [ GLOBAL | LOCAL | TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name
     [ ( colname [, ...] ) ]
-    [ USING using ]
-    [ WITH ( parameter [= value] [, ...] ) ]
+    [ USING index_method ]
+    [ WITH ( { parameter [= value] } [, ...] ) ]
     [ WITHOUT OIDS ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ TABLESPACE tablespace ]
-    AS as
+    AS select_statement
     [ WITH [ NO ] DATA ]
+
+# STATEMEMT select_statement
+SELECT
+TABLE
+VALUES
+EXECUTE

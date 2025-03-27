@@ -1,0 +1,38 @@
+# https://www.postgresql.org/docs/17/sql-copy.html
+
+COPY table [ ( colname [, ...] ) ]
+    FROM { 'file' | PROGRAM 'command' | STDIN }
+    [ WITH ( option ) ]
+    [ WHERE condition_expression ]
+
+COPY { table [ ( colname [, ...] ) ] | ( query_statement ) }
+    TO { 'file' | PROGRAM 'command' | STDOUT }
+    [ WITH ( option ) ]
+
+# WHERE option
+[ FORMAT format ]
+[ FREEZE [ freeze ] ]
+[ DELIMITER 'delimiter' ]
+[ NULL 'null' ]
+[ DEFAULT 'default' ]
+[ HEADER [ header | MATCH ] ]
+[ QUOTE 'quote' ]
+[ ESCAPE 'escape' ]
+[ FORCE_QUOTE { ( colname [, ...] ) | * } ]
+[ FORCE_NOT_NULL { ( colname [, ...] ) | * } ]
+[ FORCE_NULL { ( colname [, ...] ) | * } ]
+[ ON_ERROR on_error ]
+[ ENCODING 'encoding' ]
+[ LOG_VERBOSITY log_verbosity ]
+
+# STATEMEMT query_statement
+SELECT
+TABLE
+VALUES
+INSERT
+UPDATE
+DELETE
+MERGE
+
+# RETURN condition_expression
+BOOLEAN

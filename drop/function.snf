@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-dropfunction.html
+
+DROP FUNCTION [ IF EXISTS ] { name [ ( arg [, ...] ) ] } [, ...] [ CASCADE | RESTRICT ]
+
+# WHERE arg
+[ argmode ] [ argname ] argtype

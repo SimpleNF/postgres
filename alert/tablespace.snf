@@ -2,8 +2,11 @@
 
 ALTER TABLESPACE name RENAME TO new_name
 
-ALTER TABLESPACE name SET ( { option = value } [, ...] )
+ALTER TABLESPACE name SET ( { parameter [= value ] } [, ...] )
 
-ALTER TABLESPACE name RESET ( option [, ...] )
+ALTER TABLESPACE name RESET ( parameter [, ...] )
 
-ALTER TABLESPACE name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER TABLESPACE name OWNER TO role
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

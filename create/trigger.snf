@@ -7,8 +7,11 @@ CREATE [ OR REPLACE ] [ CONSTRAINT ] TRIGGER name { BEFORE | AFTER | INSTEAD OF 
     [ INITIALLY IMMEDIATE | INITIALLY DEFERRED ]
     [ REFERENCING { { OLD | NEW } TABLE [ AS ] referencing } [...] ]
     [ FOR [ EACH ] { ROW | STATEMENT } ]
-    [ WHEN ( when ) ]
-    EXECUTE { FUNCTION | PROCEDURE } function ( [ args ] )
+    [ WHEN ( condition_expression ) ]
+    EXECUTE { FUNCTION | PROCEDURE } function ( value [, ...] )
 
 # WHERE event
 { INSERT | UPDATE [ OF colname [, ...] ] | DELETE | TRUNCATE }
+
+# RETURN condition_expression
+BOOLEAN

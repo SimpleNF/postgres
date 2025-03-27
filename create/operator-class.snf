@@ -1,7 +1,8 @@
 # https://www.postgresql.org/docs/17/sql-createopclass.html
 
-CREATE OPERATOR CLASS name [ DEFAULT ] 
-    FOR TYPE type USING using [ FAMILY family ] AS {
+CREATE OPERATOR CLASS name [ DEFAULT ] FOR TYPE type USING index_method [ FAMILY family ] AS
+  {
     OPERATOR number operator [ ( left, right ) ] [ FOR SEARCH | FOR ORDER BY order ] |
-    FUNCTION number [ ( left [, right ] ) ] function ( argtype [, ...] ) } [, ...]
+    FUNCTION number [ ( left [, right ] ) ] function ( argtype [, ...] )
+  } [, ...]
     [ STORAGE storage ]

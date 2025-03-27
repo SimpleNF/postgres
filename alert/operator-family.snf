@@ -1,19 +1,22 @@
 # https://www.postgresql.org/docs/17/sql-alteropfamily.html
 
-ALTER OPERATOR FAMILY name USING using ADD
+ALTER OPERATOR FAMILY name USING index_method ADD
   {
-    OPERATOR operator_number operator ( left, right ) [ FOR SEARCH | FOR ORDER BY order ] |
-    FUNCTION function_number [ ( left [, right ] ) ] function [ ( argtype [, ...] ) ]
+    OPERATOR number operator ( left, right ) [ FOR SEARCH | FOR ORDER BY order ] |
+    FUNCTION number [ ( left [, right ] ) ] function [ ( argtype [, ...] ) ]
   } [, ...]
 
-ALTER OPERATOR FAMILY name USING using DROP
+ALTER OPERATOR FAMILY name USING index_method DROP
   {
-    OPERATOR operator_number ( left [, right ] ) |
-    FUNCTION function_number ( left [, right ] )
+    OPERATOR number ( left [, right ] ) |
+    FUNCTION number ( left [, right ] )
   } [, ...]
 
-ALTER OPERATOR FAMILY name USING using RENAME TO new_name
+ALTER OPERATOR FAMILY name USING index_method RENAME TO new_name
 
-ALTER OPERATOR FAMILY name USING using SET SCHEMA schema
+ALTER OPERATOR FAMILY name USING index_method OWNER TO role
 
-ALTER OPERATOR FAMILY name USING using OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER OPERATOR FAMILY name USING index_method SET SCHEMA schema
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

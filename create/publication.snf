@@ -5,5 +5,8 @@ CREATE PUBLICATION name
     [ WITH ( { parameter [= value] } [, ...] ) ]
 
 # WHERE table ONEOF
-TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( where ) ]
+TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( condition_expression ) ]
 TABLES IN SCHEMA { schema | CURRENT_SCHEMA }
+
+# RETURN condition_expression
+BOOLEAN

@@ -1,10 +1,10 @@
 # https://www.postgresql.org/docs/17/sql-altergroup.html
 
-ALTER GROUP group ADD USER user [, ...]
+ALTER GROUP role ADD USER user [, ...]
 
-ALTER GROUP group DROP USER user [, ...]
+ALTER GROUP role DROP USER user [, ...]
 
 ALTER GROUP name RENAME TO new_name
 
-# WHERE group
-{ group | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

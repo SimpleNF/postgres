@@ -1,21 +1,23 @@
 # https://www.postgresql.org/docs/17/sql-alterprocedure.html
 
-ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] action [...] [ RESTRICT ]
+ALTER PROCEDURE name [ ( arg [, ...] ) ] action [ RESTRICT ]
 
-ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] RENAME TO new_name
+ALTER PROCEDURE name [ ( arg [, ...] ) ] RENAME TO new_name
 
-ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] SET SCHEMA schema
+ALTER PROCEDURE name [ ( arg [, ...] ) ] OWNER TO role
 
-ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER PROCEDURE name [ ( arg [, ...] ) ] SET SCHEMA schema
 
-ALTER PROCEDURE name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
+ALTER PROCEDURE name [ ( arg [, ...] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
-# WHERE action ONEOF
+# WHERE action
 [ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ]
-[ SET parameter { TO | = } { value | DEFAULT } ]
-[ SET parameter FROM CURRENT ]
-[ RESET parameter ]
-RESET ALL
+[ { SET parameter { { TO | = } { value | DEFAULT } | FROM CURRENT } } [, ...] ]
+[ { RESET parameter } [, ...] ]
+[ RESET ALL ]
 
 # WHERE arg
 [ argmode ] [ argname ] argtype
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

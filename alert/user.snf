@@ -14,13 +14,13 @@ ALTER USER user [ WITH ]
 
 ALTER USER name RENAME TO new_name
 
-ALTER USER { user | ALL } [ IN DATABASE database ] SET parameter { TO | = } { value | DEFAULT }
-
 ALTER USER { user | ALL } [ IN DATABASE database ] SET parameter FROM CURRENT
+
+ALTER USER { user | ALL } [ IN DATABASE database ] SET parameter { TO | = } { value | DEFAULT }
 
 ALTER USER { user | ALL } [ IN DATABASE database ] RESET parameter
 
 ALTER USER { user | ALL } [ IN DATABASE database ] RESET ALL
 
 # WHERE user
-{ role | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

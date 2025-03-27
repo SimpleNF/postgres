@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-dropaggregate.html
+
+DROP AGGREGATE [ IF EXISTS ] name ( signature ) [, ...] [ CASCADE | RESTRICT ]
+
+# WHERE signature
+* | arg [, ...] | arg [, ...] ORDER BY orders [, ...]
+
+# WHERE arg,orders
+[ argmode ] [ argname ] argtype

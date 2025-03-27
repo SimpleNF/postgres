@@ -1,31 +1,31 @@
 # https://www.postgresql.org/docs/17/sql-alterextension.html
 
-ALTER EXTENSION name ADD member [, ...]
+ALTER EXTENSION name ADD action
 
-ALTER EXTENSION name DROP member [, ...]
+ALTER EXTENSION name DROP action
 
 ALTER EXTENSION name UPDATE [ TO version ]
 
 ALTER EXTENSION name SET SCHEMA schema
 
-# WHERE member ONEOF
+# ONEOFIS action
 ACCESS METHOD access_method
 AGGREGATE aggregate ( signature )
-CAST (source AS target)
+CAST ( source AS target )
 COLLATION collation
 CONVERSION conversion
 DOMAIN domain
 EVENT TRIGGER event_trigger
 FOREIGN DATA WRAPPER fdw
 FOREIGN TABLE foreign_table
-FUNCTION function [ ( [ argtype [, ...] ] ) ]
+FUNCTION function [ ( argtype [, ...] ) ]
 MATERIALIZED VIEW m_view
 OPERATOR operator (left, right)
-OPERATOR CLASS operator_class USING using
-OPERATOR FAMILY operator_family USING using
+OPERATOR CLASS opclass USING index_method
+OPERATOR FAMILY opfamily USING index_method
 [ PROCEDURAL ] LANGUAGE language
-PROCEDURE procedure [ ( [ argtype [, ...] ] ) ]
-ROUTINE routine [ ( [ argtype [, ...] ] ) ]
+PROCEDURE procedure [ ( argtype [, ...] ) ]
+ROUTINE routine [ ( argtype [, ...] ) ]
 SCHEMA schema
 SEQUENCE sequence
 SERVER server
@@ -39,7 +39,7 @@ TYPE type
 VIEW view
 
 # WHERE signature
-{ * | arg [, ...] | [ arg [, ...] ] ORDER BY { orders } [, ...] }
+* | arg [, ...] | arg [, ...] ORDER BY order [, ...]
 
-# WHERE arg,orders
+# WHERE arg,order
 [ argmode ] [ argname ] argtype

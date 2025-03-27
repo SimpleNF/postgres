@@ -3,8 +3,14 @@
 ALTER FOREIGN DATA WRAPPER name
     [ HANDLER handler | NO HANDLER ]
     [ VALIDATOR validator | NO VALIDATOR ]
-    [ OPTIONS ( { [ ADD | SET | DROP ] option ['value'] } [, ...]) ]
+    [ OPTIONS ( option [, ...]) ]
 
 ALTER FOREIGN DATA WRAPPER name RENAME TO new_name
 
-ALTER FOREIGN DATA WRAPPER name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER FOREIGN DATA WRAPPER name OWNER TO role
+
+# WHERE option
+[ ADD | SET | DROP ] name ['value']
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

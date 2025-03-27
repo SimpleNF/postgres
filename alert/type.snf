@@ -1,12 +1,8 @@
 # https://www.postgresql.org/docs/17/sql-altertype.html
 
-ALTER TYPE name ADD ATTRIBUTE attribute type [ COLLATE collation ] [ CASCADE | RESTRICT ]
+ALTER TYPE name action [, ...]
 
 ALTER TYPE name ADD VALUE [ IF NOT EXISTS ] new_enum [ { BEFORE | AFTER } neighbor_enum ]
-
-ALTER TYPE name ALTER ATTRIBUTE attribute [ SET DATA ] TYPE type [ COLLATE collation ] [ CASCADE | RESTRICT ]
-
-ALTER TYPE name DROP ATTRIBUTE [ IF EXISTS ] attribute [ CASCADE | RESTRICT ]
 
 ALTER TYPE name RENAME ATTRIBUTE attribute TO new_attribute [ CASCADE | RESTRICT ]
 
@@ -14,8 +10,16 @@ ALTER TYPE name RENAME VALUE enum TO new_enum
 
 ALTER TYPE name RENAME TO new_name
 
-ALTER TYPE name SET ( { parameter = value } [, ...] )
+ALTER TYPE name SET ( { property = value } [, ...] )
+
+ALTER TYPE name OWNER TO role
 
 ALTER TYPE name SET SCHEMA schema
 
-ALTER TYPE name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+# ONEOFIS action
+ADD ATTRIBUTE attribute type [ COLLATE collation ] [ CASCADE | RESTRICT ]
+DROP ATTRIBUTE [ IF EXISTS ] attribute [ CASCADE | RESTRICT ]
+ALTER ATTRIBUTE attribute [ SET DATA ] TYPE type [ COLLATE collation ] [ CASCADE | RESTRICT ]
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

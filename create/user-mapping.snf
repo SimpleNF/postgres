@@ -1,5 +1,8 @@
 # https://www.postgresql.org/docs/17/sql-createusermapping.html
 
-CREATE USER MAPPING [ IF NOT EXISTS ] FOR { user | USER | CURRENT_ROLE | CURRENT_USER | PUBLIC }
+CREATE USER MAPPING [ IF NOT EXISTS ] FOR role_public
     SERVER server
     [ OPTIONS ( { option 'value' } [, ...] ) ]
+
+# WHERE role_public
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC

@@ -1,0 +1,31 @@
+# https://www.postgresql.org/docs/17/sql-update.html
+
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+UPDATE [ ONLY ] table [ * ] [ [ AS ] alias ]
+    SET { 
+          colname = { value_expression | DEFAULT } |
+          ( colname [, ...] ) = [ ROW ] ( { value_expression | DEFAULT } [, ...] ) |
+          ( colname [, ...] ) = ( row_statement )
+        } [, ...]
+    [ FROM from_item [, ...] ]
+    [ WHERE condition_expression | WHERE CURRENT OF cursor ]
+    [ RETURNING [ * ] { col_expression [ [ AS ] alias ] } [, ...] ]
+
+# ONEOFIS from_item
+with_name [ [ AS ] with_alias [ ( col_alias [, ...] ) ] ]
+[ ONLY ] table [ * ] [ [ AS ] table_alias [ ( col_alias [, ...] ) ] ] [ TABLESAMPLE tablesample ( value [, ...] ) [ REPEATABLE ( seed ) ] ]
+[ LATERAL ] ( select ) [ [ AS ] select_alias [ ( col_alias [, ...] ) ] ]
+[ LATERAL ] function ( value [, ...] )
+[ LATERAL ] function ( value [, ...] ) AS ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( value [, ...] ) [ AS ] function_alias ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( value [, ...] ) WITH ORDINALITY [ [ AS ] function_alias [ ( col_alias [, ...] ) ] ]
+[ LATERAL ] ROWS FROM ( { function ( value [, ...] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] alias [ ( col_alias [, ...] ) ] ]
+from_item join_type from_item { ON condition_expression | USING ( colname [, ...] ) [ AS join_alias ] }
+from_item NATURAL join_type from_item
+from_item CROSS JOIN from_item
+
+# STATEMEMT row_statement
+SELECT
+
+# RETURN condition_expression
+BOOLEAN

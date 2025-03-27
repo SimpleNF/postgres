@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-set-constraints.html
+
+SET CONSTRAINTS { ALL | name [, ...] } { DEFERRED | IMMEDIATE }

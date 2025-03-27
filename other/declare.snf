@@ -1,0 +1,9 @@
+# https://www.postgresql.org/docs/17/sql-declare.html
+
+DECLARE name [ BINARY ] [ ASENSITIVE | INSENSITIVE ] [ [ NO ] SCROLL ]
+    CURSOR [ { WITH | WITHOUT } HOLD ] FOR select_statement
+
+# STATEMEMT select_statement
+SELECT
+TABLE
+VALUES

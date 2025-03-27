@@ -8,20 +8,23 @@ ALTER MATERIALIZED VIEW [ IF EXISTS ] name RENAME TO new_name
 
 ALTER MATERIALIZED VIEW [ IF EXISTS ] name SET SCHEMA schema
 
-ALTER MATERIALIZED VIEW ALL IN TABLESPACE name [ OWNED BY owner [, ...] ] SET TABLESPACE tablespace [ NOWAIT ]
+ALTER MATERIALIZED VIEW ALL IN TABLESPACE tablespace [ OWNED BY owner [, ...] ] SET TABLESPACE new_tablespace [ NOWAIT ]
 
 ALTER MATERIALIZED VIEW name [ NO ] DEPENDS ON EXTENSION extension
 
-# WHERE action ONEOF
+# ONEOFIS action
 ALTER [ COLUMN ] colname SET STATISTICS statistics
-ALTER [ COLUMN ] colname SET ( { option = value } [, ...] )
-ALTER [ COLUMN ] colname RESET ( option [, ...] )
 ALTER [ COLUMN ] colname SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT }
 ALTER [ COLUMN ] colname SET COMPRESSION compression
-CLUSTER ON cluster_on
+ALTER [ COLUMN ] colname SET ( { parameter = value } [, ...] )
+ALTER [ COLUMN ] colname RESET ( parameter [, ...] )
+CLUSTER ON cluster
 SET WITHOUT CLUSTER
 SET ACCESS METHOD access_method
-SET TABLESPACE tablespace
 SET ( { parameter [= value] } [, ...] )
 RESET ( parameter [, ...] )
-OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+SET TABLESPACE tablespace
+OWNER TO role
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

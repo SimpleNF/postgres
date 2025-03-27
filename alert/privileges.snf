@@ -5,13 +5,13 @@ ALTER DEFAULT PRIVILEGES
     [ IN SCHEMA schema [, ...] ]
     grant_or_revoke
 
-# WHERE grant_or_revoke
-GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN as method } [, ...] | ALL [ PRIVILEGES ] }
+# PARTOFIS grant_or_revoke
+GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON TABLES
     TO { [ GROUP ] role | PUBLIC } [, ...] 
     [ WITH GRANT OPTION ]
 
-GRANT { { USAGE | SELECT | UPDATE as method } [, ...] | ALL [ PRIVILEGES ] }
+GRANT { { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SEQUENCES
     TO { [ GROUP ] role | PUBLIC } [, ...] 
     [ WITH GRANT OPTION ]
@@ -26,18 +26,17 @@ GRANT { USAGE | ALL [ PRIVILEGES ] }
     TO { [ GROUP ] role | PUBLIC } [, ...] 
     [ WITH GRANT OPTION ]
 
-GRANT { { USAGE | CREATE as method } [, ...] | ALL [ PRIVILEGES ] }
+GRANT { { USAGE | CREATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SCHEMAS
     TO { [ GROUP ] role | PUBLIC } [, ...] 
     [ WITH GRANT OPTION ]
 
-REVOKE [ GRANT OPTION FOR ]
-    { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN as method } [, ...] | ALL [ PRIVILEGES ] }
+REVOKE [ GRANT OPTION FOR ] { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON TABLES
     FROM { [ GROUP ] role | PUBLIC } [, ...]
     [ CASCADE | RESTRICT ]
 
-REVOKE [ GRANT OPTION FOR ] { { USAGE | SELECT | UPDATE as method } [, ...] | ALL [ PRIVILEGES ] }
+REVOKE [ GRANT OPTION FOR ] { { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SEQUENCES
     FROM { [ GROUP ] role | PUBLIC } [, ...]
     [ CASCADE | RESTRICT ]

@@ -5,5 +5,5 @@ CREATE STATISTICS [ IF NOT EXISTS ] [ name ]
     FROM table
 
 CREATE STATISTICS [ IF NOT EXISTS ] [ name ] [ ( kind [, ...] ) ]
-    ON { colname | ( expression ) } [, ...]
+    ON { colname | ( col_expression ) } [, ...]
     FROM table

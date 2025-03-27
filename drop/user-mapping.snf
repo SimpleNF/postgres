@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-dropusermapping.html
+
+DROP USER MAPPING [ IF EXISTS ] FOR role_public SERVER server
+
+# WHERE role_public
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC

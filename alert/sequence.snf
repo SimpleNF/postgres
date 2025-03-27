@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/17/sql-altersequence.html
 
 ALTER SEQUENCE [ IF EXISTS ] name
-    [ AS as ]
+    [ AS type ]
     [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE ]
     [ MAXVALUE maxvalue | NO MAXVALUE ]
@@ -10,10 +10,13 @@ ALTER SEQUENCE [ IF EXISTS ] name
     [ CACHE cache ] [ [ NO ] CYCLE ]
     [ OWNED BY { table.colname | NONE } ]
 
+ALTER SEQUENCE [ IF EXISTS ] name SET { LOGGED | UNLOGGED }
+
 ALTER SEQUENCE [ IF EXISTS ] name RENAME TO new_name
 
-ALTER SEQUENCE [ IF EXISTS ] name SET { LOGGED | UNLOGGED }
+ALTER SEQUENCE [ IF EXISTS ] name OWNER TO role
 
 ALTER SEQUENCE [ IF EXISTS ] name SET SCHEMA schema
 
-ALTER SEQUENCE [ IF EXISTS ] name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

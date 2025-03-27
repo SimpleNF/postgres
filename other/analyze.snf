@@ -1,0 +1,11 @@
+# https://www.postgresql.org/docs/17/sql-analyze.html
+
+ANALYZE [ ( option ) ] table [, ...]
+
+# WHERE option
+[ VERBOSE [ verbose ] ]
+[ SKIP_LOCKED [ skip_locked ] ]
+[ BUFFER_USAGE_LIMIT buffer_usage_limit ]
+
+# WHERE table
+name [ ( colname [, ...] ) ]

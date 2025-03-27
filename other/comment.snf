@@ -1,0 +1,54 @@
+# https://www.postgresql.org/docs/17/sql-comment.html
+
+COMMENT ON
+{
+  ACCESS METHOD access_name |
+  AGGREGATE aggregate ( signature ) |
+  CAST (source AS target) |
+  COLLATION collation |
+  COLUMN table.colname |
+  CONSTRAINT table_constraint ON table |
+  CONSTRAINT domain_constraint ON DOMAIN domain |
+  CONVERSION conversion |
+  DATABASE database |
+  DOMAIN domain |
+  EXTENSION extension |
+  EVENT TRIGGER event_trigger |
+  FOREIGN DATA WRAPPER fdw |
+  FOREIGN TABLE ft |
+  FUNCTION function [ ( arg [, ...] ) ] |
+  INDEX index |
+  LARGE OBJECT large_object |
+  MATERIALIZED VIEW m_view |
+  OPERATOR operator (left, right) |
+  OPERATOR CLASS op_class USING index_method |
+  OPERATOR FAMILY op_family USING index_method |
+  POLICY policy ON table |
+  [ PROCEDURAL ] LANGUAGE language |
+  PROCEDURE procedure [ ( arg [, ...] ) ] |
+  PUBLICATION publication |
+  ROLE role |
+  ROUTINE routine [ ( arg [, ...] ) ] |
+  RULE rule ON table |
+  SCHEMA schema |
+  SEQUENCE sequence |
+  SERVER server |
+  STATISTICS statistics |
+  SUBSCRIPTION subscription |
+  TABLE table |
+  TABLESPACE tablespace |
+  TEXT SEARCH CONFIGURATION tsc |
+  TEXT SEARCH DICTIONARY tsd |
+  TEXT SEARCH PARSER tsp |
+  TEXT SEARCH TEMPLATE tst |
+  TRANSFORM FOR transform LANGUAGE language |
+  TRIGGER trigger ON table |
+  TYPE type |
+  VIEW view
+} IS { 'comment' | NULL }
+
+# WHERE signature
+* | arg [, ...] | arg [, ...] ORDER BY orders [, ...]
+
+# WHERE arg,orders
+[ argmode ] [ argname ] argtype

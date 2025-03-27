@@ -1,8 +1,14 @@
 # https://www.postgresql.org/docs/17/sql-alterpolicy.html
 
 ALTER POLICY name ON table
-    [ TO { role | PUBLIC | CURRENT_ROLE | CURRENT_USER | SESSION_USER } [, ...] ]
-    [ USING ( using ) ]
-    [ WITH CHECK ( check ) ]
+    [ TO role_public [, ...] ]
+    [ USING ( using_expression ) ]
+    [ WITH CHECK ( check_expression ) ]
 
 ALTER POLICY name ON table RENAME TO new_name
+
+# WHERE role_public
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
+
+# RETURN using_expression,check_expression
+BOOLEAN

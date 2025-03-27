@@ -2,5 +2,10 @@
 
 CREATE [ OR REPLACE ] [ TEMPORARY | TEMP ] [ RECURSIVE ] VIEW name [ ( colname [, ...] ) ]
     [ WITH ( { parameter [= value] } [, ...] ) ]
-    AS sql
+    AS select_statement
     [ WITH [ CASCADED | LOCAL ] CHECK OPTION ]
+
+# STATEMEMT select_statement
+SELECT
+TABLE
+VALUES

@@ -1,6 +1,14 @@
 # https://www.postgresql.org/docs/17/sql-createschema.html
 
-CREATE SCHEMA [ IF NOT EXISTS ] [ name ] [ AUTHORIZATION role ] [ element [...] ]
+CREATE SCHEMA [ IF NOT EXISTS ] [ name ] [ AUTHORIZATION role ] create_statement [...]
 
 # WHERE role
-{ owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+
+# STATEMEMT create_statement
+CREATE TABLE
+CREATE VIEW
+CREATE INDEX
+CREATE SEQUENCE
+CREATE TRIGGER
+GRANT

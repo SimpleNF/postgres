@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-createfunction.html
 
-CREATE [ OR REPLACE ] FUNCTION name ( [ arg [, ...] ] )
+CREATE [ OR REPLACE ] FUNCTION name ( arg [, ...] )
     [ RETURNS returns | RETURNS TABLE ( column [, ...] ) ]
     [ LANGUAGE language ]
     [ TRANSFORM { FOR TYPE type } [, ...] ]
@@ -14,12 +14,12 @@ CREATE [ OR REPLACE ] FUNCTION name ( [ arg [, ...] ] )
     [ ROWS rows ]
     [ SUPPORT support ]
     [ SET parameter { TO value | = value | FROM CURRENT } [, ...] ]
-    [ AS definition ]
-    [ AS 'file', 'link' ]
-    [ sql ]
+    [ AS 'file', 'function' ]
+    [ AS pg_definition ]
+    [ sql_definition ]
 
 # WHERE arg
-[ argmode ] [ argname ] argtype [ { DEFAULT | = } default ]
+[ argmode ] [ argname ] argtype [ { DEFAULT | = } value_expression ]
 
 # WHERE column
 colname coltype

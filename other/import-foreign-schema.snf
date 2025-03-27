@@ -1,0 +1,7 @@
+# https://www.postgresql.org/docs/17/sql-importforeignschema.html
+
+IMPORT FOREIGN SCHEMA remote_schema
+    [ { LIMIT TO | EXCEPT } ( table [, ...] ) ]
+    FROM SERVER server
+    INTO local
+    [ OPTIONS ( { option 'value' } [, ... ] ) ]

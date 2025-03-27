@@ -1,0 +1,17 @@
+# https://www.postgresql.org/docs/17/sql-explain.html
+
+EXPLAIN [ ( option ) ] sql_statement
+
+# WHERE option
+[ ANALYZE [ analyze ] ]
+[ VERBOSE [ verbose ] ]
+[ COSTS [ costs ] ]
+[ SETTINGS [ settings ] ]
+[ GENERIC_PLAN [ generic_plan ] ]
+[ BUFFERS [ buffers ] ]
+[ SERIALIZE [ { NONE | TEXT | BINARY } ] ]
+[ WAL [ wal ] ]
+[ TIMING [ timing ] ]
+[ SUMMARY [ summary ] ]
+[ MEMORY [ memory ] ]
+[ FORMAT { TEXT | XML | JSON | YAML } ]

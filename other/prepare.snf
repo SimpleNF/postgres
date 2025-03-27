@@ -1,0 +1,12 @@
+# https://www.postgresql.org/docs/17/sql-prepare.html
+
+PREPARE name [ ( type [, ...] ) ] AS query_statement
+
+# STATEMEMT query_statement
+SELECT
+TABLE
+INSERT
+MERGE
+UPDATE
+DELETE
+VALUES

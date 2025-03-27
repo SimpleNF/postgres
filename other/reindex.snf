@@ -1,0 +1,10 @@
+# https://www.postgresql.org/docs/17/sql-reindex.html
+
+REINDEX [ ( option ) ] { INDEX | TABLE | SCHEMA } [ CONCURRENTLY ] name
+
+REINDEX [ ( option ) ] { DATABASE | SYSTEM } [ CONCURRENTLY ] [ name ]
+
+# WHERE option
+[ CONCURRENTLY [ concurrently ] ]
+[ TABLESPACE tablespace ]
+[ VERBOSE [ verbose ] ]

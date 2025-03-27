@@ -1,0 +1,32 @@
+# https://www.postgresql.org/docs/17/sql-security-label.html
+
+SECURITY LABEL [ FOR provider ] ON
+{
+  TABLE table |
+  COLUMN table.colname |
+  AGGREGATE aggregate ( signature ) |
+  DATABASE database |
+  DOMAIN domain |
+  EVENT TRIGGER event_trigger |
+  FOREIGN TABLE ft |
+  FUNCTION function [ ( arg [, ...] ) ] |
+  LARGE OBJECT large_object |
+  MATERIALIZED VIEW m_view |
+  [ PROCEDURAL ] LANGUAGE language |
+  PROCEDURE procedure [ ( arg [, ...] ) ] |
+  PUBLICATION publication |
+  ROLE role |
+  ROUTINE routine [ ( arg [, ...] ) ] |
+  SCHEMA schema |
+  SEQUENCE sequence |
+  SUBSCRIPTION subscription |
+  TABLESPACE tablespace |
+  TYPE type |
+  VIEW view
+} IS { 'string' | NULL }
+
+# WHERE signature
+* | arg [, ...] | arg [, ...] ORDER BY orders [, ...]
+
+# WHERE arg,orders
+[ argmode ] [ argname ] argtype

@@ -1,0 +1,49 @@
+# https://www.postgresql.org/docs/17/sql-insert.html
+
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+INSERT INTO table [ AS alias ] [ ( colname [, ...] ) ]
+    [ OVERRIDING { SYSTEM | USER } VALUE ]
+    { DEFAULT VALUES | VALUES ( { value_expression | DEFAULT } [, ...] ) [, ...] | select_statement }
+    [ ON CONFLICT [ conflict_target ] conflict_action ]
+    [ RETURNING [ * ] { col_expression [ [ AS ] alias ] } [, ...] ]
+
+# WHERE with_query
+with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )
+    [ SEARCH { BREADTH | DEPTH } FIRST BY colname [, ...] SET search_path_colname ]
+    [ CYCLE colname [, ...] SET cycle_colname [ TO mark_value DEFAULT mark_default ] USING cycle_path_colname ]
+
+# ONEOFIS conflict_target
+( { colname | ( col_expression ) } [ COLLATE collate ] [ opclass ] [, ...] ) [ WHERE condition_expression ]
+ON CONSTRAINT constraint
+
+# WHERE conflict_action
+{
+  DO NOTHING |
+  DO UPDATE SET
+  {
+    colname = { value_expression | DEFAULT } |
+    ( colname [, ...] ) = [ ROW ] ( { value_expression | DEFAULT } [, ...] ) |
+    ( colname [, ...] ) = ( row_statement )
+  } [, ...]
+  [ WHERE condition_expression ]
+}
+
+# STATEMEMT select_statement
+SELECT
+TABLE
+VALUES
+
+# STATEMEMT query_statement
+SELECT
+TABLE
+VALUES
+INSERT
+UPDATE
+DELETE
+MERGE
+
+# STATEMEMT row_statement
+SELECT
+
+# RETURN condition_expression
+BOOLEAN

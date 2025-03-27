@@ -1,30 +1,32 @@
 # https://www.postgresql.org/docs/17/sql-createforeigntable.html
 
-CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ([ {
-    colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ] [ COLLATE collation ] [ constraint [...] ] |
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( {
+    colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ] [ COLLATE collation ] col_constraint [...] |
     table_constraint
-} [, ...] ])
+} [, ...] )
 [ INHERITS ( inherit [, ...] ) ]
 SERVER server
 [ OPTIONS ( { option 'value' } [, ...] ) ]
 
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name 
 PARTITION OF parent [ ({
-    colname [ WITH OPTIONS ] [ constraint [...] ] |
+    colname [ WITH OPTIONS ] col_constraint [...] |
     table_constraint
 } [, ...]) ]
-{ FOR VALUES partition | DEFAULT }
+{ FOR VALUES partition_values | DEFAULT }
 SERVER server
 [ OPTIONS ( { option 'value' } [, ...] ) ]
 
-# WHERE constraint
-[ CONSTRAINT name ] { NOT NULL | NULL | CHECK ( check ) [ NO INHERIT ] | DEFAULT default | GENERATED ALWAYS AS ( generation ) STORED }
+# WHERE col_constraint
+[ CONSTRAINT name ] { NOT NULL | NULL | CHECK ( check_expression ) [ NO INHERIT ] | DEFAULT value_expression | GENERATED ALWAYS AS ( generation ) STORED }
 
 # WHERE table_constraint
-[ CONSTRAINT constraint ] CHECK ( check ) [ NO INHERIT ]
+[ CONSTRAINT name ] CHECK ( check_expression ) [ NO INHERIT ]
 
-# WHERE partition
-  IN ( in [, ...] ) |
-FROM ( { from | MINVALUE | MAXVALUE } [, ...] )
-  TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
+# ONEOFIS partition_values
+  IN ( in [, ...] )
+FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
 WITH ( MODULUS modulus, REMAINDER premainder )
+
+# RETURN check_expression
+BOOLEAN

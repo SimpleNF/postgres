@@ -2,8 +2,11 @@
 
 CREATE DOMAIN name [ AS ] type
     [ COLLATE collate ]
-    [ DEFAULT default ]
-    [ constraint [...] ]
+    [ DEFAULT value_expression ]
+    constraint [...]
 
 # WHERE constraint
-[ CONSTRAINT name ] { NOT NULL | NULL | CHECK (check) }
+[ CONSTRAINT name ] { NOT NULL | NULL | CHECK (check_expression) }
+
+# RETURN check_expression
+BOOLEAN

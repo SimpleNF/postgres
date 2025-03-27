@@ -1,16 +1,16 @@
 # https://www.postgresql.org/docs/17/sql-alterfunction.html
 
-ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] action [...] [ RESTRICT ]
+ALTER FUNCTION name [ ( arg [, ...] ) ] action [ RESTRICT ]
 
-ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] RENAME TO new_name
+ALTER FUNCTION name [ ( arg [, ...] ) ] RENAME TO new_name
 
-ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] SET SCHEMA schema
+ALTER FUNCTION name [ ( arg [, ...] ) ] OWNER TO role
 
-ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER FUNCTION name [ ( arg [, ...] ) ] SET SCHEMA schema
 
-ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extension
+ALTER FUNCTION name [ ( arg [, ...] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
-# WHERE action ONEOF
+# WHERE action
 [ STRICT | CALLED ON NULL INPUT | RETURNS NULL ON NULL INPUT ]
 [ IMMUTABLE | STABLE | VOLATILE ]
 [ [ NOT ] LEAKPROOF ]
@@ -19,10 +19,12 @@ ALTER FUNCTION name [ ( [ arg [, ...] ] ) ] [ NO ] DEPENDS ON EXTENSION extensio
 [ COST cost ]
 [ ROWS rows ]
 [ SUPPORT support ]
-[ SET parameter { TO | = } { value | DEFAULT } ]
-[ SET parameter FROM CURRENT ]
-[ RESET parameter ]
+[ { SET parameter { { TO | = } { value | DEFAULT } | FROM CURRENT } } [, ...] ]
+[ { RESET parameter } [, ...] ]
 [ RESET ALL ]
 
 # WHERE arg
 [ argmode ] [ argname ] argtype
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

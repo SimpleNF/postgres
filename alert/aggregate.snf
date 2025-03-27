@@ -2,12 +2,15 @@
 
 ALTER AGGREGATE name ( signature ) RENAME TO new_name
 
+ALTER AGGREGATE name ( signature ) OWNER TO role
+
 ALTER AGGREGATE name ( signature ) SET SCHEMA schema
 
-ALTER AGGREGATE name ( signature ) OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
-
 # WHERE signature
-{ * | arg [, ...] | [ arg [, ...] ] ORDER BY { orders } [, ...] }
+* | arg [, ...] | arg [, ...] ORDER BY order [, ...]
 
-# WHERE arg,orders
+# WHERE arg,order
 [ argmode ] [ argname ] argtype
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

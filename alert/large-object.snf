@@ -1,3 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-alterlargeobject.html
 
-ALTER LARGE OBJECT oid OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER LARGE OBJECT name OWNER TO role
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

@@ -1,12 +1,8 @@
 # https://www.postgresql.org/docs/17/sql-alterdatabase.html
 
-ALTER DATABASE name [ [ WITH ] option [...] ]
-
-ALTER DATABASE name RENAME TO new_name
+ALTER DATABASE name [ [ WITH ] action ]
 
 ALTER DATABASE name REFRESH COLLATION VERSION
-
-ALTER DATABASE name SET TABLESPACE tablespace
 
 ALTER DATABASE name SET parameter FROM CURRENT
 
@@ -16,7 +12,16 @@ ALTER DATABASE name RESET parameter
 
 ALTER DATABASE name RESET ALL
 
-ALTER DATABASE name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER DATABASE name RENAME TO new_name
 
-# WHERE option
-{ ALLOW_CONNECTIONS allowconn | CONNECTION LIMIT connlimit | IS_TEMPLATE istemplate }
+ALTER DATABASE name OWNER TO role
+
+ALTER DATABASE name SET TABLESPACE tablespace
+
+# WHERE action
+[ ALLOW_CONNECTIONS allowconn ]
+[ CONNECTION LIMIT connlimit ]
+[ IS_TEMPLATE istemplate ]
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

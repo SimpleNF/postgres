@@ -1,0 +1,8 @@
+# https://www.postgresql.org/docs/17/sql-begin.html
+
+BEGIN [ WORK | TRANSACTION ] transaction_mode
+
+# WHERE transaction_mode
+[ ISOLATION LEVEL { SERIALIZABLE | REPEATABLE READ | READ COMMITTED | READ UNCOMMITTED } ]
+[ READ WRITE | READ ONLY ]
+[ [ NOT ] DEFERRABLE ]

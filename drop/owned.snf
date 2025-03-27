@@ -1,0 +1,6 @@
+# https://www.postgresql.org/docs/17/sql-drop-owned.html
+
+DROP OWNED BY role [, ...] [ CASCADE | RESTRICT ]
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

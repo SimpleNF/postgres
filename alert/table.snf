@@ -8,7 +8,7 @@ ALTER TABLE [ IF EXISTS ] [ ONLY ] name [ * ] RENAME CONSTRAINT constraint TO ne
 
 ALTER TABLE [ IF EXISTS ] name RENAME TO new_name
 
-ALTER TABLE [ IF EXISTS ] name ATTACH PARTITION partition { FOR VALUES partition_def | DEFAULT }
+ALTER TABLE [ IF EXISTS ] name ATTACH PARTITION partition { FOR VALUES partition_values | DEFAULT }
 
 ALTER TABLE [ IF EXISTS ] name DETACH PARTITION partition [ CONCURRENTLY | FINALIZE ]
 
@@ -16,21 +16,21 @@ ALTER TABLE [ IF EXISTS ] name SET SCHEMA schema
 
 ALTER TABLE ALL IN TABLESPACE name [ OWNED BY owner [, ...] ] SET TABLESPACE tablespace [ NOWAIT ]
 
-# WHERE action ONEOF
-  ADD [ COLUMN ] [ IF NOT EXISTS ] colname type [ COLLATE collate ] [ constraint [...] ]
+# ONEOFIS action
+  ADD [ COLUMN ] [ IF NOT EXISTS ] colname type [ COLLATE collate ] col_constraint [...]
  DROP [ COLUMN ] [ IF EXISTS ] colname [ RESTRICT | CASCADE ]
-ALTER [ COLUMN ] colname [ SET DATA ] TYPE type [ COLLATE collate ] [ USING using ]
-ALTER [ COLUMN ] colname SET DEFAULT expression
+ALTER [ COLUMN ] colname [ SET DATA ] TYPE type [ COLLATE collate ] [ USING col_expression ]
+ALTER [ COLUMN ] colname SET DEFAULT value_expression
 ALTER [ COLUMN ] colname DROP DEFAULT
 ALTER [ COLUMN ] colname { SET | DROP } NOT NULL
-ALTER [ COLUMN ] colname SET EXPRESSION AS ( expression )
+ALTER [ COLUMN ] colname SET EXPRESSION AS ( col_expression )
 ALTER [ COLUMN ] colname DROP EXPRESSION [ IF EXISTS ]
 ALTER [ COLUMN ] colname ADD GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ]
 ALTER [ COLUMN ] colname { SET GENERATED { ALWAYS | BY DEFAULT } | SET generated | RESTART [ [ WITH ] restart ] } [...]
 ALTER [ COLUMN ] colname DROP IDENTITY [ IF EXISTS ]
 ALTER [ COLUMN ] colname SET STATISTICS { statistics | DEFAULT }
-ALTER [ COLUMN ] colname SET ( option = value [, ...] )
-ALTER [ COLUMN ] colname RESET ( option [, ...] )
+ALTER [ COLUMN ] colname SET ( parameter = value [, ...] )
+ALTER [ COLUMN ] colname RESET ( parameter [, ...] )
 ALTER [ COLUMN ] colname SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT }
 ALTER [ COLUMN ] colname SET COMPRESSION compression
 ADD table_constraint [ NOT VALID ]
@@ -56,61 +56,72 @@ SET WITHOUT OIDS
 SET ACCESS METHOD { access_method | DEFAULT }
 SET TABLESPACE tablespace
 SET { LOGGED | UNLOGGED }
-SET ( parameter [= value] [, ...] )
+SET ( { parameter [= value] } [, ...] )
 RESET ( parameter [, ...] )
 INHERIT inherit
 NO INHERIT no_inherit
 OF of
 NOT OF
-OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+OWNER TO role
 REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 
-# WHERE partition_def
-  IN ( in [, ...] ) |
-FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
-WITH ( MODULUS modulus, REMAINDER remainder )
-
-# WHERE constraint
-[ CONSTRAINT name ] {
-NOT NULL |
-NULL |
-CHECK ( check ) [ NO INHERIT ] |
-DEFAULT default |
-GENERATED ALWAYS AS ( generated ) STORED |
-GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
-UNIQUE [ NULLS [ NOT ] DISTINCT ] unique |
-PRIMARY KEY primary_key |
-REFERENCES references [ ( colname ) ]
-  [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-  [ ON DELETE on_delete ]
-  [ ON UPDATE on_update ] }
+# WHERE col_constraint
+[ CONSTRAINT name ]
+{
+  NOT NULL |
+  NULL |
+  CHECK ( check_expression ) [ NO INHERIT ] |
+  DEFAULT value_expression |
+  GENERATED ALWAYS AS ( generated ) STORED |
+  GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
+  UNIQUE [ NULLS [ NOT ] DISTINCT ] unique |
+  PRIMARY KEY primary_key |
+  REFERENCES references [ ( colname ) ]
+    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+    [ ON DELETE on_delete ]
+    [ ON UPDATE on_update ]
+}
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
 # WHERE table_constraint
-[ CONSTRAINT constraint ] {
-CHECK ( check ) [ NO INHERIT ] |
-UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique |
-PRIMARY KEY ( colname [, ...] ) primary_key |
-EXCLUDE [ USING using ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( where ) ] |
-FOREIGN KEY ( colname [, ...] )
-  REFERENCES references [ ( colname [, ...] ) ]
-  [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-  [ ON DELETE on_delete ]
-  [ ON UPDATE on_update ] }
+[ CONSTRAINT name ]
+{
+  CHECK ( check_expression ) [ NO INHERIT ] |
+  UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique |
+  PRIMARY KEY ( colname [, ...] ) primary_key |
+  EXCLUDE [ USING index_method ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( condition_expression ) ] |
+  FOREIGN KEY ( colname [, ...] )
+    REFERENCES references [ ( colname [, ...] ) ]
+    [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
+    [ ON DELETE on_delete ]
+    [ ON UPDATE on_update ]
+}
 [ DEFERRABLE | NOT DEFERRABLE ]
 [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
-# and table_index_constraint
-[ CONSTRAINT constraint ] { UNIQUE | PRIMARY KEY } USING INDEX index
+# WHERE table_index_constraint
+[ CONSTRAINT name ]
+{ UNIQUE | PRIMARY KEY } USING INDEX index
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
 # WHERE unique,primary_key,exclude
 [ INCLUDE ( colname [, ...] ) ]
 [ WITH ( parameter [= value] [, ...] ) ]
-[ USING INDEX TABLESPACE index ]
+[ USING INDEX TABLESPACE tablespace ]
 
 # WHERE exclude_element
-{ colname | ( expression ) } [ COLLATE collate ] [ opclass [ ( parameter = value [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
+{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( parameter = value [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
 # WHERE on_delete,on_update
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }
+
+# ONEOFIS partition_values
+  IN ( in [, ...] )
+FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
+WITH ( MODULUS modulus, REMAINDER remainder )
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+
+# RETURN condition_expression
+BOOLEAN

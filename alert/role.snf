@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-alterrole.html
 
-ALTER ROLE role [ WITH ] 
+ALTER ROLE role [ WITH ]
     [ SUPERUSER | NOSUPERUSER ]
     [ CREATEDB | NOCREATEDB ]
     [ CREATEROLE | NOCREATEROLE ]
@@ -14,13 +14,13 @@ ALTER ROLE role [ WITH ]
 
 ALTER ROLE name RENAME TO new_name
 
-ALTER ROLE { role | ALL } [ IN DATABASE database ] SET parameter { TO | = } { value | DEFAULT }
-
 ALTER ROLE { role | ALL } [ IN DATABASE database ] SET parameter FROM CURRENT
+
+ALTER ROLE { role | ALL } [ IN DATABASE database ] SET parameter { TO | = } { value | DEFAULT }
 
 ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET parameter
 
 ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET ALL
 
 # WHERE role
-{ role | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

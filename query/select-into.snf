@@ -1,0 +1,72 @@
+# https://www.postgresql.org/docs/17/sql-selectinto.html
+
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+SELECT [ ALL | DISTINCT [ ON ( col_expression [, ...] ) ] ]
+    [ * | { col_expression [ [ AS ] col_alias ] } [, ...] ]
+    INTO [ TEMPORARY | TEMP | UNLOGGED ] [ TABLE ] new_table
+    [ FROM from_item [, ...] ]
+    [ WHERE condition_expression ]
+    [ GROUP BY group_by_item [, ...] ]
+    [ HAVING having ]
+    [ WINDOW window AS ( window_item ) [, ...] ]
+    [ { UNION | INTERSECT | EXCEPT } [ ALL | DISTINCT ] select_statement ]
+    [ ORDER BY order_by_item [, ...] ]
+    [ LIMIT { limit | ALL } ]
+    [ OFFSET offset [ ROW | ROWS ] ]
+    [ FETCH { FIRST | NEXT } [ fetch ] { ROW | ROWS } ONLY ]
+    [ FOR { UPDATE | SHARE } [ OF from_reference [, ...] ] [ NOWAIT ] ]
+
+# WHERE with_query
+with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )
+    [ SEARCH { BREADTH | DEPTH } FIRST BY colname [, ...] SET search_path_colname ]
+    [ CYCLE colname [, ...] SET cycle_colname [ TO mark_value DEFAULT mark_default ] USING cycle_path_colname ]
+
+# ONEOFIS from_item
+with_name [ [ AS ] with_alias [ ( col_alias [, ...] ) ] ]
+[ ONLY ] table [ * ] [ [ AS ] table_alias [ ( col_alias [, ...] ) ] ] [ TABLESAMPLE tablesample ( value [, ...] ) [ REPEATABLE ( seed ) ] ]
+[ LATERAL ] ( select_statement ) [ [ AS ] select_alias [ ( col_alias [, ...] ) ] ]
+[ LATERAL ] function ( value [, ...] )
+[ LATERAL ] function ( value [, ...] ) AS ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( value [, ...] ) [ AS ] function_alias ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( value [, ...] ) WITH ORDINALITY [ [ AS ] function_alias [ ( col_alias [, ...] ) ] ]
+[ LATERAL ] ROWS FROM ( { function ( value [, ...] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] alias [ ( col_alias [, ...] ) ] ]
+from_item join_type from_item { ON condition_expression | USING ( colname [, ...] ) [ AS join_alias ] }
+from_item NATURAL join_type from_item
+from_item CROSS JOIN from_item
+
+# WHERE window_item
+[ name ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
+[ ORDER BY order_by_item [, ...] ]
+[ frame_clause ]
+
+# WHERE partition_item
+{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass ]
+
+# WHERE group_by_item
+( )
+col_expression
+( col_expression [, ...] )
+ROLLUP ( { col_expression | ( col_expression [, ...] ) } [, ...] )
+CUBE ( { col_expression | ( col_expression [, ...] ) } [, ...] )
+GROUPING SETS ( group_by_item [, ...] )
+
+# WHERE order_by_item
+col_expression [ ASC | DESC | USING operator ] [ NULLS { FIRST | LAST } ]
+
+# STATEMEMT select_statement
+SELECT
+TABLE
+VALUES
+
+# STATEMEMT query_statement
+SELECT
+TABLE
+VALUES
+INSERT
+UPDATE
+DELETE
+MERGE
+
+# RETURN condition_expression
+BOOLEAN

@@ -1,31 +1,28 @@
 # https://www.postgresql.org/docs/17/sql-createtable.html
 
-CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name ( [ {
-    colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] [ constraint [...] ] |
+CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name ( {
+    colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] col_constraint [...] |
     table_constraint |
-    LIKE like [ option [...] ]
-} [, ...] ]
+    LIKE like [ option ]
+} [, ...]
 )
 [ INHERITS ( inherits [, ...] ) ]
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
-[ USING using ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
+[ USING index_method ]
 [ WITH ( { parameter [ = value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
-# WHERE option
-{ INCLUDING | EXCLUDING } { COMMENTS | COMPRESSION | CONSTRAINTS | DEFAULTS | GENERATED | IDENTITY | INDEXES | STATISTICS | STORAGE | ALL }
-
 # CASE TYPE
 CREATE [ TEMPORARY | TEMP | UNLOGGED |GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name 
 OF type [ ( {
-    colname [ WITH OPTIONS ] [ constraint [...] ] |
+    colname [ WITH OPTIONS ] col_constraint [...] |
     table_constraint 
 } [, ...] 
 ) ]
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
-[ USING using ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
+[ USING index_method ]
 [ WITH ( { parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
@@ -34,35 +31,38 @@ OF type [ ( {
 # CASE PARTITION
 CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name 
 PARTITION OF parent [ ( {
-    colname [ WITH OPTIONS ] [ constraint [...] ] |
+    colname [ WITH OPTIONS ] col_constraint [...] |
     table_constraint
 } [, ...] ) ]
-{ FOR VALUES partition | DEFAULT }
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
-[ USING using ]
+{ FOR VALUES partition_values | DEFAULT }
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
+[ USING index_method ]
 [ WITH ( { parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
-# WHERE partition_by
-{ colname | ( expression ) } [ COLLATE collate ] [ opclass ]
+# WHERE option
+{ INCLUDING | EXCLUDING } { COMMENTS | COMPRESSION | CONSTRAINTS | DEFAULTS | GENERATED | IDENTITY | INDEXES | STATISTICS | STORAGE | ALL }
 
-# WHERE partition
-{ IN ( in [, ...] ) |
-FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] ) |
-WITH ( MODULUS modulus, REMAINDER remainder ) }
+# ONEOFIS partition_values
+  IN ( in [, ...] )
+FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
+WITH ( MODULUS modulus, REMAINDER remainder )
 
-# WHERE constraint
+# WHERE partition_item
+{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass ]
+
+# WHERE col_constraint
 [ CONSTRAINT name ] {
 NULL |
 NOT NULL |
-DEFAULT default |
+DEFAULT value_expression |
 GENERATED ALWAYS AS ( generated ) STORED |
 GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
 PRIMARY KEY primary_key |
 UNIQUE [ NULLS [ NOT ] DISTINCT ] unique |
-CHECK ( check ) [ NO INHERIT ] |
+CHECK ( check_expression ) [ NO INHERIT ] |
 REFERENCES references [ ( colname ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
     [ ON DELETE on_delete ]
@@ -72,10 +72,10 @@ REFERENCES references [ ( colname ) ]
 
 # WHERE table_constraint
 [ CONSTRAINT name ] {
-CHECK ( check ) [ NO INHERIT ] |
+CHECK ( check_expression ) [ NO INHERIT ] |
 UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique |
 PRIMARY KEY ( colname [, ...] ) primary_key |
-EXCLUDE [ USING using ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( where ) ] |
+EXCLUDE [ USING index_method ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( condition_expression ) ] |
 FOREIGN KEY ( colname [, ...] )
     REFERENCES references [ ( colname [, ...] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
@@ -86,11 +86,14 @@ FOREIGN KEY ( colname [, ...] )
 
 # WHERE unique,primary_key,exclude
 [ INCLUDE ( include [, ...] ) ]
-[ WITH ( parameter [= value] [, ...] ) ]
-[ USING INDEX TABLESPACE index ]
+[ WITH ( { parameter [= value] } [, ...] ) ]
+[ USING INDEX TABLESPACE tablespace ]
 
 # WHERE exclude_element
-{ colname | ( expression ) } [ COLLATE collate ] [ opclass [ ( { parameter = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
+{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( { option = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
 # WHERE on_delete,on_update
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }
+
+# RETURN check_expression,condition_expression
+BOOLEAN

@@ -1,0 +1,81 @@
+# https://www.postgresql.org/docs/17/sql-grant.html
+
+GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
+    ON { [ TABLE ] table [, ...] | ALL TABLES IN SCHEMA schema [, ...] }
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { { SELECT | INSERT | UPDATE | REFERENCES } ( colname [, ...] ) [, ...] | ALL [ PRIVILEGES ] ( colname [, ...] ) }
+    ON [ TABLE ] table [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
+    ON { SEQUENCE sequence [, ...] | ALL SEQUENCES IN SCHEMA schema [, ...] }
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { { CREATE | CONNECT | TEMPORARY | TEMP } [, ...] | ALL [ PRIVILEGES ] }
+    ON DATABASE database [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { USAGE | ALL [ PRIVILEGES ] }
+    ON DOMAIN domain [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { USAGE | ALL [ PRIVILEGES ] }
+    ON FOREIGN DATA WRAPPER fdw [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { USAGE | ALL [ PRIVILEGES ] }
+    ON FOREIGN SERVER server [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { EXECUTE | ALL [ PRIVILEGES ] }
+    ON { { FUNCTION | PROCEDURE | ROUTINE } routine [ ( arg [, ...] ) ] [, ...] | ALL { FUNCTIONS | PROCEDURES | ROUTINES } IN SCHEMA schema [, ...] }
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { USAGE | ALL [ PRIVILEGES ] }
+    ON LANGUAGE language [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
+    ON LARGE OBJECT large_object [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { { SET | ALTER SYSTEM } [, ... ] | ALL [ PRIVILEGES ] }
+    ON PARAMETER parameter [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { { CREATE | USAGE } [, ...] | ALL [ PRIVILEGES ] }
+    ON SCHEMA schema [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { CREATE | ALL [ PRIVILEGES ] }
+    ON TABLESPACE tablespace [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT { USAGE | ALL [ PRIVILEGES ] }
+    ON TYPE type [, ...]
+    TO role [, ...] [ WITH GRANT OPTION ]
+    [ GRANTED BY role ]
+
+GRANT role_name [, ...] TO role [, ...]
+    [ WITH { ADMIN | INHERIT | SET } { OPTION | TRUE | FALSE } ]
+    [ GRANTED BY role ]
+
+# WHERE role_public
+[ GROUP ] name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
+
+# WHERE arg
+[ argmode ] [ argname ] argtype

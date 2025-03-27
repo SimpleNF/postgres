@@ -1,0 +1,5 @@
+# https://www.postgresql.org/docs/17/sql-set-role.html
+
+SET [ SESSION | LOCAL ] ROLE { role | NONE }
+
+RESET ROLE

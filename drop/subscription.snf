@@ -1,0 +1,3 @@
+# https://www.postgresql.org/docs/17/sql-dropsubscription.html
+
+DROP SUBSCRIPTION [ IF EXISTS ] name [ CASCADE | RESTRICT ]

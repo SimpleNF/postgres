@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-alterview.html
 
-ALTER VIEW [ IF EXISTS ] name ALTER [ COLUMN ] colname SET DEFAULT default
+ALTER VIEW [ IF EXISTS ] name ALTER [ COLUMN ] colname SET DEFAULT value_expression
 
 ALTER VIEW [ IF EXISTS ] name ALTER [ COLUMN ] colname DROP DEFAULT
 
@@ -8,10 +8,13 @@ ALTER VIEW [ IF EXISTS ] name RENAME [ COLUMN ] colname TO new_colname
 
 ALTER VIEW [ IF EXISTS ] name RENAME TO new_name
 
-ALTER VIEW [ IF EXISTS ] name SET ( parameter [= value] [, ...] )
+ALTER VIEW [ IF EXISTS ] name SET ( { parameter [= value] } [, ...] )
+
+ALTER VIEW [ IF EXISTS ] name RESET ( parameter [, ...] )
+
+ALTER VIEW [ IF EXISTS ] name OWNER TO role
 
 ALTER VIEW [ IF EXISTS ] name SET SCHEMA schema
 
-ALTER VIEW [ IF EXISTS ] name RESET ( option [, ...] )
-
-ALTER VIEW [ IF EXISTS ] name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

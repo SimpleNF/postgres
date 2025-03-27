@@ -10,8 +10,14 @@ ALTER PUBLICATION name SET table [, ...]
 
 ALTER PUBLICATION name SET ( { parameter [= value] } [, ...] )
 
-ALTER PUBLICATION name OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER PUBLICATION name OWNER TO role
 
-# WHERE table ONEOF
-TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( where ) ]
+# ONEOFIS table
+TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( condition_expression ) ]
 TABLES IN SCHEMA { schema | CURRENT_SCHEMA }
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+
+# RETURN condition_expression
+BOOLEAN

@@ -1,7 +1,10 @@
 # https://www.postgresql.org/docs/17/sql-alteropclass.html
 
-ALTER OPERATOR CLASS name USING using RENAME TO new_name
+ALTER OPERATOR CLASS name USING index_method RENAME TO new_name
 
-ALTER OPERATOR CLASS name USING using SET SCHEMA schema
+ALTER OPERATOR CLASS name USING index_method OWNER TO role
 
-ALTER OPERATOR CLASS name USING using OWNER TO { owner | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
+ALTER OPERATOR CLASS name USING index_method SET SCHEMA schema
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

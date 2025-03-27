@@ -3,5 +3,15 @@
 CREATE [ OR REPLACE ] RULE name AS 
     ON { SELECT | UPDATE | INSERT | DELETE }
     TO table
-    [ WHERE where ]
-    DO [ ALSO | INSTEAD ] { NOTHING | ( command [; ...] ) }
+    [ WHERE condition_expression ]
+    DO [ ALSO | INSTEAD ] { NOTHING | ( rule_statement [; ...] ) }
+
+# STATEMEMT rule_statement
+SELECT
+INSERT
+UPDATE
+DELETE
+NOTIFY
+
+# RETURN condition_expression
+BOOLEAN

@@ -1,0 +1,53 @@
+# https://www.postgresql.org/docs/17/sql-merge.html
+
+[ WITH with_query [, ...] ]
+MERGE INTO [ ONLY ] table [ * ] [ [ AS ] alias ]
+    USING from_item ON condition_expression
+    when_clause [...]
+    [ RETURNING [ * ] { col_expression [ [ AS ] alias ] } [, ...] ]
+
+# WHERE with_query
+with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )
+    [ SEARCH { BREADTH | DEPTH } FIRST BY colname [, ...] SET search_path_colname ]
+    [ CYCLE colname [, ...] SET cycle_colname [ TO mark_value DEFAULT mark_default ] USING cycle_path_colname ]
+
+# WHERE from_item
+{ [ ONLY ] table [ * ] | ( select_statement ) } [ [ AS ] alias ]
+
+# ONEOFIS when_clause
+WHEN MATCHED [ AND condition_expression ] THEN { merge_update | DELETE | DO NOTHING }
+WHEN NOT MATCHED BY SOURCE [ AND condition_expression ] THEN { merge_update | DELETE | DO NOTHING }
+WHEN NOT MATCHED [ BY TARGET ] [ AND condition_expression ] THEN { merge_insert | DO NOTHING } 
+
+# WHERE merge_insert
+INSERT [( colname [, ...] )]
+[ OVERRIDING { SYSTEM | USER } VALUE ]
+{ VALUES ( { value_expression | DEFAULT } [, ...] ) | DEFAULT VALUES }
+
+# WHERE merge_update
+UPDATE SET
+{
+  colname = { value_expression | DEFAULT } |
+  ( colname [, ...] ) = [ ROW ] ( { value_expression | DEFAULT } [, ...] ) |
+  ( colname [, ...] ) = ( row_statement )
+} [, ...]
+
+# STATEMEMT select_statement
+SELECT
+TABLE
+VALUES
+
+# STATEMEMT query_statement
+SELECT
+TABLE
+VALUES
+INSERT
+UPDATE
+DELETE
+MERGE
+
+# STATEMEMT row_statement
+SELECT
+
+# RETURN condition_expression
+BOOLEAN
