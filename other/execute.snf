@@ -1,3 +1,3 @@
 # https://www.postgresql.org/docs/17/sql-execute.html
 
-EXECUTE name [ ( value [, ...] ) ]
+EXECUTE prepare [ ( value [, ...] ) ]

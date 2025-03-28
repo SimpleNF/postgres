@@ -1,7 +1,0 @@
-# https://www.postgresql.org/docs/17/sql-delete.html
-
-[ WITH [ RECURSIVE ] query [, ...] ]
-DELETE FROM [ ONLY ] table [ * ] [ [ AS ] alias ]
-    [ USING using [, ...] ]
-    [ WHERE where | WHERE CURRENT OF cursor ]
-    [ RETURNING { * | expression [ [ AS ] output ] } [, ...] ]

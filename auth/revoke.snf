@@ -43,7 +43,7 @@ REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
     [ CASCADE | RESTRICT ]
 
 REVOKE [ GRANT OPTION FOR ] { EXECUTE | ALL [ PRIVILEGES ] }
-    ON { { FUNCTION | PROCEDURE | ROUTINE } function [ ( [ arg [, ...] ] ) ] [, ...] | ALL { FUNCTIONS | PROCEDURES | ROUTINES } IN SCHEMA schema [, ...] }
+    ON { { FUNCTION | PROCEDURE | ROUTINE } routine [ ( [ arg [, ...] ] ) ] [, ...] | ALL { FUNCTIONS | PROCEDURES | ROUTINES } IN SCHEMA schema [, ...] }
     FROM role [, ...]
     [ GRANTED BY role ]
     [ CASCADE | RESTRICT ]
@@ -55,7 +55,7 @@ REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
     [ CASCADE | RESTRICT ]
 
 REVOKE [ GRANT OPTION FOR ] { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
-    ON LARGE OBJECT large_obj [, ...]
+    ON LARGE OBJECT large_object [, ...]
     FROM role [, ...]
     [ GRANTED BY role ]
     [ CASCADE | RESTRICT ]

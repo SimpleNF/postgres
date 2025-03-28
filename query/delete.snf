@@ -1,0 +1,25 @@
+# https://www.postgresql.org/docs/17/sql-delete.html
+
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+DELETE FROM [ ONLY ] table [ * ] [ [ AS ] alias ]
+    [ USING from_item [, ...] ]
+    [ WHERE where | WHERE CURRENT OF cursor ]
+    [ RETURNING { * | expression [ [ AS ] output ] } [, ...] ]
+
+# WHERE with_query
+with_name [ ( column [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( select | values | insert | update | delete | merge )
+    [ SEARCH { BREADTH | DEPTH } FIRST BY column [, ...] SET search_path_column ]
+    [ CYCLE column [, ...] SET cycle_column [ TO mark_value DEFAULT mark_default ] USING cycle_path_column ]
+
+# ONEOFIS from_item
+with_name [ [ AS ] with_alias [ ( column_alias [, ...] ) ] ]
+[ ONLY ] table [ * ] [ [ AS ] table_alias [ ( column_alias [, ...] ) ] ] [ TABLESAMPLE tablesample ( value [, ...] ) [ REPEATABLE ( seed ) ] ]
+[ LATERAL ] ( select ) [ [ AS ] select_alias [ ( column_alias [, ...] ) ] ]
+[ LATERAL ] function ( [ value [, ...] ] )
+[ LATERAL ] function ( [ value [, ...] ] ) AS ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( [ value [, ...] ] ) [ AS ] function_alias ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( [ value [, ...] ] ) WITH ORDINALITY [ [ AS ] function_alias [ ( column_alias [, ...] ) ] ]
+[ LATERAL ] ROWS FROM ( { function ( [ value [, ...] ] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] alias [ ( column_alias [, ...] ) ] ]
+from_item join_type from_item { ON condition | USING ( column [, ...] ) [ AS join_alias ] }
+from_item NATURAL join_type from_item
+from_item CROSS JOIN from_item

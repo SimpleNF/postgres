@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/17/sql-creatematerializedview.html
 
 CREATE MATERIALIZED VIEW [ IF NOT EXISTS ] name [ (colname [, ...] ) ]
-    [ USING using ]
+    [ USING index_method ]
     [ WITH ( { parameter [= value] } [, ...] ) ]
     [ TABLESPACE tablespace ]
     AS sql

@@ -2,7 +2,7 @@
 
 ALTER POLICY name ON table
     [ TO { role | PUBLIC | CURRENT_ROLE | CURRENT_USER | SESSION_USER } [, ...] ]
-    [ USING ( using ) ]
+    [ USING ( expression ) ]
     [ WITH CHECK ( check ) ]
 
 ALTER POLICY name ON table RENAME TO new_name

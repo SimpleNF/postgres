@@ -1,26 +1,26 @@
 # https://www.postgresql.org/docs/17/sql-copy.html
 
 COPY table [ ( column [, ...] ) ]
-    FROM { 'filename' | PROGRAM 'command' | STDIN }
-    [ WITH ( option [, ...] ) ]
-    [ WHERE condition ]
+    FROM { 'file' | PROGRAM 'command' | STDIN }
+    [ WITH ( option ) ]
+    [ WHERE where ]
 
 COPY { table [ ( column [, ...] ) ] | ( query ) }
-    TO { 'filename' | PROGRAM 'command' | STDOUT }
-    [ WITH ( option [, ...] ) ]
+    TO { 'file' | PROGRAM 'command' | STDOUT }
+    [ WITH ( option ) ]
 
-# ONEOFIS option
-FORMAT format
-FREEZE [ freeze ]
-DELIMITER 'delimiter_char'
-NULL 'null_string'
-DEFAULT 'default_string'
-HEADER [ boolean | MATCH ]
-QUOTE 'quote_char'
-ESCAPE 'escape_char'
-FORCE_QUOTE { ( column [, ...] ) | * }
-FORCE_NOT_NULL { ( column [, ...] ) | * }
-FORCE_NULL { ( column [, ...] ) | * }
-ON_ERROR on_error
-ENCODING 'encoding'
-LOG_VERBOSITY verbosity
+# WHERE option
+[ FORMAT format ]
+[ FREEZE [ freeze ] ]
+[ DELIMITER 'delimiter' ]
+[ NULL 'null' ]
+[ DEFAULT 'default' ]
+[ HEADER [ header | MATCH ] ]
+[ QUOTE 'quote' ]
+[ ESCAPE 'escape' ]
+[ FORCE_QUOTE { ( column [, ...] ) | * } ]
+[ FORCE_NOT_NULL { ( column [, ...] ) | * } ]
+[ FORCE_NULL { ( column [, ...] ) | * } ]
+[ ON_ERROR on_error ]
+[ ENCODING 'encoding' ]
+[ LOG_VERBOSITY log_verbosity ]

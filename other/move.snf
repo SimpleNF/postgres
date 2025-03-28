@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-move.html
 
-MOVE [ direction ] [ FROM | IN ] cursor_name
+MOVE [ direction ] [ FROM | IN ] cursor
 
 # ONEOFIS direction
 NEXT

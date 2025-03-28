@@ -1,8 +1,8 @@
 # https://www.postgresql.org/docs/17/sql-begin.html
 
-BEGIN [ WORK | TRANSACTION ] [ transaction [, ...] ]
+BEGIN [ WORK | TRANSACTION ] [ transaction_mode [, ...] ]
 
-# ONEOFIS transaction
-ISOLATION LEVEL { SERIALIZABLE | REPEATABLE READ | READ COMMITTED | READ UNCOMMITTED }
-READ WRITE | READ ONLY
-[ NOT ] DEFERRABLE
+# WHERE transaction_mode
+[ ISOLATION LEVEL { SERIALIZABLE | REPEATABLE READ | READ COMMITTED | READ UNCOMMITTED } ]
+[ READ WRITE | READ ONLY ]
+[ [ NOT ] DEFERRABLE ]

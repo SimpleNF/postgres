@@ -46,7 +46,7 @@ GRANT { USAGE | ALL [ PRIVILEGES ] }
     [ GRANTED BY role ]
 
 GRANT { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
-    ON LARGE OBJECT large_obj [, ...]
+    ON LARGE OBJECT large_object [, ...]
     TO role [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role ]
 

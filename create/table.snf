@@ -8,7 +8,7 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] 
 )
 [ INHERITS ( inherits [, ...] ) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
-[ USING using ]
+[ USING index_method ]
 [ WITH ( { parameter [ = value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
@@ -25,7 +25,7 @@ OF type [ ( {
 } [, ...] 
 ) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
-[ USING using ]
+[ USING index_method ]
 [ WITH ( { parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
@@ -39,7 +39,7 @@ PARTITION OF parent [ ( {
 } [, ...] ) ]
 { FOR VALUES partition | DEFAULT }
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_by [, ...] ) ]
-[ USING using ]
+[ USING index_method ]
 [ WITH ( { parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
@@ -75,7 +75,7 @@ REFERENCES references [ ( colname ) ]
 CHECK ( check ) [ NO INHERIT ] |
 UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique |
 PRIMARY KEY ( colname [, ...] ) primary_key |
-EXCLUDE [ USING using ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( where ) ] |
+EXCLUDE [ USING index_method ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( where ) ] |
 FOREIGN KEY ( colname [, ...] )
     REFERENCES references [ ( colname [, ...] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
@@ -87,7 +87,7 @@ FOREIGN KEY ( colname [, ...] )
 # WHERE unique,primary_key,exclude
 [ INCLUDE ( include [, ...] ) ]
 [ WITH ( { parameter [= value] } [, ...] ) ]
-[ USING INDEX TABLESPACE index ]
+[ USING INDEX TABLESPACE tablespace ]
 
 # WHERE exclude_element
 { colname | ( expression ) } [ COLLATE collate ] [ opclass [ ( { parameter = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]

@@ -1,0 +1,29 @@
+# https://www.postgresql.org/docs/17/sql-insert.html
+
+[ WITH [ RECURSIVE ] with_query [, ...] ]
+INSERT INTO table [ AS alias ] [ ( column [, ...] ) ]
+    [ OVERRIDING { SYSTEM | USER } VALUE ]
+    { DEFAULT VALUES | VALUES ( { expression | DEFAULT } [, ...] ) [, ...] | select }
+    [ ON CONFLICT [ conflict_target ] conflict_action ]
+    [ RETURNING { * | expression [ [ AS ] output ] } [, ...] ]
+
+# WHERE with_query
+with_name [ ( column [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( select | values | insert | update | delete | merge )
+    [ SEARCH { BREADTH | DEPTH } FIRST BY column [, ...] SET search_path_column ]
+    [ CYCLE column [, ...] SET cycle_column [ TO mark_value DEFAULT mark_default ] USING cycle_path_column ]
+
+# ONEOFIS conflict_target
+( { column | ( expression ) } [ COLLATE collate ] [ opclass ] [, ...] ) [ WHERE where ]
+ON CONSTRAINT constraint
+
+# WHERE conflict_action
+{
+  DO NOTHING |
+  DO UPDATE SET
+  { 
+    column = { expression | DEFAULT } |
+    ( column [, ...] ) = [ ROW ] ( { expression | DEFAULT } [, ...] ) |
+    ( column [, ...] ) = ( sub_select )
+  } [, ...]
+  [ WHERE where ]
+}

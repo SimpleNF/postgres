@@ -4,7 +4,7 @@ REINDEX [ ( option [, ...] ) ] { INDEX | TABLE | SCHEMA } [ CONCURRENTLY ] name
 
 REINDEX [ ( option [, ...] ) ] { DATABASE | SYSTEM } [ CONCURRENTLY ] [ name ]
 
-# ONEOFIS option
-CONCURRENTLY [ concurrently ]
-TABLESPACE tablespace
-VERBOSE [ verbose ]
+# WHERE option
+[ CONCURRENTLY [ concurrently ] ]
+[ TABLESPACE tablespace ]
+[ VERBOSE [ verbose ] ]

@@ -19,7 +19,7 @@ ALTER TABLE ALL IN TABLESPACE name [ OWNED BY owner [, ...] ] SET TABLESPACE tab
 # ONEOFIS action
   ADD [ COLUMN ] [ IF NOT EXISTS ] colname type [ COLLATE collate ] [ constraint [...] ]
  DROP [ COLUMN ] [ IF EXISTS ] colname [ RESTRICT | CASCADE ]
-ALTER [ COLUMN ] colname [ SET DATA ] TYPE type [ COLLATE collate ] [ USING using ]
+ALTER [ COLUMN ] colname [ SET DATA ] TYPE type [ COLLATE collate ] [ USING expression ]
 ALTER [ COLUMN ] colname SET DEFAULT expression
 ALTER [ COLUMN ] colname DROP DEFAULT
 ALTER [ COLUMN ] colname { SET | DROP } NOT NULL
@@ -89,7 +89,7 @@ REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
   CHECK ( check ) [ NO INHERIT ] |
   UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique |
   PRIMARY KEY ( colname [, ...] ) primary_key |
-  EXCLUDE [ USING using ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( where ) ] |
+  EXCLUDE [ USING index_method ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( where ) ] |
   FOREIGN KEY ( colname [, ...] )
     REFERENCES references [ ( colname [, ...] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
@@ -107,7 +107,7 @@ REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 # WHERE unique,primary_key,exclude
 [ INCLUDE ( colname [, ...] ) ]
 [ WITH ( parameter [= value] [, ...] ) ]
-[ USING INDEX TABLESPACE index ]
+[ USING INDEX TABLESPACE tablespace ]
 
 # WHERE exclude_element
 { colname | ( expression ) } [ COLLATE collate ] [ opclass [ ( parameter = value [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]

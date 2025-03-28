@@ -1,13 +1,18 @@
 # https://www.postgresql.org/docs/17/sql-merge.html
 
-[ WITH query [, ...] ]
-MERGE INTO [ ONLY ] target [ * ] [ [ AS ] alias ]
-USING source ON condition
+[ WITH with_query [, ...] ]
+MERGE INTO [ ONLY ] table [ * ] [ [ AS ] alias ]
+USING from_item ON condition
 when_clause [...]
 [ RETURNING { * | expression [ [ AS ] output ] } [, ...] ]
 
-# WHERE source
-{ [ ONLY ] table [ * ] | ( query ) } [ [ AS ] alias ]
+# WHERE with_query
+with_name [ ( column [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( select | values | insert | update | delete | merge )
+    [ SEARCH { BREADTH | DEPTH } FIRST BY column [, ...] SET search_path_column ]
+    [ CYCLE column [, ...] SET cycle_column [ TO mark_value DEFAULT mark_default ] USING cycle_path_column ]
+
+# WHERE from_item
+{ [ ONLY ] table [ * ] | ( select ) } [ [ AS ] alias ]
 
 # ONEOFIS when_clause
 WHEN MATCHED [ AND condition ] THEN { merge_update | DELETE | DO NOTHING }
@@ -20,7 +25,7 @@ INSERT [( column [, ...] )]
 { VALUES ( { expression | DEFAULT } [, ...] ) | DEFAULT VALUES }
 
 # WHERE merge_update
-UPDATE SET 
+UPDATE SET
 {
   column = { expression | DEFAULT } |
   ( column [, ...] ) = [ ROW ] ( { expression | DEFAULT } [, ...] ) |
