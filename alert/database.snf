@@ -4,11 +4,11 @@ ALTER DATABASE name [ [ WITH ] action ]
 
 ALTER DATABASE name REFRESH COLLATION VERSION
 
-ALTER DATABASE name SET parameter FROM CURRENT
+ALTER DATABASE name SET config_parameter FROM CURRENT
 
-ALTER DATABASE name SET parameter { TO | = } { value | DEFAULT }
+ALTER DATABASE name SET config_parameter { TO | = } { value | DEFAULT }
 
-ALTER DATABASE name RESET parameter
+ALTER DATABASE name RESET config_parameter
 
 ALTER DATABASE name RESET ALL
 

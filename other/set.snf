@@ -1,5 +1,5 @@
 # https://www.postgresql.org/docs/17/sql-set.html
 
-SET [ SESSION | LOCAL ] parameter { TO | = } { value | 'value' | DEFAULT }
+SET [ SESSION | LOCAL ] config_parameter { TO | = } { value | 'value' | DEFAULT }
 
 SET [ SESSION | LOCAL ] TIME ZONE { value | 'value' | LOCAL | DEFAULT }

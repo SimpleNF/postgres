@@ -3,7 +3,7 @@
 CREATE [ GLOBAL | LOCAL | TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name
     [ ( colname [, ...] ) ]
     [ USING index_method ]
-    [ WITH ( { parameter [= value] } [, ...] ) ]
+    [ WITH ( { storage_parameter [= value] } [, ...] ) ]
     [ WITHOUT OIDS ]
     [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
     [ TABLESPACE tablespace ]

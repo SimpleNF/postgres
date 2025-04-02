@@ -5,12 +5,12 @@ CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ IF NOT EXISTS ] [ name ] ON [ ONLY ] 
 )
 [ INCLUDE ( include [, ...] ) ]
 [ NULLS [ NOT ] DISTINCT ]
-[ WITH ( { parameter [= value] } [, ...] ) ]
+[ WITH ( { storage_parameter [= value] } [, ...] ) ]
 [ TABLESPACE tablespace ]
 [ WHERE condition_expression ]
 
 # WHERE column
-{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( { option = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
+{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( { opclass_parameter = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
 # RETURN condition_expression
 BOOLEAN

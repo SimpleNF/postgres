@@ -13,7 +13,7 @@ CREATE [ OR REPLACE ] FUNCTION name ( arg [, ...] )
     [ COST cost ]
     [ ROWS rows ]
     [ SUPPORT support ]
-    [ SET parameter { TO value | = value | FROM CURRENT } [, ...] ]
+    [ SET config_parameter { TO value | = value | FROM CURRENT } [, ...] ]
     [ AS 'file', 'function' ]
     [ AS pg_definition ]
     [ sql_definition ]

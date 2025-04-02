@@ -3,4 +3,4 @@
 CREATE SUBSCRIPTION name
     CONNECTION 'connection'
     PUBLICATION publication [, ...]
-    [ WITH ( { parameter [= value] } [, ...] ) ]
+    [ WITH ( { subscription_parameter [= value] } [, ...] ) ]

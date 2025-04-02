@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/17/sql-createview.html
 
 CREATE [ OR REPLACE ] [ TEMPORARY | TEMP ] [ RECURSIVE ] VIEW name [ ( colname [, ...] ) ]
-    [ WITH ( { parameter [= value] } [, ...] ) ]
+    [ WITH ( { view_parameter [= value] } [, ...] ) ]
     AS select_statement
     [ WITH [ CASCADED | LOCAL ] CHECK OPTION ]
 

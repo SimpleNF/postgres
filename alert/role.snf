@@ -14,11 +14,11 @@ ALTER ROLE role [ WITH ]
 
 ALTER ROLE name RENAME TO new_name
 
-ALTER ROLE { role | ALL } [ IN DATABASE database ] SET parameter FROM CURRENT
+ALTER ROLE { role | ALL } [ IN DATABASE database ] SET config_parameter FROM CURRENT
 
-ALTER ROLE { role | ALL } [ IN DATABASE database ] SET parameter { TO | = } { value | DEFAULT }
+ALTER ROLE { role | ALL } [ IN DATABASE database ] SET config_parameter { TO | = } { value | DEFAULT }
 
-ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET parameter
+ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET config_parameter
 
 ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET ALL
 

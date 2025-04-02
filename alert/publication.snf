@@ -8,7 +8,7 @@ ALTER PUBLICATION name RENAME TO new_name
 
 ALTER PUBLICATION name SET table [, ...]
 
-ALTER PUBLICATION name SET ( { parameter [= value] } [, ...] )
+ALTER PUBLICATION name SET ( { publication_parameter [= value] } [, ...] )
 
 ALTER PUBLICATION name OWNER TO role
 

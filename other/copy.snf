@@ -2,14 +2,14 @@
 
 COPY table [ ( colname [, ...] ) ]
     FROM { 'file' | PROGRAM 'command' | STDIN }
-    [ WITH ( option ) ]
+    [ WITH ( config ) ]
     [ WHERE condition_expression ]
 
 COPY { table [ ( colname [, ...] ) ] | ( query_statement ) }
     TO { 'file' | PROGRAM 'command' | STDOUT }
-    [ WITH ( option ) ]
+    [ WITH ( config ) ]
 
-# WHERE option
+# WHERE config
 [ FORMAT format ]
 [ FREEZE [ freeze ] ]
 [ DELIMITER 'delimiter' ]

@@ -1,8 +1,8 @@
 # https://www.postgresql.org/docs/17/sql-explain.html
 
-EXPLAIN [ ( option ) ] sql_statement
+EXPLAIN [ ( config ) ] sql_statement
 
-# WHERE option
+# WHERE config
 [ ANALYZE [ analyze ] ]
 [ VERBOSE [ verbose ] ]
 [ COSTS [ costs ] ]

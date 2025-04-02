@@ -1,13 +1,13 @@
 # https://www.postgresql.org/docs/17/sql-alterserver.html
 
-ALTER SERVER name [ VERSION 'version' ] [ OPTIONS ( option [, ...] ) ]
+ALTER SERVER name [ VERSION 'version' ] [ OPTIONS ( option_item [, ...] ) ]
 
 ALTER SERVER name RENAME TO new_name
 
 ALTER SERVER name OWNER TO role
 
-# WHERE option
-[ ADD | SET | DROP ] name ['value']
+# WHERE option_item
+[ ADD | SET | DROP ] option ['value']
 
 # WHERE role
 name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

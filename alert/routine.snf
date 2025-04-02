@@ -17,8 +17,8 @@ ALTER ROUTINE name [ ( arg [, ...] ) ] [ NO ] DEPENDS ON EXTENSION extension
 [ PARALLEL { UNSAFE | RESTRICTED | SAFE } ]
 [ COST cost ]
 [ ROWS rows ]
-[ { SET parameter { { TO | = } { value | DEFAULT } | FROM CURRENT } } [, ...] ]
-[ { RESET parameter } [, ...] ]
+[ { SET config_parameter { { TO | = } { value | DEFAULT } | FROM CURRENT } } [, ...] ]
+[ { RESET config_parameter } [, ...] ]
 [ RESET ALL ]
 
 # WHERE arg

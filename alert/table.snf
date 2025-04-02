@@ -29,8 +29,8 @@ ALTER [ COLUMN ] colname ADD GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( i
 ALTER [ COLUMN ] colname { SET GENERATED { ALWAYS | BY DEFAULT } | SET generated | RESTART [ [ WITH ] restart ] } [...]
 ALTER [ COLUMN ] colname DROP IDENTITY [ IF EXISTS ]
 ALTER [ COLUMN ] colname SET STATISTICS { statistics | DEFAULT }
-ALTER [ COLUMN ] colname SET ( parameter = value [, ...] )
-ALTER [ COLUMN ] colname RESET ( parameter [, ...] )
+ALTER [ COLUMN ] colname SET ( attribute_parameter = value [, ...] )
+ALTER [ COLUMN ] colname RESET ( attribute_parameter [, ...] )
 ALTER [ COLUMN ] colname SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT }
 ALTER [ COLUMN ] colname SET COMPRESSION compression
 ADD table_constraint [ NOT VALID ]
@@ -56,8 +56,8 @@ SET WITHOUT OIDS
 SET ACCESS METHOD { access_method | DEFAULT }
 SET TABLESPACE tablespace
 SET { LOGGED | UNLOGGED }
-SET ( { parameter [= value] } [, ...] )
-RESET ( parameter [, ...] )
+SET ( { storage_parameter [= value] } [, ...] )
+RESET ( storage_parameter [, ...] )
 INHERIT inherit
 NO INHERIT no_inherit
 OF of
@@ -106,11 +106,11 @@ REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 
 # WHERE unique,primary_key,exclude
 [ INCLUDE ( colname [, ...] ) ]
-[ WITH ( parameter [= value] [, ...] ) ]
+[ WITH ( storage_parameter [= value] [, ...] ) ]
 [ USING INDEX TABLESPACE tablespace ]
 
 # WHERE exclude_element
-{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( parameter = value [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
+{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( opclass_parameter = value [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
 # WHERE on_delete,on_update
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }

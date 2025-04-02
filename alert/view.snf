@@ -8,9 +8,9 @@ ALTER VIEW [ IF EXISTS ] name RENAME [ COLUMN ] colname TO new_colname
 
 ALTER VIEW [ IF EXISTS ] name RENAME TO new_name
 
-ALTER VIEW [ IF EXISTS ] name SET ( { parameter [= value] } [, ...] )
+ALTER VIEW [ IF EXISTS ] name SET ( { view_parameter [= value] } [, ...] )
 
-ALTER VIEW [ IF EXISTS ] name RESET ( parameter [, ...] )
+ALTER VIEW [ IF EXISTS ] name RESET ( view_parameter [, ...] )
 
 ALTER VIEW [ IF EXISTS ] name OWNER TO role
 

@@ -1,5 +1,5 @@
 # https://www.postgresql.org/docs/17/sql-reset.html
 
-RESET parameter
+RESET config_parameter
 
 RESET ALL

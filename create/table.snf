@@ -3,13 +3,13 @@
 CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name ( {
     colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] col_constraint [...] |
     table_constraint |
-    LIKE like [ option ]
+    LIKE like_table [ like_config ]
 } [, ...]
 )
 [ INHERITS ( inherits [, ...] ) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
 [ USING index_method ]
-[ WITH ( { parameter [ = value] } [, ...] ) ]
+[ WITH ( { storage_parameter [ = value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
@@ -23,7 +23,7 @@ OF type [ ( {
 ) ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
 [ USING index_method ]
-[ WITH ( { parameter [= value] } [, ...] ) ]
+[ WITH ( { storage_parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
@@ -37,12 +37,12 @@ PARTITION OF parent [ ( {
 { FOR VALUES partition_values | DEFAULT }
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
 [ USING index_method ]
-[ WITH ( { parameter [= value] } [, ...] ) ]
+[ WITH ( { storage_parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
 [ ON COMMIT { PRESERVE ROWS | DELETE ROWS | DROP } ]
 [ TABLESPACE tablespace ]
 
-# WHERE option
+# WHERE like_config
 { INCLUDING | EXCLUDING } { COMMENTS | COMPRESSION | CONSTRAINTS | DEFAULTS | GENERATED | IDENTITY | INDEXES | STATISTICS | STORAGE | ALL }
 
 # ONEOFIS partition_values
@@ -86,11 +86,11 @@ FOREIGN KEY ( colname [, ...] )
 
 # WHERE unique,primary_key,exclude
 [ INCLUDE ( include [, ...] ) ]
-[ WITH ( { parameter [= value] } [, ...] ) ]
+[ WITH ( { storage_parameter [= value] } [, ...] ) ]
 [ USING INDEX TABLESPACE tablespace ]
 
 # WHERE exclude_element
-{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( { option = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
+{ colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( { opclass_parameter = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
 # WHERE on_delete,on_update
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }

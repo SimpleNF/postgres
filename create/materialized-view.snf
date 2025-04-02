@@ -2,7 +2,7 @@
 
 CREATE MATERIALIZED VIEW [ IF NOT EXISTS ] name [ (colname [, ...] ) ]
     [ USING index_method ]
-    [ WITH ( { parameter [= value] } [, ...] ) ]
+    [ WITH ( { storage_parameter [= value] } [, ...] ) ]
     [ TABLESPACE tablespace ]
     AS select_statement
     [ WITH [ NO ] DATA ]

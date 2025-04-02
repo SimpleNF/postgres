@@ -12,8 +12,8 @@ ALTER PROCEDURE name [ ( arg [, ...] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
 # WHERE action
 [ [ EXTERNAL ] SECURITY INVOKER | [ EXTERNAL ] SECURITY DEFINER ]
-[ { SET parameter { { TO | = } { value | DEFAULT } | FROM CURRENT } } [, ...] ]
-[ { RESET parameter } [, ...] ]
+[ { SET config_parameter { { TO | = } { value | DEFAULT } | FROM CURRENT } } [, ...] ]
+[ { RESET config_parameter } [, ...] ]
 [ RESET ALL ]
 
 # WHERE arg

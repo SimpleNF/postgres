@@ -4,7 +4,7 @@ CREATE [ OR REPLACE ] PROCEDURE name ( arg [, ...] )
     [ LANGUAGE language ]
     [ TRANSFORM { FOR TYPE type } [, ...] ]
     [ [ EXTERNAL ] SECURITY { INVOKER | DEFINER } ]
-    [ SET parameter { TO value | = value | FROM CURRENT } [, ...] ]
+    [ SET config_parameter { TO value | = value | FROM CURRENT } [, ...] ]
     [ AS 'file', 'function' ]
     [ AS pg_definition ]
     [ sql_definition ]

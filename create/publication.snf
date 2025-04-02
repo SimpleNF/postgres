@@ -2,7 +2,7 @@
 
 CREATE PUBLICATION name
     [ FOR ALL TABLES | FOR table [, ...] ]
-    [ WITH ( { parameter [= value] } [, ...] ) ]
+    [ WITH ( { publication_parameter [= value] } [, ...] ) ]
 
 # WHERE table ONEOF
 TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( condition_expression ) ]

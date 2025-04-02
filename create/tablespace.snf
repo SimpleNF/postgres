@@ -3,7 +3,7 @@
 CREATE TABLESPACE name
     [ OWNER role ]
     [ LOCATION 'location' ]
-    [ WITH ( { parameter [= value] } [, ...] ) ]
+    [ WITH ( { tablespace_parameter [= value] } [, ...] ) ]
 
 # WHERE role
 name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

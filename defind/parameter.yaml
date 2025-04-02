@@ -1,0 +1,141 @@
+# https://www.postgresql.org/docs/17/sql-altertable.html
+attribute_parameter:
+  n_distinct:
+    type: number
+  n_distinct_inherited:
+    type: number
+
+# https://www.postgresql.org/docs/17/sql-createview.html
+view_parameter:
+  check_option:
+    type: LOCAL | CASCADED
+  security_barrier:
+    type: boolean
+  security_invoker:
+    type: boolean
+
+# https://www.postgresql.org/docs/17/sql-createtablespace.html
+tablespace_parameter:
+  seq_page_cost:
+    type: floating point
+  random_page_cost:
+    type: floating point
+  effective_io_concurrency:
+    type: integer
+  maintenance_io_concurrency:
+    type: integer
+
+# https://www.postgresql.org/docs/17/sql-altertype.html
+type_parameter:
+  receive:
+    type: function
+  send:
+    type: function
+  typmod_in:
+    type: function
+  typmod_out:
+    type: function
+  analyze:
+    type: function
+  subscript:
+    type: function
+  storage:
+    type: PLAIN | EXTERNAL | EXTENDED | MAIN
+
+# https://www.postgresql.org/docs/17/sql-createsubscription.html
+subscription_parameter:
+  connect:
+    type: boolean
+    belong:
+      - WITH
+  create_slot:
+    type: boolean
+    belong:
+      - WITH
+  enabled:
+    type: boolean
+    belong:
+      - WITH
+  slot_name:
+    type: string
+  binary:
+    type: boolean
+  copy_data:
+    type: boolean
+    belong:
+      - WITH
+  streaming:
+    type: ON | OFF | PARALLEL
+  synchronous_commit:
+    type: ON | OFF | LOCAL | REMOTE_WRITE | REMOTE_APPLY
+  two_phase:
+    type: boolean
+    belong:
+      - WITH
+  disable_on_error:
+    type: boolean
+  password_required:
+    type: boolean
+  run_as_owner:
+    type: boolean
+  origin:
+    type: string
+  failover:
+    type: boolean
+
+# https://www.postgresql.org/docs/17/sql-createpublication.html
+publication_parameter:
+  publish:
+    type: string
+  publish_via_partition_root:
+    type: boolean
+
+# https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-STORAGE-PARAMETERS
+storage_parameter:
+  fillfactor:
+    type: integer
+  deduplicate_items:
+    type: boolean
+  buffering:
+    type: ON | OFF | AUTO
+  fastupdate:
+    type: boolean
+  gin_pending_list_limit:
+    type: integer
+  pages_per_range:
+    type: integer
+  autosummarize:
+    type: boolean
+
+# https://www.postgresql.org/docs/current/textsearch-dictionaries.html
+template_parameter:
+  stopwords:
+    type: string
+    belong:
+      - simple
+      - ispell
+      - snowball
+  accept:
+    type: boolean
+    belong:
+      - simple
+  synonyms:
+    type: string
+    belong:
+      - synonym
+  dictfile:
+    type: string
+    belong:
+      - thesaurus
+  dictionary:
+    type: string
+    belong:
+      - thesaurus
+  afffile:
+    type: string
+    belong:
+      - ispell
+  language:
+    type: string
+    belong:
+      - snowball

@@ -2,9 +2,9 @@
 
 ALTER TABLESPACE name RENAME TO new_name
 
-ALTER TABLESPACE name SET ( { parameter [= value ] } [, ...] )
+ALTER TABLESPACE name SET ( { tablespace_parameter [= value ] } [, ...] )
 
-ALTER TABLESPACE name RESET ( parameter [, ...] )
+ALTER TABLESPACE name RESET ( tablespace_parameter [, ...] )
 
 ALTER TABLESPACE name OWNER TO role
 

@@ -6,9 +6,9 @@ ALTER INDEX [ IF EXISTS ] name ALTER [ COLUMN ] colnum SET STATISTICS statistics
 
 ALTER INDEX [ IF EXISTS ] name RENAME TO new_name
 
-ALTER INDEX [ IF EXISTS ] name SET ( { parameter [= value] } [, ...] )
+ALTER INDEX [ IF EXISTS ] name SET ( { storage_parameter [= value] } [, ...] )
 
-ALTER INDEX [ IF EXISTS ] name RESET ( parameter [, ...] )
+ALTER INDEX [ IF EXISTS ] name RESET ( storage_parameter [, ...] )
 
 ALTER INDEX [ IF EXISTS ] name SET TABLESPACE tablespace
 

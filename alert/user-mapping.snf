@@ -2,10 +2,10 @@
 
 ALTER USER MAPPING FOR role_public
     SERVER server
-    OPTIONS ( option [, ...] )
+    OPTIONS ( option_item [, ...] )
 
-# WHERE option
-[ ADD | SET | DROP ] name ['value']
+# WHERE option_item
+[ ADD | SET | DROP ] option ['value']
 
 # WHERE role_public
 name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC

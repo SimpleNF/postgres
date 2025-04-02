@@ -16,13 +16,13 @@ ALTER MATERIALIZED VIEW name [ NO ] DEPENDS ON EXTENSION extension
 ALTER [ COLUMN ] colname SET STATISTICS statistics
 ALTER [ COLUMN ] colname SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT }
 ALTER [ COLUMN ] colname SET COMPRESSION compression
-ALTER [ COLUMN ] colname SET ( { parameter = value } [, ...] )
-ALTER [ COLUMN ] colname RESET ( parameter [, ...] )
+ALTER [ COLUMN ] colname SET ( { attribute_parameter = value } [, ...] )
+ALTER [ COLUMN ] colname RESET ( attribute_parameter [, ...] )
 CLUSTER ON cluster
 SET WITHOUT CLUSTER
 SET ACCESS METHOD access_method
-SET ( { parameter [= value] } [, ...] )
-RESET ( parameter [, ...] )
+SET ( { storage_parameter [= value] } [, ...] )
+RESET ( storage_parameter [, ...] )
 SET TABLESPACE tablespace
 OWNER TO role
 
