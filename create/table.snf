@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/17/sql-createtable.html
 
 CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name ( {
-    colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] col_constraint [...] |
+    colname type [ STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT } ] [ COMPRESSION compression ] [ COLLATE collate ] [ col_constraint [...] ] |
     table_constraint |
     LIKE like_table [ like_config ]
 } [, ...]
@@ -17,7 +17,7 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] 
 # CASE TYPE
 CREATE [ TEMPORARY | TEMP | UNLOGGED |GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name 
 OF type [ ( {
-    colname [ WITH OPTIONS ] col_constraint [...] |
+    colname [ WITH OPTIONS ] [ col_constraint [...] ] |
     table_constraint 
 } [, ...] 
 ) ]
@@ -31,7 +31,7 @@ OF type [ ( {
 # CASE PARTITION
 CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] name 
 PARTITION OF parent [ ( {
-    colname [ WITH OPTIONS ] col_constraint [...] |
+    colname [ WITH OPTIONS ] [ col_constraint [...] ] |
     table_constraint
 } [, ...] ) ]
 { FOR VALUES partition_values | DEFAULT }
