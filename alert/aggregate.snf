@@ -9,7 +9,7 @@ ALTER AGGREGATE name ( signature ) SET SCHEMA schema
 # WHERE signature
 * | arg [, ...] | arg [, ...] ORDER BY order [, ...]
 
-# WHERE arg,order
+# WHERE arg, order
 [ argmode ] [ argname ] argtype
 
 # WHERE role

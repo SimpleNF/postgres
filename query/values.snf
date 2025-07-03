@@ -1,10 +1,10 @@
 # https://www.postgresql.org/docs/17/sql-values.html
 
 VALUES ( value_expression [, ...] ) [, ...]
-    [ ORDER BY order_by [, ...] ]
+    [ ORDER BY order_by_expression [, ...] ]
     [ LIMIT { limit | ALL } ]
     [ OFFSET offset [ ROW | ROWS ] ]
     [ FETCH { FIRST | NEXT } [ fetch ] { ROW | ROWS } ONLY ]
 
-# WHERE order_by
+# WHERE order_by_expression
 col_expression [ ASC | DESC | USING operator ]

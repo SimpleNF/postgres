@@ -6,7 +6,4 @@ CREATE DOMAIN name [ AS ] type
     constraint [...]
 
 # WHERE constraint
-[ CONSTRAINT name ] { NOT NULL | NULL | CHECK (check_expression) }
-
-# RETURN check_expression
-BOOLEAN
+[ CONSTRAINT name ] { NOT NULL | NULL | CHECK ( boolean_expression ) }

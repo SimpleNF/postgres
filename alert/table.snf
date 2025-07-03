@@ -70,31 +70,31 @@ REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 {
   NOT NULL |
   NULL |
-  CHECK ( check_expression ) [ NO INHERIT ] |
+  CHECK ( boolean_expression ) [ NO INHERIT ] |
   DEFAULT value_expression |
   GENERATED ALWAYS AS ( generated ) STORED |
   GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
-  UNIQUE [ NULLS [ NOT ] DISTINCT ] unique |
-  PRIMARY KEY primary_key |
+  UNIQUE [ NULLS [ NOT ] DISTINCT ] unique_index |
+  PRIMARY KEY primary_key_index |
   REFERENCES references [ ( colname ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-    [ ON DELETE on_delete ]
-    [ ON UPDATE on_update ]
+    [ ON DELETE on_delete_action ]
+    [ ON UPDATE on_update_action ]
 }
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
 # WHERE table_constraint
 [ CONSTRAINT name ]
 {
-  CHECK ( check_expression ) [ NO INHERIT ] |
-  UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique |
-  PRIMARY KEY ( colname [, ...] ) primary_key |
-  EXCLUDE [ USING index_method ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( condition_expression ) ] |
+  CHECK ( boolean_expression ) [ NO INHERIT ] |
+  UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique_index |
+  PRIMARY KEY ( colname [, ...] ) primary_key_index |
+  EXCLUDE [ USING index_method ] ( exclude_column WITH operator [, ...] ) exclude_index [ WHERE ( boolean_expression ) ] |
   FOREIGN KEY ( colname [, ...] )
     REFERENCES references [ ( colname [, ...] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-    [ ON DELETE on_delete ]
-    [ ON UPDATE on_update ]
+    [ ON DELETE on_delete_action ]
+    [ ON UPDATE on_update_action ]
 }
 [ DEFERRABLE | NOT DEFERRABLE ]
 [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
@@ -104,15 +104,15 @@ REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 { UNIQUE | PRIMARY KEY } USING INDEX index
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
-# WHERE unique,primary_key,exclude
+# WHERE unique_index, primary_key_index, exclude_index
 [ INCLUDE ( colname [, ...] ) ]
 [ WITH ( storage_parameter [= value] [, ...] ) ]
 [ USING INDEX TABLESPACE tablespace ]
 
-# WHERE exclude_element
+# WHERE exclude_column
 { colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( opclass_parameter = value [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
-# WHERE on_delete,on_update
+# WHERE on_delete_action, on_update_action
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }
 
 # ONEOFIS partition_values
@@ -122,6 +122,3 @@ WITH ( MODULUS modulus, REMAINDER remainder )
 
 # WHERE role
 name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
-
-# RETURN condition_expression
-BOOLEAN

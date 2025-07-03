@@ -2,8 +2,8 @@
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 DELETE FROM [ ONLY ] table [ * ] [ [ AS ] table_alias ]
-    [ USING from_item [, ...] ]
-    [ WHERE condition_expression | WHERE CURRENT OF cursor ]
+    [ USING from_expression [, ...] ]
+    [ WHERE boolean_expression | WHERE CURRENT OF cursor ]
     [ RETURNING [ * ] { col_expression [ [ AS ] col_alias ] } [, ...] ]
 
 # WHERE with_query
@@ -11,18 +11,18 @@ with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement 
     [ SEARCH { BREADTH | DEPTH } FIRST BY search_colname [, ...] SET search_path_colname ]
     [ CYCLE colname [, ...] SET cycle_colname [ TO mark_value DEFAULT mark_default ] USING cycle_path_colname ]
 
-# ONEOFIS from_item
+# ONEOFIS from_expression
 with_name [ [ AS ] with_alias [ ( col_alias [, ...] ) ] ]
-[ ONLY ] table [ * ] [ [ AS ] table_alias [ ( col_alias [, ...] ) ] ] [ TABLESAMPLE tablesample ( value [, ...] ) [ REPEATABLE ( seed ) ] ]
+[ ONLY ] table [ * ] [ [ AS ] table_alias [ ( col_alias [, ...] ) ] ] [ TABLESAMPLE tablesample ( number_expression [, ...] ) [ REPEATABLE ( seed ) ] ]
 [ LATERAL ] ( select_statement ) [ [ AS ] select_alias [ ( col_alias [, ...] ) ] ]
-[ LATERAL ] function ( value [, ...] )
-[ LATERAL ] function ( value [, ...] ) AS ( { colname [ type ] } [, ...] )
-[ LATERAL ] function ( value [, ...] ) [ AS ] function_alias ( { colname [ type ] } [, ...] )
-[ LATERAL ] function ( value [, ...] ) WITH ORDINALITY [ [ AS ] function_alias [ ( col_alias [, ...] ) ] ]
-[ LATERAL ] ROWS FROM ( { function ( value [, ...] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] alias [ ( col_alias [, ...] ) ] ]
-from_item join_type from_item { ON condition_expression | USING ( colname [, ...] ) [ AS join_alias ] }
-from_item NATURAL join_type from_item
-from_item CROSS JOIN from_item
+[ LATERAL ] function ( value_expression [, ...] )
+[ LATERAL ] function ( value_expression [, ...] ) AS ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( value_expression [, ...] ) [ AS ] function_alias ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( value_expression [, ...] ) WITH ORDINALITY [ [ AS ] function_alias [ ( col_alias [, ...] ) ] ]
+[ LATERAL ] ROWS FROM ( { function ( value_expression [, ...] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] alias [ ( col_alias [, ...] ) ] ]
+from_expression join_type from_expression { ON boolean_expression | USING ( colname [, ...] ) [ AS join_alias ] }
+from_expression NATURAL join_type from_expression
+from_expression CROSS JOIN from_expression
 
 # STATEMEMT select_statement
 SELECT
@@ -37,6 +37,3 @@ INSERT
 UPDATE
 DELETE
 MERGE
-
-# RETURN condition_expression
-BOOLEAN

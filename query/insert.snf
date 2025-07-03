@@ -13,20 +13,18 @@ with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement 
     [ CYCLE colname [, ...] SET cycle_colname [ TO mark_value DEFAULT mark_default ] USING cycle_path_colname ]
 
 # ONEOFIS conflict_target
-( { colname | ( col_expression ) } [ COLLATE collate ] [ opclass ] [, ...] ) [ WHERE condition_expression ]
+( { colname | ( col_expression ) } [ COLLATE collate ] [ opclass ] [, ...] ) [ WHERE boolean_expression ]
 ON CONSTRAINT constraint
 
 # WHERE conflict_action
+DO NOTHING |
+DO UPDATE SET
 {
-  DO NOTHING |
-  DO UPDATE SET
-  {
-    colname = { value_expression | DEFAULT } |
-    ( colname [, ...] ) = [ ROW ] ( { value_expression | DEFAULT } [, ...] ) |
-    ( colname [, ...] ) = ( row_statement )
-  } [, ...]
-  [ WHERE condition_expression ]
-}
+  colname = { value_expression | DEFAULT } |
+  ( colname [, ...] ) = [ ROW ] ( { value_expression | DEFAULT } [, ...] ) |
+  ( colname [, ...] ) = ( select_statement )
+} [, ...]
+[ WHERE boolean_expression ]
 
 # STATEMEMT select_statement
 SELECT
@@ -41,9 +39,3 @@ INSERT
 UPDATE
 DELETE
 MERGE
-
-# STATEMEMT row_statement
-SELECT
-
-# RETURN condition_expression
-BOOLEAN

@@ -5,6 +5,6 @@ REINDEX [ ( config ) ] { INDEX | TABLE | SCHEMA } [ CONCURRENTLY ] name
 REINDEX [ ( config ) ] { DATABASE | SYSTEM } [ CONCURRENTLY ] [ name ]
 
 # WHERE config
-[ CONCURRENTLY [ concurrently ] ]
-[ TABLESPACE tablespace ]
-[ VERBOSE [ verbose ] ]
+[ CONCURRENTLY [ concurrently ], ]
+[ TABLESPACE tablespace, ]
+[ VERBOSE [ verbose ], ]

@@ -3,7 +3,7 @@
 CREATE [ OR REPLACE ] RULE name AS 
     ON { SELECT | UPDATE | INSERT | DELETE }
     TO table
-    [ WHERE condition_expression ]
+    [ WHERE boolean_expression ]
     DO [ ALSO | INSTEAD ] { NOTHING | ( rule_statement [; ...] ) }
 
 # STATEMEMT rule_statement
@@ -12,6 +12,3 @@ INSERT
 UPDATE
 DELETE
 NOTIFY
-
-# RETURN condition_expression
-BOOLEAN

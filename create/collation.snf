@@ -7,7 +7,7 @@ CREATE COLLATION [ IF NOT EXISTS ] name (
     [ PROVIDER = provider, ]
     [ DETERMINISTIC = deterministic, ]
     [ RULES = rules, ]
-    [ VERSION = version ]
+    [ VERSION = version, ]
 )
 
 CREATE COLLATION [ IF NOT EXISTS ] name FROM collation

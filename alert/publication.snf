@@ -13,11 +13,8 @@ ALTER PUBLICATION name SET ( { publication_parameter [= value] } [, ...] )
 ALTER PUBLICATION name OWNER TO role
 
 # ONEOFIS table
-TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( condition_expression ) ]
+TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( boolean_expression ) ]
 TABLES IN SCHEMA { schema | CURRENT_SCHEMA }
 
 # WHERE role
 name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
-
-# RETURN condition_expression
-BOOLEAN

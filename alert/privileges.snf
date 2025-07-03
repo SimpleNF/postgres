@@ -3,55 +3,61 @@
 ALTER DEFAULT PRIVILEGES
     [ FOR { ROLE | USER } role [, ...] ]
     [ IN SCHEMA schema [, ...] ]
-    grant_or_revoke
+    grant_or_revoke_expression
 
-# PARTOFIS grant_or_revoke
+# PARTOFIS grant_or_revoke_expression
 GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON TABLES
-    TO { [ GROUP ] role | PUBLIC } [, ...] 
+    TO role_public [, ...] 
     [ WITH GRANT OPTION ]
 
 GRANT { { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SEQUENCES
-    TO { [ GROUP ] role | PUBLIC } [, ...] 
+    TO role_public [, ...] 
     [ WITH GRANT OPTION ]
 
 GRANT { EXECUTE | ALL [ PRIVILEGES ] }
     ON { FUNCTIONS | ROUTINES }
-    TO { [ GROUP ] role | PUBLIC } [, ...] 
+    TO role_public [, ...] 
     [ WITH GRANT OPTION ]
 
 GRANT { USAGE | ALL [ PRIVILEGES ] }
     ON TYPES
-    TO { [ GROUP ] role | PUBLIC } [, ...] 
+    TO role_public [, ...] 
     [ WITH GRANT OPTION ]
 
 GRANT { { USAGE | CREATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SCHEMAS
-    TO { [ GROUP ] role | PUBLIC } [, ...] 
+    TO role_public [, ...] 
     [ WITH GRANT OPTION ]
 
 REVOKE [ GRANT OPTION FOR ] { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON TABLES
-    FROM { [ GROUP ] role | PUBLIC } [, ...]
+    FROM role_public [, ...]
     [ CASCADE | RESTRICT ]
 
 REVOKE [ GRANT OPTION FOR ] { { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SEQUENCES
-    FROM { [ GROUP ] role | PUBLIC } [, ...]
+    FROM role_public [, ...]
     [ CASCADE | RESTRICT ]
 
 REVOKE [ GRANT OPTION FOR ] { EXECUTE | ALL [ PRIVILEGES ] }
     ON { FUNCTIONS | ROUTINES }
-    FROM { [ GROUP ] role | PUBLIC } [, ...]
+    FROM role_public [, ...]
     [ CASCADE | RESTRICT ]
 
 REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
     ON TYPES
-    FROM { [ GROUP ] role | PUBLIC } [, ...]
+    FROM role_public [, ...]
     [ CASCADE | RESTRICT ]
 
 REVOKE [ GRANT OPTION FOR ] { { USAGE | CREATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SCHEMAS
-    FROM { [ GROUP ] role | PUBLIC } [, ...]
+    FROM role_public [, ...]
     [ CASCADE | RESTRICT ]
+
+# WHERE role
+name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+
+# WHERE role_public
+[ GROUP ] name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
