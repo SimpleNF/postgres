@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterschema.html
+# https://www.postgresql.org/docs/18/sql-alterschema.html
 
 ALTER SCHEMA name RENAME TO new_name
 

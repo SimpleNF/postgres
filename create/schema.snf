@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createschema.html
+# https://www.postgresql.org/docs/18/sql-createschema.html
 
 CREATE SCHEMA [ IF NOT EXISTS ] [ name ] [ AUTHORIZATION role ] create_statement [...]
 

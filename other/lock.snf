@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-lock.html
+# https://www.postgresql.org/docs/18/sql-lock.html
 
 LOCK [ TABLE ] [ ONLY ] { name [ * ] } [, ...] [ IN mode MODE ] [ NOWAIT ]
 

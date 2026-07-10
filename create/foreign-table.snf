@@ -1,8 +1,9 @@
-# https://www.postgresql.org/docs/17/sql-createforeigntable.html
+# https://www.postgresql.org/docs/18/sql-createforeigntable.html
 
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( {
     colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ] [ COLLATE collation ] [ col_constraint [...] ] |
-    table_constraint
+    table_constraint |
+    LIKE like_table [ like_config ]
 } [, ...] )
 [ INHERITS ( inherit [, ...] ) ]
 SERVER server
@@ -17,12 +18,26 @@ SERVER server
 [ OPTIONS ( { option 'value' } [, ...] ) ]
 
 # WHERE col_constraint
-[ CONSTRAINT name ] { NOT NULL | NULL | CHECK ( boolean_expression ) [ NO INHERIT ] | DEFAULT value_expression | GENERATED ALWAYS AS ( generation ) STORED }
+[ CONSTRAINT name ] {
+    NOT NULL [ NO INHERIT ] |
+    NULL |
+    CHECK ( boolean_expression ) [ NO INHERIT ] |
+    DEFAULT value_expression |
+    GENERATED ALWAYS AS ( generation ) [ STORED | VIRTUAL ]
+}
+[ ENFORCED | NOT ENFORCED ]
 
 # WHERE table_constraint
-[ CONSTRAINT name ] CHECK ( boolean_expression ) [ NO INHERIT ]
+[ CONSTRAINT name ] {
+    NOT NULL colname [ NO INHERIT ] |
+    CHECK ( boolean_expression ) [ NO INHERIT ]
+}
+[ ENFORCED | NOT ENFORCED ]
+
+# WHERE like_config
+{ INCLUDING | EXCLUDING } { COMMENTS | CONSTRAINTS | DEFAULTS | GENERATED | STATISTICS | ALL }
 
 # ONEOFIS partition_values
   IN ( in [, ...] )
 FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
-WITH ( MODULUS modulus, REMAINDER premainder )
+WITH ( MODULUS modulus, REMAINDER remainder )

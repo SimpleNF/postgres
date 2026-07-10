@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altertsdictionary.html
+# https://www.postgresql.org/docs/18/sql-altertsdictionary.html
 
 ALTER TEXT SEARCH DICTIONARY name ( { template_parameter [= value] } [, ...] )
 

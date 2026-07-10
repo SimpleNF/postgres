@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createtrigger.html
+# https://www.postgresql.org/docs/18/sql-createtrigger.html
 
 CREATE [ OR REPLACE ] [ CONSTRAINT ] TRIGGER name { BEFORE | AFTER | INSTEAD OF } event [OR ...]
     ON table

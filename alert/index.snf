@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterindex.html
+# https://www.postgresql.org/docs/18/sql-alterindex.html
 
 ALTER INDEX name ATTACH PARTITION partition
 

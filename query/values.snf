@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-values.html
+# https://www.postgresql.org/docs/18/sql-values.html
 
 VALUES ( value_expression [, ...] ) [, ...]
     [ ORDER BY order_by_expression [, ...] ]

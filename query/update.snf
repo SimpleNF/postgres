@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-update.html
+# https://www.postgresql.org/docs/18/sql-update.html
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [ ONLY ] table [ * ] [ [ AS ] alias ]
@@ -9,7 +9,8 @@ UPDATE [ ONLY ] table [ * ] [ [ AS ] alias ]
         } [, ...]
     [ FROM from_expression [, ...] ]
     [ WHERE boolean_expression | WHERE CURRENT OF cursor ]
-    [ RETURNING [ * ] { col_expression [ [ AS ] alias ] } [, ...] ]
+    [ RETURNING [ WITH ( { OLD | NEW } AS output_alias [, ...] ) ]
+        { * | col_expression [ [ AS ] alias ] } [, ...] ]
 
 # WHERE with_query
 with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )

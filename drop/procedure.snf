@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-dropprocedure.html
+# https://www.postgresql.org/docs/18/sql-dropprocedure.html
 
 DROP PROCEDURE [ IF EXISTS ] { name [ ( arg [, ...] ) ] } [, ...] [ CASCADE | RESTRICT ]
 

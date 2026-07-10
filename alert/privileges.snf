@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterdefaultprivileges.html
+# https://www.postgresql.org/docs/18/sql-alterdefaultprivileges.html
 
 ALTER DEFAULT PRIVILEGES
     [ FOR { ROLE | USER } role [, ...] ]
@@ -31,6 +31,11 @@ GRANT { { USAGE | CREATE } [, ...] | ALL [ PRIVILEGES ] }
     TO role_public [, ...] 
     [ WITH GRANT OPTION ]
 
+GRANT { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
+    ON LARGE OBJECTS
+    TO role_public [, ...]
+    [ WITH GRANT OPTION ]
+
 REVOKE [ GRANT OPTION FOR ] { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON TABLES
     FROM role_public [, ...]
@@ -53,6 +58,11 @@ REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
 
 REVOKE [ GRANT OPTION FOR ] { { USAGE | CREATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SCHEMAS
+    FROM role_public [, ...]
+    [ CASCADE | RESTRICT ]
+
+REVOKE [ GRANT OPTION FOR ] { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
+    ON LARGE OBJECTS
     FROM role_public [, ...]
     [ CASCADE | RESTRICT ]
 

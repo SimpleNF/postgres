@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-explain.html
+# https://www.postgresql.org/docs/18/sql-explain.html
 
 EXPLAIN [ ( config ) ] sql_statement
 

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altertable.html
+# https://www.postgresql.org/docs/18/sql-altertable.html
 
 ALTER TABLE [ IF EXISTS ] [ ONLY ] name [ * ] action [, ...]
 
@@ -35,7 +35,8 @@ ALTER [ COLUMN ] colname SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFA
 ALTER [ COLUMN ] colname SET COMPRESSION compression
 ADD table_constraint [ NOT VALID ]
 ADD table_index_constraint
-ALTER CONSTRAINT constraint [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+ALTER CONSTRAINT constraint [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ] [ ENFORCED | NOT ENFORCED ]
+ALTER CONSTRAINT constraint [ INHERIT | NO INHERIT ]
 VALIDATE CONSTRAINT constraint
 DROP CONSTRAINT [ IF EXISTS ] constraint [ RESTRICT | CASCADE ]
 DISABLE TRIGGER [ trigger | ALL | USER ]
@@ -68,11 +69,11 @@ REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 # WHERE col_constraint
 [ CONSTRAINT name ]
 {
-  NOT NULL |
+  NOT NULL [ NO INHERIT ] |
   NULL |
   CHECK ( boolean_expression ) [ NO INHERIT ] |
   DEFAULT value_expression |
-  GENERATED ALWAYS AS ( generated ) STORED |
+  GENERATED ALWAYS AS ( generated ) [ STORED | VIRTUAL ] |
   GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
   UNIQUE [ NULLS [ NOT ] DISTINCT ] unique_index |
   PRIMARY KEY primary_key_index |
@@ -81,23 +82,25 @@ REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
     [ ON DELETE on_delete_action ]
     [ ON UPDATE on_update_action ]
 }
-[ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+[ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ] [ ENFORCED | NOT ENFORCED ]
 
 # WHERE table_constraint
 [ CONSTRAINT name ]
 {
   CHECK ( boolean_expression ) [ NO INHERIT ] |
-  UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique_index |
-  PRIMARY KEY ( colname [, ...] ) primary_key_index |
+  NOT NULL colname [ NO INHERIT ] |
+  UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] [, colname WITHOUT OVERLAPS ] ) unique_index |
+  PRIMARY KEY ( colname [, ...] [, colname WITHOUT OVERLAPS ] ) primary_key_index |
   EXCLUDE [ USING index_method ] ( exclude_column WITH operator [, ...] ) exclude_index [ WHERE ( boolean_expression ) ] |
-  FOREIGN KEY ( colname [, ...] )
-    REFERENCES references [ ( colname [, ...] ) ]
+  FOREIGN KEY ( colname [, ...] [, PERIOD colname ] )
+    REFERENCES references [ ( refcolname [, ...] [, PERIOD refcolname ] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
     [ ON DELETE on_delete_action ]
     [ ON UPDATE on_update_action ]
 }
 [ DEFERRABLE | NOT DEFERRABLE ]
 [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
+[ ENFORCED | NOT ENFORCED ]
 
 # WHERE table_index_constraint
 [ CONSTRAINT name ]

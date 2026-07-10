@@ -1,10 +1,11 @@
-# https://www.postgresql.org/docs/17/sql-delete.html
+# https://www.postgresql.org/docs/18/sql-delete.html
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 DELETE FROM [ ONLY ] table [ * ] [ [ AS ] table_alias ]
     [ USING from_expression [, ...] ]
     [ WHERE boolean_expression | WHERE CURRENT OF cursor ]
-    [ RETURNING [ * ] { col_expression [ [ AS ] col_alias ] } [, ...] ]
+    [ RETURNING [ WITH ( { OLD | NEW } AS output_alias [, ...] ) ]
+        { * | col_expression [ [ AS ] col_alias ] } [, ...] ]
 
 # WHERE with_query
 with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )

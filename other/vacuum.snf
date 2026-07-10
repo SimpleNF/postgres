@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-vacuum.html
+# https://www.postgresql.org/docs/18/sql-vacuum.html
 
 VACUUM [ ( config ) ] table_expression [, ...]
 
@@ -19,4 +19,4 @@ VACUUM [ ( config ) ] table_expression [, ...]
 [ BUFFER_USAGE_LIMIT buffer_usage_limit, ]
 
 # WHERE table_expression
-name [ ( colname [, ...] ) ]
+[ ONLY ] name [ * ] [ ( colname [, ...] ) ]

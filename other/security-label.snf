@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-security-label.html
+# https://www.postgresql.org/docs/18/sql-security-label.html
 
 SECURITY LABEL [ FOR provider ] ON label_target IS { 'string' | NULL }
 

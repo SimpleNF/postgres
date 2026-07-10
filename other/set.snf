@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-set.html
+# https://www.postgresql.org/docs/18/sql-set.html
 
 SET [ SESSION | LOCAL ] config_parameter { TO | = } { value | 'value' | DEFAULT }
 

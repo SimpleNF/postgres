@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterextension.html
+# https://www.postgresql.org/docs/18/sql-alterextension.html
 
 ALTER EXTENSION name ADD extension_target
 

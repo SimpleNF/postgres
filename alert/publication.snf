@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterpublication.html
+# https://www.postgresql.org/docs/18/sql-alterpublication.html
 
 ALTER PUBLICATION name ADD table [, ...]
 

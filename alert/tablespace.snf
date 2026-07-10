@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altertablespace.html
+# https://www.postgresql.org/docs/18/sql-altertablespace.html
 
 ALTER TABLESPACE name RENAME TO new_name
 

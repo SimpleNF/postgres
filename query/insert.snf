@@ -1,11 +1,12 @@
-# https://www.postgresql.org/docs/17/sql-insert.html
+# https://www.postgresql.org/docs/18/sql-insert.html
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 INSERT INTO table [ AS alias ] [ ( colname [, ...] ) ]
     [ OVERRIDING { SYSTEM | USER } VALUE ]
     { DEFAULT VALUES | VALUES ( { value_expression | DEFAULT } [, ...] ) [, ...] | select_statement }
     [ ON CONFLICT [ conflict_target ] conflict_action ]
-    [ RETURNING [ * ] { col_expression [ [ AS ] alias ] } [, ...] ]
+    [ RETURNING [ WITH ( { OLD | NEW } AS output_alias [, ...] ) ]
+        { * | col_expression [ [ AS ] alias ] } [, ...] ]
 
 # WHERE with_query
 with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createprocedure.html
+# https://www.postgresql.org/docs/18/sql-createprocedure.html
 
 CREATE [ OR REPLACE ] PROCEDURE name ( arg [, ...] )
     [ LANGUAGE language ]

@@ -1,6 +1,6 @@
-# https://www.postgresql.org/docs/17/sql-createtableas.html
+# https://www.postgresql.org/docs/18/sql-createtableas.html
 
-CREATE [ GLOBAL | LOCAL | TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name
+CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name
     [ ( colname [, ...] ) ]
     [ USING index_method ]
     [ WITH ( { storage_parameter [= value] } [, ...] ) ]

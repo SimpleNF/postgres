@@ -1,8 +1,8 @@
-# https://www.postgresql.org/docs/17/sql-createtablespace.html
+# https://www.postgresql.org/docs/18/sql-createtablespace.html
 
 CREATE TABLESPACE name
     [ OWNER role ]
-    [ LOCATION 'location' ]
+    LOCATION 'location'
     [ WITH ( { tablespace_parameter [= value] } [, ...] ) ]
 
 # WHERE role

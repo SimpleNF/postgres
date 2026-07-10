@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alteropclass.html
+# https://www.postgresql.org/docs/18/sql-alteropclass.html
 
 ALTER OPERATOR CLASS name USING index_method RENAME TO new_name
 

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-prepare.html
+# https://www.postgresql.org/docs/18/sql-prepare.html
 
 PREPARE name [ ( type [, ...] ) ] AS query_statement
 

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterdomain.html
+# https://www.postgresql.org/docs/18/sql-alterdomain.html
 
 ALTER DOMAIN name ADD [ CONSTRAINT constraint ] { NOT NULL | CHECK ( boolean_expression ) } [ NOT VALID ]
 

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altercollation.html
+# https://www.postgresql.org/docs/18/sql-altercollation.html
 
 ALTER COLLATION name REFRESH VERSION
 

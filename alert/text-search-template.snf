@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altertstemplate.html
+# https://www.postgresql.org/docs/18/sql-altertstemplate.html
 
 ALTER TEXT SEARCH TEMPLATE name RENAME TO new_name
 

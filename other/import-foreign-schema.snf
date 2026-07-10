@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-importforeignschema.html
+# https://www.postgresql.org/docs/18/sql-importforeignschema.html
 
 IMPORT FOREIGN SCHEMA remote_schema
     [ { LIMIT TO | EXCEPT } ( table [, ...] ) ]

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterserver.html
+# https://www.postgresql.org/docs/18/sql-alterserver.html
 
 ALTER SERVER name [ VERSION 'version' ] [ OPTIONS ( option_expression [, ...] ) ]
 

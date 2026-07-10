@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-reindex.html
+# https://www.postgresql.org/docs/18/sql-reindex.html
 
 REINDEX [ ( config ) ] { INDEX | TABLE | SCHEMA } [ CONCURRENTLY ] name
 

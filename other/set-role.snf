@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-set-role.html
+# https://www.postgresql.org/docs/18/sql-set-role.html
 
 SET [ SESSION | LOCAL ] ROLE { role | NONE }
 
