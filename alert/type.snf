@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altertype.html
+# https://www.postgresql.org/docs/18/sql-altertype.html
 
 ALTER TYPE name action [, ...]
 

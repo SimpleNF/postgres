@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createtransform.html
+# https://www.postgresql.org/docs/18/sql-createtransform.html
 
 CREATE [ OR REPLACE ] TRANSFORM FOR type LANGUAGE language (
     FROM SQL WITH FUNCTION from [ (fromtype [, ...]) ],

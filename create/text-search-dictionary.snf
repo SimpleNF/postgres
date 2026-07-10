@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createtsdictionary.html
+# https://www.postgresql.org/docs/18/sql-createtsdictionary.html
 
 CREATE TEXT SEARCH DICTIONARY name (
     TEMPLATE = template,

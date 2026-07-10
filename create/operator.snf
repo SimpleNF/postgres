@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createoperator.html
+# https://www.postgresql.org/docs/18/sql-createoperator.html
 
 CREATE OPERATOR name (
     { FUNCTION | PROCEDURE } = function,

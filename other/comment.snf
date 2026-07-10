@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-comment.html
+# https://www.postgresql.org/docs/18/sql-comment.html
 
 COMMENT ON comment_target IS { 'comment' | NULL }
 

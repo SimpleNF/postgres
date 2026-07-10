@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-creatematerializedview.html
+# https://www.postgresql.org/docs/18/sql-creatematerializedview.html
 
 CREATE MATERIALIZED VIEW [ IF NOT EXISTS ] name [ (colname [, ...] ) ]
     [ USING index_method ]

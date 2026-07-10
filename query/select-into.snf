@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-selectinto.html
+# https://www.postgresql.org/docs/18/sql-selectinto.html
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [ ALL | DISTINCT [ ON ( col_expression [, ...] ) ] ]

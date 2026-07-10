@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-dropfunction.html
+# https://www.postgresql.org/docs/18/sql-dropfunction.html
 
 DROP FUNCTION [ IF EXISTS ] { name [ ( arg [, ...] ) ] } [, ...] [ CASCADE | RESTRICT ]
 

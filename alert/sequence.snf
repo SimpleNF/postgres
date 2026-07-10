@@ -1,13 +1,14 @@
-# https://www.postgresql.org/docs/17/sql-altersequence.html
+# https://www.postgresql.org/docs/18/sql-altersequence.html
 
 ALTER SEQUENCE [ IF EXISTS ] name
     [ AS type ]
     [ INCREMENT [ BY ] increment ]
     [ MINVALUE minvalue | NO MINVALUE ]
     [ MAXVALUE maxvalue | NO MAXVALUE ]
+    [ [ NO ] CYCLE ]
     [ START [ WITH ] start ]
     [ RESTART [ [ WITH ] restart ] ]
-    [ CACHE cache ] [ [ NO ] CYCLE ]
+    [ CACHE cache ]
     [ OWNED BY { table.colname | NONE } ]
 
 ALTER SEQUENCE [ IF EXISTS ] name SET { LOGGED | UNLOGGED }

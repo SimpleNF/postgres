@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altertsparser.html
+# https://www.postgresql.org/docs/18/sql-altertsparser.html
 
 ALTER TEXT SEARCH PARSER name RENAME TO new_name
 

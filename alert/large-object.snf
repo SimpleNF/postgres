@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterlargeobject.html
+# https://www.postgresql.org/docs/18/sql-alterlargeobject.html
 
 ALTER LARGE OBJECT name OWNER TO role
 

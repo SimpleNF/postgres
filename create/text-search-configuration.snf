@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createtsconfig.html
+# https://www.postgresql.org/docs/18/sql-createtsconfig.html
 
 # CASE PARSER
 CREATE TEXT SEARCH CONFIGURATION name (

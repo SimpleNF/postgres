@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-begin.html
+# https://www.postgresql.org/docs/18/sql-begin.html
 
 BEGIN [ WORK | TRANSACTION ] transaction_mode
 

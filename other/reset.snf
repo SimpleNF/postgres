@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-reset.html
+# https://www.postgresql.org/docs/18/sql-reset.html
 
 RESET config_parameter
 

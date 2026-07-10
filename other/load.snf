@@ -1,3 +1,3 @@
-# https://www.postgresql.org/docs/17/sql-load.html
+# https://www.postgresql.org/docs/18/sql-load.html
 
 LOAD 'file'

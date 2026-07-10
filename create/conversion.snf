@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createconversion.html
+# https://www.postgresql.org/docs/18/sql-createconversion.html
 
 CREATE [ DEFAULT ] CONVERSION name
     FOR for

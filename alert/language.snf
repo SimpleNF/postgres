@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterlanguage.html
+# https://www.postgresql.org/docs/18/sql-alterlanguage.html
 
 ALTER [ PROCEDURAL ] LANGUAGE name RENAME TO new_name
 

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterstatistics.html
+# https://www.postgresql.org/docs/18/sql-alterstatistics.html
 
 ALTER STATISTICS name RENAME TO new_name
 

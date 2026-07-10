@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createaggregate.html
+# https://www.postgresql.org/docs/18/sql-createaggregate.html
 
 CREATE [ OR REPLACE ] AGGREGATE name (
     arg [, ...]

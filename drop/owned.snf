@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-drop-owned.html
+# https://www.postgresql.org/docs/18/sql-drop-owned.html
 
 DROP OWNED BY role [, ...] [ CASCADE | RESTRICT ]
 

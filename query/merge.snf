@@ -1,10 +1,11 @@
-# https://www.postgresql.org/docs/17/sql-merge.html
+# https://www.postgresql.org/docs/18/sql-merge.html
 
 [ WITH with_query [, ...] ]
 MERGE INTO [ ONLY ] table [ * ] [ [ AS ] alias ]
     USING from_expression ON boolean_expression
     when_expression [...]
-    [ RETURNING [ * ] { col_expression [ [ AS ] alias ] } [, ...] ]
+    [ RETURNING [ WITH ( { OLD | NEW } AS output_alias [, ...] ) ]
+        { * | col_expression [ [ AS ] alias ] } [, ...] ]
 
 # WHERE with_query
 with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )

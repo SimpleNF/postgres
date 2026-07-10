@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createsubscription.html
+# https://www.postgresql.org/docs/18/sql-createsubscription.html
 
 CREATE SUBSCRIPTION name
     CONNECTION 'connection'

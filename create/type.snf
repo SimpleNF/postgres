@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createtype.html
+# https://www.postgresql.org/docs/18/sql-createtype.html
 
 # CASE COMPOSITE
 CREATE TYPE name AS

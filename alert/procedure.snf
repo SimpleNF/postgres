@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterprocedure.html
+# https://www.postgresql.org/docs/18/sql-alterprocedure.html
 
 ALTER PROCEDURE name [ ( arg [, ...] ) ] action [ RESTRICT ]
 

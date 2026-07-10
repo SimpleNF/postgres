@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altertsconfig.html
+# https://www.postgresql.org/docs/18/sql-altertsconfig.html
 
 ALTER TEXT SEARCH CONFIGURATION name
     ADD MAPPING FOR token [, ...] WITH dictionary [, ...]

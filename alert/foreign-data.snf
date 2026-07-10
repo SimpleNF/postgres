@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterforeigndatawrapper.html
+# https://www.postgresql.org/docs/18/sql-alterforeigndatawrapper.html
 
 ALTER FOREIGN DATA WRAPPER name
     [ HANDLER handler | NO HANDLER ]

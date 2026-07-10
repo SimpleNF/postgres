@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-altermaterializedview.html
+# https://www.postgresql.org/docs/18/sql-altermaterializedview.html
 
 ALTER MATERIALIZED VIEW [ IF EXISTS ] name action [, ...]
 

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alteraggregate.html
+# https://www.postgresql.org/docs/18/sql-alteraggregate.html
 
 ALTER AGGREGATE name ( signature ) RENAME TO new_name
 

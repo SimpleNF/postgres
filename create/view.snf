@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createview.html
+# https://www.postgresql.org/docs/18/sql-createview.html
 
 CREATE [ OR REPLACE ] [ TEMPORARY | TEMP ] [ RECURSIVE ] VIEW name [ ( colname [, ...] ) ]
     [ WITH ( { view_parameter [= value] } [, ...] ) ]

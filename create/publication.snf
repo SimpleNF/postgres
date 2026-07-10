@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createpublication.html
+# https://www.postgresql.org/docs/18/sql-createpublication.html
 
 CREATE PUBLICATION name
     [ FOR ALL TABLES | FOR table [, ...] ]

@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-move.html
+# https://www.postgresql.org/docs/18/sql-move.html
 
 MOVE [ direction ] [ FROM | IN ] cursor
 

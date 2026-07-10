@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterfunction.html
+# https://www.postgresql.org/docs/18/sql-alterfunction.html
 
 ALTER FUNCTION name [ ( arg [, ...] ) ] action [ RESTRICT ]
 

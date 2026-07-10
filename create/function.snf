@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createfunction.html
+# https://www.postgresql.org/docs/18/sql-createfunction.html
 
 CREATE [ OR REPLACE ] FUNCTION name ( arg [, ...] )
     [ RETURNS returns | RETURNS TABLE ( table_column_expression [, ...] ) ]

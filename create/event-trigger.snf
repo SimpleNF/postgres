@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createeventtrigger.html
+# https://www.postgresql.org/docs/18/sql-createeventtrigger.html
 
 CREATE EVENT TRIGGER name ON event
     WHEN TAG IN ( value_expression [, ...] )

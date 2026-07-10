@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterpolicy.html
+# https://www.postgresql.org/docs/18/sql-alterpolicy.html
 
 ALTER POLICY name ON table
     [ TO role_public [, ...] ]

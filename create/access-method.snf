@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-create-access-method.html
+# https://www.postgresql.org/docs/18/sql-create-access-method.html
 
 CREATE ACCESS METHOD name
     TYPE type

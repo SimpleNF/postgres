@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createusermapping.html
+# https://www.postgresql.org/docs/18/sql-createusermapping.html
 
 CREATE USER MAPPING [ IF NOT EXISTS ] FOR role_public
     SERVER server

@@ -1,3 +1,3 @@
-# https://www.postgresql.org/docs/17/sql-droptsconfig.html
+# https://www.postgresql.org/docs/18/sql-droptsconfig.html
 
 DROP TEXT SEARCH CONFIGURATION [ IF EXISTS ] name [ CASCADE | RESTRICT ]

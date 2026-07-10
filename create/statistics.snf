@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createstatistics.html
+# https://www.postgresql.org/docs/18/sql-createstatistics.html
 
 CREATE STATISTICS [ IF NOT EXISTS ] [ name ]
     ON ( on )

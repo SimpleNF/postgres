@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-grant.html
+# https://www.postgresql.org/docs/18/sql-grant.html
 
 GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON { [ TABLE ] table [, ...] | ALL TABLES IN SCHEMA schema [, ...] }

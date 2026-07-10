@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterconversion.html
+# https://www.postgresql.org/docs/18/sql-alterconversion.html
 
 ALTER CONVERSION name RENAME TO new_name
 

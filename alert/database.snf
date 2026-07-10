@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-alterdatabase.html
+# https://www.postgresql.org/docs/18/sql-alterdatabase.html
 
 ALTER DATABASE name [ [ WITH ] action ]
 

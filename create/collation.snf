@@ -1,4 +1,4 @@
-# https://www.postgresql.org/docs/17/sql-createcollation.html
+# https://www.postgresql.org/docs/18/sql-createcollation.html
 
 CREATE COLLATION [ IF NOT EXISTS ] name (
     [ LOCALE = locale, ]

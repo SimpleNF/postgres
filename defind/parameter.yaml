@@ -1,11 +1,11 @@
-# https://www.postgresql.org/docs/17/sql-altertable.html
+# https://www.postgresql.org/docs/18/sql-altertable.html
 attribute_parameter:
   n_distinct:
     type: number
   n_distinct_inherited:
     type: number
 
-# https://www.postgresql.org/docs/17/sql-createview.html
+# https://www.postgresql.org/docs/18/sql-createview.html
 view_parameter:
   check_option:
     type: LOCAL | CASCADED
@@ -14,7 +14,7 @@ view_parameter:
   security_invoker:
     type: boolean
 
-# https://www.postgresql.org/docs/17/sql-createtablespace.html
+# https://www.postgresql.org/docs/18/sql-createtablespace.html
 tablespace_parameter:
   seq_page_cost:
     type: floating point
@@ -25,7 +25,7 @@ tablespace_parameter:
   maintenance_io_concurrency:
     type: integer
 
-# https://www.postgresql.org/docs/17/sql-altertype.html
+# https://www.postgresql.org/docs/18/sql-altertype.html
 type_parameter:
   receive:
     type: function
@@ -42,7 +42,7 @@ type_parameter:
   storage:
     type: PLAIN | EXTERNAL | EXTENDED | MAIN
 
-# https://www.postgresql.org/docs/17/sql-createsubscription.html
+# https://www.postgresql.org/docs/18/sql-createsubscription.html
 subscription_parameter:
   connect:
     type: boolean
@@ -83,14 +83,16 @@ subscription_parameter:
   failover:
     type: boolean
 
-# https://www.postgresql.org/docs/17/sql-createpublication.html
+# https://www.postgresql.org/docs/18/sql-createpublication.html
 publication_parameter:
   publish:
     type: string
+  publish_generated_columns:
+    type: NONE | STORED
   publish_via_partition_root:
     type: boolean
 
-# https://www.postgresql.org/docs/17/sql-createindex.html#SQL-CREATEINDEX-STORAGE-PARAMETERS
+# https://www.postgresql.org/docs/18/sql-createindex.html#SQL-CREATEINDEX-STORAGE-PARAMETERS
 storage_parameter:
   fillfactor:
     type: integer
@@ -107,7 +109,7 @@ storage_parameter:
   autosummarize:
     type: boolean
 
-# https://www.postgresql.org/docs/current/textsearch-dictionaries.html
+# https://www.postgresql.org/docs/18/textsearch-dictionaries.html
 template_parameter:
   stopwords:
     type: string
