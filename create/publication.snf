@@ -4,9 +4,6 @@ CREATE PUBLICATION name
     [ FOR ALL TABLES | FOR table [, ...] ]
     [ WITH ( { publication_parameter [= value] } [, ...] ) ]
 
-# WHERE table ONEOF
-TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( condition_expression ) ]
+# ONEOFIS table
+TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( boolean_expression ) ]
 TABLES IN SCHEMA { schema | CURRENT_SCHEMA }
-
-# RETURN condition_expression
-BOOLEAN

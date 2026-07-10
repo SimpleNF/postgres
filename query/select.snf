@@ -3,12 +3,12 @@
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [ ALL | DISTINCT [ ON ( col_expression [, ...] ) ] ]
     [ * | { col_expression [ [ AS ] col_alias ] } [, ...] ]
-    [ FROM from_item [, ...] ]
-    [ WHERE condition_expression ]
-    [ GROUP BY [ ALL | DISTINCT ] group_by_item [, ...] ]
-    [ HAVING having ]
-    [ WINDOW window AS ( window_item ) [, ...] ]
-    [ ORDER BY order_by_item [, ...] ]
+    [ FROM from_expression [, ...] ]
+    [ WHERE boolean_expression ]
+    [ GROUP BY [ ALL | DISTINCT ] group_by_expression [, ...] ]
+    [ HAVING boolean_expression ]
+    [ WINDOW window AS ( window_expression ) [, ...] ]
+    [ ORDER BY order_by_expression [, ...] ]
     [ LIMIT { limit | ALL } ]
     [ OFFSET offset [ ROW | ROWS ] ]
     [ FETCH { FIRST | NEXT } [ fetch ] { ROW | ROWS } { ONLY | WITH TIES } ]
@@ -22,37 +22,54 @@ with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement 
     [ SEARCH { BREADTH | DEPTH } FIRST BY search_colname [, ...] SET search_path_colname ]
     [ CYCLE colname [, ...] SET cycle_colname [ TO mark_value DEFAULT mark_default ] USING cycle_path_colname ]
 
-# ONEOFIS from_item
+# ONEOFIS from_expression
 with_name [ [ AS ] with_alias [ ( col_alias [, ...] ) ] ]
-[ ONLY ] table [ * ] [ [ AS ] table_alias [ ( col_alias [, ...] ) ] ] [ TABLESAMPLE tablesample ( value [, ...] ) [ REPEATABLE ( seed ) ] ]
+[ ONLY ] table [ * ] [ [ AS ] table_alias [ ( col_alias [, ...] ) ] ] [ TABLESAMPLE tablesample ( number_expression [, ...] ) [ REPEATABLE ( seed ) ] ]
 [ LATERAL ] ( select_statement ) [ [ AS ] select_alias [ ( col_alias [, ...] ) ] ]
-[ LATERAL ] function ( value [, ...] )
-[ LATERAL ] function ( value [, ...] ) AS ( { colname [ type ] } [, ...] )
-[ LATERAL ] function ( value [, ...] ) [ AS ] function_alias ( { colname [ type ] } [, ...] )
-[ LATERAL ] function ( value [, ...] ) WITH ORDINALITY [ [ AS ] function_alias [ ( col_alias [, ...] ) ] ]
-[ LATERAL ] ROWS FROM ( { function ( value [, ...] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] alias [ ( col_alias [, ...] ) ] ]
-from_item join_type from_item { ON condition_expression | USING ( colname [, ...] ) [ AS join_alias ] }
-from_item NATURAL join_type from_item
-from_item CROSS JOIN from_item
+[ LATERAL ] function ( value_expression [, ...] )
+[ LATERAL ] function ( value_expression [, ...] ) AS ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( value_expression [, ...] ) [ AS ] function_alias ( { colname [ type ] } [, ...] )
+[ LATERAL ] function ( value_expression [, ...] ) WITH ORDINALITY [ [ AS ] function_alias [ ( col_alias [, ...] ) ] ]
+[ LATERAL ] ROWS FROM ( { function ( value_expression [, ...] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] alias [ ( col_alias [, ...] ) ] ]
+from_expression join_type from_expression { ON boolean_expression | USING ( colname [, ...] ) [ AS join_alias ] }
+from_expression NATURAL join_type from_expression
+from_expression CROSS JOIN from_expression
 
-# WHERE window_item
+# WHERE window_expression
 [ name ]
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
-[ ORDER BY order_by_item [, ...] ]
-[ frame_clause ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
+[ ORDER BY order_by_expression [, ...] ]
+[ frame_expression ]
 
-# WHERE partition_item
+# WHERE partition_column
 { colname | ( col_expression ) } [ COLLATE collate ] [ opclass ]
 
-# WHERE group_by_item
+# ONEOFIS frame_expression
+{ RANGE | ROWS | GROUPS } frame_start [ frame_exclusion ]
+{ RANGE | ROWS | GROUPS } BETWEEN frame_start AND frame_end [ frame_exclusion ]
+
+# ONEOFIS frame_start, frame_end
+UNBOUNDED PRECEDING
+offset PRECEDING
+CURRENT ROW
+offset FOLLOWING
+UNBOUNDED FOLLOWING
+
+# ONEOFIS frame_exclusion
+EXCLUDE CURRENT ROW
+EXCLUDE GROUP
+EXCLUDE TIES
+EXCLUDE NO OTHERS
+
+# WHERE group_by_expression
 ( )
 col_expression
 ( col_expression [, ...] )
 ROLLUP ( { col_expression | ( col_expression [, ...] ) } [, ...] )
 CUBE ( { col_expression | ( col_expression [, ...] ) } [, ...] )
-GROUPING SETS ( group_by_item [, ...] )
+GROUPING SETS ( group_by_expression [, ...] )
 
-# WHERE order_by_item
+# WHERE order_by_expression
 col_expression [ ASC | DESC | USING operator ] [ NULLS { FIRST | LAST } ]
 
 # STATEMEMT select_statement
@@ -68,6 +85,3 @@ INSERT
 UPDATE
 DELETE
 MERGE
-
-# RETURN condition_expression
-BOOLEAN

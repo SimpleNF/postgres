@@ -15,7 +15,7 @@ CREATE TYPE name AS RANGE (
     [ COLLATION = collation, ]
     [ CANONICAL = canonical, ]
     [ SUBTYPE_DIFF = subtype_diff, ]
-    [ MULTIRANGE_TYPE_NAME = multirange_type_name ]
+    [ MULTIRANGE_TYPE_NAME = multirange_type_name, ]
 )
 
 # CASE FUNCTION
@@ -38,7 +38,7 @@ CREATE TYPE name (
     [ DEFAULT = value_expression, ]
     [ ELEMENT = element, ]
     [ DELIMITER = delimiter, ]
-    [ COLLATABLE = collatable ]
+    [ COLLATABLE = collatable, ]
 )
 
 # CASE BASE

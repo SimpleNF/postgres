@@ -1,5 +1,5 @@
 {
-  "name": "@zebra/snf-postgres",
+  "name": "snf-postgres",
   "version": "0.0.1",
   "description": "postgres snf define",
   "type": "module",

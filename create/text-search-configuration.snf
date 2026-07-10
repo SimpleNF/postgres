@@ -1,9 +1,11 @@
 # https://www.postgresql.org/docs/17/sql-createtsconfig.html
 
+# CASE PARSER
 CREATE TEXT SEARCH CONFIGURATION name (
     PARSER = parser
 )
 
+# CASE COPY
 CREATE TEXT SEARCH CONFIGURATION name (
     COPY = copy
 )

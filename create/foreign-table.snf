@@ -8,8 +8,7 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( {
 SERVER server
 [ OPTIONS ( { option 'value' } [, ...] ) ]
 
-CREATE FOREIGN TABLE [ IF NOT EXISTS ] name 
-PARTITION OF parent [ ({
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] name PARTITION OF parent [ ({
     colname [ WITH OPTIONS ] [ col_constraint [...] ] |
     table_constraint
 } [, ...]) ]
@@ -18,15 +17,12 @@ SERVER server
 [ OPTIONS ( { option 'value' } [, ...] ) ]
 
 # WHERE col_constraint
-[ CONSTRAINT name ] { NOT NULL | NULL | CHECK ( check_expression ) [ NO INHERIT ] | DEFAULT value_expression | GENERATED ALWAYS AS ( generation ) STORED }
+[ CONSTRAINT name ] { NOT NULL | NULL | CHECK ( boolean_expression ) [ NO INHERIT ] | DEFAULT value_expression | GENERATED ALWAYS AS ( generation ) STORED }
 
 # WHERE table_constraint
-[ CONSTRAINT name ] CHECK ( check_expression ) [ NO INHERIT ]
+[ CONSTRAINT name ] CHECK ( boolean_expression ) [ NO INHERIT ]
 
 # ONEOFIS partition_values
   IN ( in [, ...] )
 FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
 WITH ( MODULUS modulus, REMAINDER premainder )
-
-# RETURN check_expression
-BOOLEAN

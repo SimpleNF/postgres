@@ -22,7 +22,7 @@ CREATE [ OR REPLACE ] AGGREGATE name (
     [ MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE }, ]
     [ MINITCOND = minitcond, ]
     [ SORTOP = sortop, ]
-    [ PARALLEL = { SAFE | RESTRICTED | UNSAFE } ]
+    [ PARALLEL = { SAFE | RESTRICTED | UNSAFE }, ]
 )
 
 CREATE [ OR REPLACE ] AGGREGATE name ( 
@@ -37,7 +37,7 @@ CREATE [ OR REPLACE ] AGGREGATE name (
     [ FINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE }, ]
     [ INITCOND = initcond, ]
     [ PARALLEL = { SAFE | RESTRICTED | UNSAFE }, ]
-    [ HYPOTHETICAL ]
+    [ HYPOTHETICAL, ]
 )
 
 # old syntax
@@ -61,7 +61,7 @@ CREATE [ OR REPLACE ] AGGREGATE name (
     [ MFINALFUNC_EXTRA, ]
     [ MFINALFUNC_MODIFY = { READ_ONLY | SHAREABLE | READ_WRITE }, ]
     [ MINITCOND = minitcond, ]
-    [ SORTOP = sortop ]
+    [ SORTOP = sortop, ]
 )
 
 # WHERE arg,order

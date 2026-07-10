@@ -7,7 +7,7 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED | GLOBAL | LOCAL ] TABLE [ IF NOT EXISTS ] 
 } [, ...]
 )
 [ INHERITS ( inherits [, ...] ) ]
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
 [ USING index_method ]
 [ WITH ( { storage_parameter [ = value] } [, ...] ) ]
 [ WITHOUT OIDS ]
@@ -21,7 +21,7 @@ OF type [ ( {
     table_constraint 
 } [, ...] 
 ) ]
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
 [ USING index_method ]
 [ WITH ( { storage_parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
@@ -35,7 +35,7 @@ PARTITION OF parent [ ( {
     table_constraint
 } [, ...] ) ]
 { FOR VALUES partition_values | DEFAULT }
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_item [, ...] ) ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
 [ USING index_method ]
 [ WITH ( { storage_parameter [= value] } [, ...] ) ]
 [ WITHOUT OIDS ]
@@ -50,7 +50,7 @@ PARTITION OF parent [ ( {
 FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
 WITH ( MODULUS modulus, REMAINDER remainder )
 
-# WHERE partition_item
+# WHERE partition_column
 { colname | ( col_expression ) } [ COLLATE collate ] [ opclass ]
 
 # WHERE col_constraint
@@ -60,40 +60,37 @@ NOT NULL |
 DEFAULT value_expression |
 GENERATED ALWAYS AS ( generated ) STORED |
 GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
-PRIMARY KEY primary_key |
-UNIQUE [ NULLS [ NOT ] DISTINCT ] unique |
-CHECK ( check_expression ) [ NO INHERIT ] |
+PRIMARY KEY primary_key_index |
+UNIQUE [ NULLS [ NOT ] DISTINCT ] unique_index |
+CHECK ( boolean_expression ) [ NO INHERIT ] |
 REFERENCES references [ ( colname ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-    [ ON DELETE on_delete ]
+    [ ON DELETE on_delete_action ]
     [ ON UPDATE on_update ] }
 [ DEFERRABLE | NOT DEFERRABLE ]
 [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
 # WHERE table_constraint
 [ CONSTRAINT name ] {
-CHECK ( check_expression ) [ NO INHERIT ] |
-UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique |
-PRIMARY KEY ( colname [, ...] ) primary_key |
-EXCLUDE [ USING index_method ] ( exclude_element WITH operator [, ...] ) exclude [ WHERE ( condition_expression ) ] |
+CHECK ( boolean_expression ) [ NO INHERIT ] |
+UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] ) unique_index |
+PRIMARY KEY ( colname [, ...] ) primary_key_index |
+EXCLUDE [ USING index_method ] ( exclude_column WITH operator [, ...] ) exclude_index [ WHERE ( boolean_expression ) ] |
 FOREIGN KEY ( colname [, ...] )
     REFERENCES references [ ( colname [, ...] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
-    [ ON DELETE on_delete ]
-    [ ON UPDATE on_update ] }
+    [ ON DELETE on_delete_action ]
+    [ ON UPDATE on_update_action ] }
 [ DEFERRABLE | NOT DEFERRABLE ]
 [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
-# WHERE unique,primary_key,exclude
+# WHERE unique_index, primary_key_index, exclude_index
 [ INCLUDE ( include [, ...] ) ]
 [ WITH ( { storage_parameter [= value] } [, ...] ) ]
 [ USING INDEX TABLESPACE tablespace ]
 
-# WHERE exclude_element
+# WHERE exclude_column
 { colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( { opclass_parameter = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
-# WHERE on_delete,on_update
+# WHERE on_delete_action, on_update_action
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }
-
-# RETURN check_expression,condition_expression
-BOOLEAN

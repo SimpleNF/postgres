@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/17/sql-createfunction.html
 
 CREATE [ OR REPLACE ] FUNCTION name ( arg [, ...] )
-    [ RETURNS returns | RETURNS TABLE ( column [, ...] ) ]
+    [ RETURNS returns | RETURNS TABLE ( table_column_expression [, ...] ) ]
     [ LANGUAGE language ]
     [ TRANSFORM { FOR TYPE type } [, ...] ]
     [ WINDOW ]
@@ -13,7 +13,7 @@ CREATE [ OR REPLACE ] FUNCTION name ( arg [, ...] )
     [ COST cost ]
     [ ROWS rows ]
     [ SUPPORT support ]
-    [ SET config_parameter { TO value | = value | FROM CURRENT } [, ...] ]
+    [ { SET config_parameter { TO value | = value | FROM CURRENT } } [, ...] ]
     [ AS 'file', 'function' ]
     [ AS pg_definition ]
     [ sql_definition ]
@@ -21,5 +21,5 @@ CREATE [ OR REPLACE ] FUNCTION name ( arg [, ...] )
 # WHERE arg
 [ argmode ] [ argname ] argtype [ { DEFAULT | = } value_expression ]
 
-# WHERE column
+# WHERE table_column_expression
 colname coltype

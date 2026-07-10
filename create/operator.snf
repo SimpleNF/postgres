@@ -9,5 +9,5 @@ CREATE OPERATOR name (
     [ RESTRICT = restrict, ]
     [ JOIN = join, ]
     [ HASHES, ]
-    [ MERGES ]
+    [ MERGES, ]
 )

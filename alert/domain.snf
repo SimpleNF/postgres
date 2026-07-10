@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/17/sql-alterdomain.html
 
-ALTER DOMAIN name ADD [ CONSTRAINT constraint ] { NOT NULL | CHECK (check_expression) } [ NOT VALID ]
+ALTER DOMAIN name ADD [ CONSTRAINT constraint ] { NOT NULL | CHECK ( boolean_expression ) } [ NOT VALID ]
 
 ALTER DOMAIN name DROP DEFAULT
 
@@ -24,6 +24,3 @@ ALTER DOMAIN name SET SCHEMA schema
 
 # WHERE role
 name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
-
-# RETURN check_expression
-BOOLEAN

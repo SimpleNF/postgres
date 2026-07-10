@@ -5,5 +5,5 @@ CREATE TEXT SEARCH PARSER name (
     GETTOKEN = gettoken,
     END = end,
     LEXTYPES = lextypes,
-    [ HEADLINE = headline ]
+    [ HEADLINE = headline, ]
 )

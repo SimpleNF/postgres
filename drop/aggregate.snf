@@ -5,5 +5,5 @@ DROP AGGREGATE [ IF EXISTS ] name ( signature ) [, ...] [ CASCADE | RESTRICT ]
 # WHERE signature
 * | arg [, ...] | arg [, ...] ORDER BY orders [, ...]
 
-# WHERE arg,orders
+# WHERE arg, orders
 [ argmode ] [ argname ] argtype
