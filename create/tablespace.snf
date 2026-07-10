@@ -2,7 +2,7 @@
 
 CREATE TABLESPACE name
     [ OWNER role ]
-    [ LOCATION 'location' ]
+    LOCATION 'location'
     [ WITH ( { tablespace_parameter [= value] } [, ...] ) ]
 
 # WHERE role

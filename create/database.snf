@@ -1,6 +1,6 @@
 # https://www.postgresql.org/docs/18/sql-createdatabase.html
 
-CREATE DATABASE name [ OWNER [=] owner ]
+CREATE DATABASE name [ WITH ] [ OWNER [=] owner ]
     [ TEMPLATE [=] template ]
     [ ENCODING [=] encoding ]
     [ STRATEGY [=] strategy ]

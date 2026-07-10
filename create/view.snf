@@ -3,7 +3,7 @@
 CREATE [ OR REPLACE ] [ TEMPORARY | TEMP ] [ RECURSIVE ] VIEW name [ ( colname [, ...] ) ]
     [ WITH ( { view_parameter [= value] } [, ...] ) ]
     AS select_statement
-    check_option
+    [ check_option ]
 
 # WHERE check_option
 WITH [ CASCADED | LOCAL ] CHECK OPTION

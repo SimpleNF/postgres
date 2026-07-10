@@ -3,7 +3,7 @@
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( {
     colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ] [ COLLATE collation ] [ col_constraint [...] ] |
     table_constraint |
-    LIKE like_table [ like_config ... ]
+    LIKE like_table [ like_config ]
 } [, ...] )
 [ INHERITS ( inherit [, ...] ) ]
 SERVER server
@@ -40,4 +40,4 @@ SERVER server
 # ONEOFIS partition_values
   IN ( in [, ...] )
 FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
-WITH ( MODULUS modulus, REMAINDER premainder )
+WITH ( MODULUS modulus, REMAINDER remainder )

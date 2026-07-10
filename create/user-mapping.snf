@@ -5,4 +5,4 @@ CREATE USER MAPPING [ IF NOT EXISTS ] FOR role_public
     [ OPTIONS ( { option 'value' } [, ...] ) ]
 
 # WHERE role_public
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
+name | USER | CURRENT_ROLE | CURRENT_USER | PUBLIC
