@@ -124,4 +124,4 @@ FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE 
 WITH ( MODULUS modulus, REMAINDER remainder )
 
 # WHERE role
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

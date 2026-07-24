@@ -3,4 +3,4 @@
 REASSIGN OWNED BY role [, ...] TO new_role
 
 # WHERE role, new_role
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

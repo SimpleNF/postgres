@@ -8,4 +8,4 @@ ALTER POLICY name ON table
 ALTER POLICY name ON table RENAME TO new_name
 
 # WHERE role_public
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC }

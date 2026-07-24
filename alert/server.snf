@@ -10,4 +10,4 @@ ALTER SERVER name OWNER TO role
 [ ADD | SET | DROP ] option ['value']
 
 # WHERE role
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

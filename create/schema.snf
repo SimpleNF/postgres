@@ -3,7 +3,7 @@
 CREATE SCHEMA [ IF NOT EXISTS ] [ name ] [ AUTHORIZATION role ] create_statement [...]
 
 # WHERE role
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
 
 # STATEMEMT create_statement
 CREATE TABLE

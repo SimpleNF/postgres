@@ -25,4 +25,4 @@ ALTER ROUTINE name [ ( arg [, ...] ) ] [ NO ] DEPENDS ON EXTENSION extension
 [ argmode ] [ argname ] argtype
 
 # WHERE role
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

@@ -14,4 +14,4 @@ ALTER OPERATOR name ( { left | NONE }, right ) OWNER TO role
 ALTER OPERATOR name ( { left | NONE }, right ) SET SCHEMA schema
 
 # WHERE role
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

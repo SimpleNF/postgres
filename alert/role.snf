@@ -23,4 +23,4 @@ ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET config_parameter
 ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET ALL
 
 # WHERE role
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

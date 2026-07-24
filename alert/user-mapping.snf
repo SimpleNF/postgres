@@ -8,4 +8,4 @@ ALTER USER MAPPING FOR role_public
 [ ADD | SET | DROP ] option ['value']
 
 # WHERE role_public
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC }

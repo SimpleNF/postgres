@@ -9,4 +9,4 @@ ALTER TABLESPACE name RESET ( tablespace_parameter [, ...] )
 ALTER TABLESPACE name OWNER TO role
 
 # WHERE role
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

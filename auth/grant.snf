@@ -75,7 +75,7 @@ GRANT role_name [, ...] TO role_public [, ...]
     [ GRANTED BY role_public ]
 
 # WHERE role_public
-[ GROUP ] name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
+{ [ GROUP ] role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC }
 
 # WHERE arg
 [ argmode ] [ argname ] argtype

@@ -8,4 +8,4 @@ CREATE POLICY name ON table
     [ WITH CHECK ( boolean_expression ) ]
 
 # WHERE role_public
-name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC
+{ role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER | PUBLIC }
