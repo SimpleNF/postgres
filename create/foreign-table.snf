@@ -1,21 +1,26 @@
 # https://www.postgresql.org/docs/18/sql-createforeigntable.html
 
+# CASE NORMAL
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( {
-    colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ] [ COLLATE collation ] [ col_constraint [...] ] |
+    colname coltype
+        [ OPTIONS ( { option 'value' } [, ...] ) ]
+        [ COLLATE collation ]
+        [ col_constraint [...] ] |
     table_constraint |
     LIKE like_table [ like_config ]
 } [, ...] )
-[ INHERITS ( inherit [, ...] ) ]
-SERVER server
-[ OPTIONS ( { option 'value' } [, ...] ) ]
+    [ INHERITS ( inherit [, ...] ) ]
+    SERVER server
+    [ OPTIONS ( { option 'value' } [, ...] ) ]
 
+# CASE PARTITION
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name PARTITION OF parent [ ({
     colname [ WITH OPTIONS ] [ col_constraint [...] ] |
     table_constraint
 } [, ...]) ]
-{ FOR VALUES partition_values | DEFAULT }
-SERVER server
-[ OPTIONS ( { option 'value' } [, ...] ) ]
+    { FOR VALUES partition_values | DEFAULT }
+    SERVER server
+    [ OPTIONS ( { option 'value' } [, ...] ) ]
 
 # WHERE col_constraint
 [ CONSTRAINT name ] {

@@ -1,9 +1,12 @@
 # https://www.postgresql.org/docs/18/sql-set-transaction.html
 
+# CASE TRANSACTION
 SET TRANSACTION transaction_mode [, ...]
 
+# CASE SNAPSHOT
 SET TRANSACTION SNAPSHOT snapshot
 
+# CASE SESSION
 SET SESSION CHARACTERISTICS AS TRANSACTION transaction_mode [, ...]
 
 # ONEOFIS transaction_mode

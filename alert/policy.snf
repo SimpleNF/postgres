@@ -1,10 +1,12 @@
 # https://www.postgresql.org/docs/18/sql-alterpolicy.html
 
+# CASE OPTIONS
 ALTER POLICY name ON table
     [ TO role_public [, ...] ]
     [ USING ( boolean_expression ) ]
     [ WITH CHECK ( boolean_expression ) ]
 
+# CASE RENAME
 ALTER POLICY name ON table RENAME TO new_name
 
 # WHERE role_public

@@ -1,5 +1,6 @@
 # https://www.postgresql.org/docs/18/sql-alterrole.html
 
+# CASE OPTIONS
 ALTER ROLE role [ WITH ]
     [ SUPERUSER | NOSUPERUSER ]
     [ CREATEDB | NOCREATEDB ]
@@ -12,15 +13,28 @@ ALTER ROLE role [ WITH ]
     [ [ ENCRYPTED ] PASSWORD 'password' | PASSWORD NULL ]
     [ VALID UNTIL 'timestamp' ]
 
+# CASE RENAME
 ALTER ROLE name RENAME TO new_name
 
-ALTER ROLE { role | ALL } [ IN DATABASE database ] SET config_parameter FROM CURRENT
+# CASE SET_CURRENT
+ALTER ROLE { role | ALL }
+    [ IN DATABASE database ]
+    SET config_parameter FROM CURRENT
 
-ALTER ROLE { role | ALL } [ IN DATABASE database ] SET config_parameter { TO | = } { value | DEFAULT }
+# CASE SET
+ALTER ROLE { role | ALL }
+    [ IN DATABASE database ]
+    SET config_parameter { TO | = } { value | DEFAULT }
 
-ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET config_parameter
+# CASE RESET
+ALTER ROLE { role | ALL }
+    [ IN DATABASE database ]
+    RESET config_parameter
 
-ALTER ROLE { role | ALL } [ IN DATABASE database ] RESET ALL
+# CASE RESET_ALL
+ALTER ROLE { role | ALL }
+    [ IN DATABASE database ]
+    RESET ALL
 
 # WHERE role
 { role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }

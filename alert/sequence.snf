@@ -1,5 +1,6 @@
 # https://www.postgresql.org/docs/18/sql-altersequence.html
 
+# CASE OPTIONS
 ALTER SEQUENCE [ IF EXISTS ] name
     [ AS type ]
     [ INCREMENT [ BY ] increment ]
@@ -11,12 +12,16 @@ ALTER SEQUENCE [ IF EXISTS ] name
     [ CACHE cache ]
     [ OWNED BY { table.colname | NONE } ]
 
+# CASE LOGGING
 ALTER SEQUENCE [ IF EXISTS ] name SET { LOGGED | UNLOGGED }
 
+# CASE RENAME
 ALTER SEQUENCE [ IF EXISTS ] name RENAME TO new_name
 
+# CASE OWNER
 ALTER SEQUENCE [ IF EXISTS ] name OWNER TO role
 
+# CASE SCHEMA
 ALTER SEQUENCE [ IF EXISTS ] name SET SCHEMA schema
 
 # WHERE role

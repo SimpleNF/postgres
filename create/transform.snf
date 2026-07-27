@@ -2,5 +2,5 @@
 
 CREATE [ OR REPLACE ] TRANSFORM FOR type LANGUAGE language (
     FROM SQL WITH FUNCTION from [ (fromtype [, ...]) ],
-      TO SQL WITH FUNCTION to [ (totype [, ...]) ]
+    TO SQL WITH FUNCTION to [ (totype [, ...]) ]
 )

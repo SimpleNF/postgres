@@ -1,5 +1,7 @@
 # https://www.postgresql.org/docs/18/sql-set-role.html
 
+# CASE SET
 SET [ SESSION | LOCAL ] ROLE { role | NONE }
 
+# CASE RESET
 RESET ROLE

@@ -1,5 +1,7 @@
 # https://www.postgresql.org/docs/18/sql-createserver.html
 
-CREATE SERVER [ IF NOT EXISTS ] name [ TYPE 'type' ] [ VERSION 'version' ]
+CREATE SERVER [ IF NOT EXISTS ] name
+    [ TYPE 'type' ]
+    [ VERSION 'version' ]
     FOREIGN DATA WRAPPER fdw
     [ OPTIONS ( { option 'value' } [, ...] ) ]

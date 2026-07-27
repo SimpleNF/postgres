@@ -1,5 +1,6 @@
 # https://www.postgresql.org/docs/18/sql-createcollation.html
 
+# CASE PARAMETERS
 CREATE COLLATION [ IF NOT EXISTS ] name (
     [ LOCALE = locale, ]
     [ LC_COLLATE = lc_collate, ]
@@ -10,4 +11,6 @@ CREATE COLLATION [ IF NOT EXISTS ] name (
     [ VERSION = version, ]
 )
 
-CREATE COLLATION [ IF NOT EXISTS ] name FROM collation
+# CASE COPY
+CREATE COLLATION [ IF NOT EXISTS ] name
+    FROM collation

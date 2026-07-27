@@ -1,5 +1,6 @@
 # https://www.postgresql.org/docs/18/sql-createaggregate.html
 
+# CASE NORMAL
 CREATE [ OR REPLACE ] AGGREGATE name (
     arg [, ...]
 ) (
@@ -25,8 +26,9 @@ CREATE [ OR REPLACE ] AGGREGATE name (
     [ PARALLEL = { SAFE | RESTRICTED | UNSAFE }, ]
 )
 
-CREATE [ OR REPLACE ] AGGREGATE name ( 
-    arg [, ...] 
+# CASE ORDERED_SET
+CREATE [ OR REPLACE ] AGGREGATE name (
+    arg [, ...]
     ORDER BY order [, ...]
 ) (
     SFUNC = sfunc,
@@ -40,7 +42,7 @@ CREATE [ OR REPLACE ] AGGREGATE name (
     [ HYPOTHETICAL, ]
 )
 
-# old syntax
+# CASE LEGACY
 CREATE [ OR REPLACE ] AGGREGATE name (
     BASETYPE = basetype,
     SFUNC = sfunc,

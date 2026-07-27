@@ -1,11 +1,15 @@
 # https://www.postgresql.org/docs/18/sql-altertablespace.html
 
+# CASE RENAME
 ALTER TABLESPACE name RENAME TO new_name
 
+# CASE SET_OPTIONS
 ALTER TABLESPACE name SET ( { tablespace_parameter [= value ] } [, ...] )
 
+# CASE RESET_OPTIONS
 ALTER TABLESPACE name RESET ( tablespace_parameter [, ...] )
 
+# CASE OWNER
 ALTER TABLESPACE name OWNER TO role
 
 # WHERE role

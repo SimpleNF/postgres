@@ -1,7 +1,9 @@
 # https://www.postgresql.org/docs/18/sql-alterschema.html
 
+# CASE RENAME
 ALTER SCHEMA name RENAME TO new_name
 
+# CASE OWNER
 ALTER SCHEMA name OWNER TO role
 
 # WHERE role

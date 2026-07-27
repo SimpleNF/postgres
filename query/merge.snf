@@ -18,7 +18,7 @@ with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement 
 # ONEOFIS when_expression
 WHEN MATCHED [ AND boolean_expression ] THEN { update_statement | DELETE | DO NOTHING }
 WHEN NOT MATCHED BY SOURCE [ AND boolean_expression ] THEN { update_statement | DELETE | DO NOTHING }
-WHEN NOT MATCHED [ BY TARGET ] [ AND boolean_expression ] THEN { insert_statement | DO NOTHING } 
+WHEN NOT MATCHED [ BY TARGET ] [ AND boolean_expression ] THEN { insert_statement | DO NOTHING }
 
 # WHERE update_statement
 UPDATE SET
@@ -33,12 +33,12 @@ INSERT [( colname [, ...] )]
 [ OVERRIDING { SYSTEM | USER } VALUE ]
 { VALUES ( { value_expression | DEFAULT } [, ...] ) | DEFAULT VALUES }
 
-# STATEMEMT select_statement
+# STATEMENT select_statement
 SELECT
 TABLE
 VALUES
 
-# STATEMEMT query_statement
+# STATEMENT query_statement
 SELECT
 TABLE
 VALUES

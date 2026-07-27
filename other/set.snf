@@ -1,5 +1,8 @@
 # https://www.postgresql.org/docs/18/sql-set.html
 
-SET [ SESSION | LOCAL ] config_parameter { TO | = } { value | 'value' | DEFAULT }
+# CASE PARAMETER
+SET [ SESSION | LOCAL ] config_parameter
+    { TO | = } { value | 'value' | DEFAULT }
 
+# CASE TIME_ZONE
 SET [ SESSION | LOCAL ] TIME ZONE { value | 'value' | LOCAL | DEFAULT }

@@ -10,7 +10,7 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name
     AS select_statement
     [ WITH [ NO ] DATA ]
 
-# STATEMEMT select_statement
+# STATEMENT select_statement
 SELECT
 TABLE
 VALUES

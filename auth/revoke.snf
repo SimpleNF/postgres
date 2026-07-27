@@ -1,90 +1,105 @@
 # https://www.postgresql.org/docs/18/sql-revoke.html
 
+# CASE TABLE
 REVOKE [ GRANT OPTION FOR ] { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON { [ TABLE ] table [, ...] | ALL TABLES IN SCHEMA schema [, ...] }
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE COLUMN
 REVOKE [ GRANT OPTION FOR ] { { SELECT | INSERT | UPDATE | REFERENCES } ( colname [, ...] ) [, ...] | ALL [ PRIVILEGES ] ( colname [, ...] ) }
     ON [ TABLE ] table [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE SEQUENCE
 REVOKE [ GRANT OPTION FOR ] { { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON { SEQUENCE sequence [, ...] | ALL SEQUENCES IN SCHEMA schema [, ...] }
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE DATABASE
 REVOKE [ GRANT OPTION FOR ] { { CREATE | CONNECT | TEMPORARY | TEMP } [, ...] | ALL [ PRIVILEGES ] }
     ON DATABASE database [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE DOMAIN
 REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
     ON DOMAIN domain [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE FOREIGN_DATA_WRAPPER
 REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
     ON FOREIGN DATA WRAPPER fdw [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE FOREIGN_SERVER
 REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
     ON FOREIGN SERVER server [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE ROUTINE
 REVOKE [ GRANT OPTION FOR ] { EXECUTE | ALL [ PRIVILEGES ] }
     ON { { FUNCTION | PROCEDURE | ROUTINE } routine [ ( arg [, ...] ) ] [, ...] | ALL { FUNCTIONS | PROCEDURES | ROUTINES } IN SCHEMA schema [, ...] }
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE LANGUAGE
 REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
     ON LANGUAGE language [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE LARGE_OBJECT
 REVOKE [ GRANT OPTION FOR ] { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON LARGE OBJECT large_object [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE PARAMETER
 REVOKE [ GRANT OPTION FOR ] { { SET | ALTER SYSTEM } [, ...] | ALL [ PRIVILEGES ] }
     ON PARAMETER parameter [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE SCHEMA
 REVOKE [ GRANT OPTION FOR ] { { CREATE | USAGE } [, ...] | ALL [ PRIVILEGES ] }
     ON SCHEMA schema [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE TABLESPACE
 REVOKE [ GRANT OPTION FOR ] { CREATE | ALL [ PRIVILEGES ] }
     ON TABLESPACE tablespace [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
+# CASE TYPE
 REVOKE [ GRANT OPTION FOR ] { USAGE | ALL [ PRIVILEGES ] }
     ON TYPE type [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]
 
-REVOKE [ { ADMIN | INHERIT | SET } OPTION FOR ] role_name [, ...] 
+# CASE ROLE
+REVOKE [ { ADMIN | INHERIT | SET } OPTION FOR ] role_name [, ...]
     FROM role_public [, ...]
     [ GRANTED BY role_public ]
     [ CASCADE | RESTRICT ]

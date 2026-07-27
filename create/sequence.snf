@@ -3,9 +3,9 @@
 CREATE [ TEMPORARY | TEMP | UNLOGGED ] SEQUENCE [ IF NOT EXISTS ] name
     [ AS type ]
     [ INCREMENT [ BY ] increment ]
-    [ MINVALUE minvalue | NO MINVALUE ] 
+    [ MINVALUE minvalue | NO MINVALUE ]
     [ MAXVALUE maxvalue | NO MAXVALUE ]
     [ [ NO ] CYCLE ]
-    [ START [ WITH ] start ] 
-    [ CACHE cache ] 
+    [ START [ WITH ] start ]
+    [ CACHE cache ]
     [ OWNED BY { table.colname | NONE } ]

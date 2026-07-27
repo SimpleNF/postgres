@@ -1,11 +1,12 @@
 # https://www.postgresql.org/docs/18/sql-createschema.html
 
-CREATE SCHEMA [ IF NOT EXISTS ] [ name ] [ AUTHORIZATION role ] create_statement [...]
+CREATE SCHEMA [ IF NOT EXISTS ] [ name ] [ AUTHORIZATION role ]
+    create_statement [...]
 
 # WHERE role
 { role_name | CURRENT_ROLE | CURRENT_USER | SESSION_USER }
 
-# STATEMEMT create_statement
+# STATEMENT create_statement
 CREATE TABLE
 CREATE VIEW
 CREATE INDEX

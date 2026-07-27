@@ -2,7 +2,7 @@
 
 PREPARE name [ ( type [, ...] ) ] AS query_statement
 
-# STATEMEMT query_statement
+# STATEMENT query_statement
 SELECT
 TABLE
 INSERT

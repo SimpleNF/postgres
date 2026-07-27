@@ -1,5 +1,6 @@
 # https://www.postgresql.org/docs/18/sql-alteruser.html
 
+# CASE OPTIONS
 ALTER USER user [ WITH ]
     [ SUPERUSER | NOSUPERUSER ]
     [ CREATEDB | NOCREATEDB ]
@@ -12,15 +13,28 @@ ALTER USER user [ WITH ]
     [ [ ENCRYPTED ] PASSWORD 'password' | PASSWORD NULL ]
     [ VALID UNTIL 'timestamp' ]
 
+# CASE RENAME
 ALTER USER name RENAME TO new_name
 
-ALTER USER { user | ALL } [ IN DATABASE database ] SET config_parameter FROM CURRENT
+# CASE SET_CURRENT
+ALTER USER { user | ALL }
+    [ IN DATABASE database ]
+    SET config_parameter FROM CURRENT
 
-ALTER USER { user | ALL } [ IN DATABASE database ] SET config_parameter { TO | = } { value | DEFAULT }
+# CASE SET
+ALTER USER { user | ALL }
+    [ IN DATABASE database ]
+    SET config_parameter { TO | = } { value | DEFAULT }
 
-ALTER USER { user | ALL } [ IN DATABASE database ] RESET config_parameter
+# CASE RESET
+ALTER USER { user | ALL }
+    [ IN DATABASE database ]
+    RESET config_parameter
 
-ALTER USER { user | ALL } [ IN DATABASE database ] RESET ALL
+# CASE RESET_ALL
+ALTER USER { user | ALL }
+    [ IN DATABASE database ]
+    RESET ALL
 
 # WHERE user
 name | CURRENT_ROLE | CURRENT_USER | SESSION_USER

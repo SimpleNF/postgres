@@ -1,7 +1,9 @@
 # https://www.postgresql.org/docs/18/sql-alterlanguage.html
 
+# CASE RENAME
 ALTER [ PROCEDURAL ] LANGUAGE name RENAME TO new_name
 
+# CASE OWNER
 ALTER [ PROCEDURAL ] LANGUAGE name OWNER TO role
 
 # WHERE role

@@ -1,75 +1,90 @@
 # https://www.postgresql.org/docs/18/sql-grant.html
 
+# CASE TABLE
 GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON { [ TABLE ] table [, ...] | ALL TABLES IN SCHEMA schema [, ...] }
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE COLUMN
 GRANT { { SELECT | INSERT | UPDATE | REFERENCES } ( colname [, ...] ) [, ...] | ALL [ PRIVILEGES ] ( colname [, ...] ) }
     ON [ TABLE ] table [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE SEQUENCE
 GRANT { { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON { SEQUENCE sequence [, ...] | ALL SEQUENCES IN SCHEMA schema [, ...] }
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE DATABASE
 GRANT { { CREATE | CONNECT | TEMPORARY | TEMP } [, ...] | ALL [ PRIVILEGES ] }
     ON DATABASE database [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE DOMAIN
 GRANT { USAGE | ALL [ PRIVILEGES ] }
     ON DOMAIN domain [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE FOREIGN_DATA_WRAPPER
 GRANT { USAGE | ALL [ PRIVILEGES ] }
     ON FOREIGN DATA WRAPPER fdw [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE FOREIGN_SERVER
 GRANT { USAGE | ALL [ PRIVILEGES ] }
     ON FOREIGN SERVER server [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE ROUTINE
 GRANT { EXECUTE | ALL [ PRIVILEGES ] }
     ON { { FUNCTION | PROCEDURE | ROUTINE } routine [ ( arg [, ...] ) ] [, ...] | ALL { FUNCTIONS | PROCEDURES | ROUTINES } IN SCHEMA schema [, ...] }
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE LANGUAGE
 GRANT { USAGE | ALL [ PRIVILEGES ] }
     ON LANGUAGE language [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE LARGE_OBJECT
 GRANT { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON LARGE OBJECT large_object [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE PARAMETER
 GRANT { { SET | ALTER SYSTEM } [, ... ] | ALL [ PRIVILEGES ] }
     ON PARAMETER parameter [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE SCHEMA
 GRANT { { CREATE | USAGE } [, ...] | ALL [ PRIVILEGES ] }
     ON SCHEMA schema [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE TABLESPACE
 GRANT { CREATE | ALL [ PRIVILEGES ] }
     ON TABLESPACE tablespace [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE TYPE
 GRANT { USAGE | ALL [ PRIVILEGES ] }
     ON TYPE type [, ...]
     TO role_public [, ...] [ WITH GRANT OPTION ]
     [ GRANTED BY role_public ]
 
+# CASE ROLE
 GRANT role_name [, ...] TO role_public [, ...]
     [ WITH { ADMIN | INHERIT | SET } { OPTION | TRUE | FALSE } ]
     [ GRANTED BY role_public ]

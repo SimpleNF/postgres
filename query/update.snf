@@ -2,7 +2,7 @@
 
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 UPDATE [ ONLY ] table [ * ] [ [ AS ] alias ]
-    SET { 
+    SET {
           colname = { value_expression | DEFAULT } |
           ( colname [, ...] ) = [ ROW ] ( { value_expression | DEFAULT } [, ...] ) |
           ( colname [, ...] ) = ( select_statement )
@@ -30,7 +30,7 @@ from_expression join_type from_expression { ON boolean_expression | USING ( coln
 from_expression NATURAL join_type from_expression
 from_expression CROSS JOIN from_expression
 
-# STATEMEMT select_statement
+# STATEMENT select_statement
 SELECT
 TABLE
 VALUES

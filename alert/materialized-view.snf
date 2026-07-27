@@ -1,15 +1,25 @@
 # https://www.postgresql.org/docs/18/sql-altermaterializedview.html
 
+# CASE OPTIONS
 ALTER MATERIALIZED VIEW [ IF EXISTS ] name action [, ...]
 
-ALTER MATERIALIZED VIEW [ IF EXISTS ] name RENAME [ COLUMN ] colname TO new_colname
+# CASE RENAME_COLUMN
+ALTER MATERIALIZED VIEW [ IF EXISTS ] name
+    RENAME [ COLUMN ] colname TO new_colname
 
+# CASE RENAME
 ALTER MATERIALIZED VIEW [ IF EXISTS ] name RENAME TO new_name
 
+# CASE SCHEMA
 ALTER MATERIALIZED VIEW [ IF EXISTS ] name SET SCHEMA schema
 
-ALTER MATERIALIZED VIEW ALL IN TABLESPACE tablespace [ OWNED BY owner [, ...] ] SET TABLESPACE new_tablespace [ NOWAIT ]
+# CASE ALL_TABLESPACE
+ALTER MATERIALIZED VIEW ALL IN TABLESPACE tablespace
+    [ OWNED BY owner [, ...] ]
+    SET TABLESPACE new_tablespace
+    [ NOWAIT ]
 
+# CASE DEPENDS_EXTENSION
 ALTER MATERIALIZED VIEW name [ NO ] DEPENDS ON EXTENSION extension
 
 # ONEOFIS action

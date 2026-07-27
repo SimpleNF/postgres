@@ -1,17 +1,28 @@
 # https://www.postgresql.org/docs/18/sql-alterindex.html
 
+# CASE ATTACH_PARTITION
 ALTER INDEX name ATTACH PARTITION partition
 
+# CASE SET_STATISTICS
 ALTER INDEX [ IF EXISTS ] name ALTER [ COLUMN ] colnum SET STATISTICS statistics
 
+# CASE RENAME
 ALTER INDEX [ IF EXISTS ] name RENAME TO new_name
 
+# CASE SET_OPTIONS
 ALTER INDEX [ IF EXISTS ] name SET ( { storage_parameter [= value] } [, ...] )
 
+# CASE RESET_OPTIONS
 ALTER INDEX [ IF EXISTS ] name RESET ( storage_parameter [, ...] )
 
+# CASE TABLESPACE
 ALTER INDEX [ IF EXISTS ] name SET TABLESPACE tablespace
 
-ALTER INDEX ALL IN TABLESPACE tablespace [ OWNED BY role [, ...] ] SET TABLESPACE new_tablespace [ NOWAIT ]
+# CASE ALL_TABLESPACE
+ALTER INDEX ALL IN TABLESPACE tablespace
+    [ OWNED BY role [, ...] ]
+    SET TABLESPACE new_tablespace
+    [ NOWAIT ]
 
+# CASE DEPENDS_EXTENSION
 ALTER INDEX name [ NO ] DEPENDS ON EXTENSION extension

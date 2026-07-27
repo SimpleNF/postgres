@@ -27,12 +27,12 @@ DO UPDATE SET
 } [, ...]
 [ WHERE boolean_expression ]
 
-# STATEMEMT select_statement
+# STATEMENT select_statement
 SELECT
 TABLE
 VALUES
 
-# STATEMEMT query_statement
+# STATEMENT query_statement
 SELECT
 TABLE
 VALUES

@@ -1,9 +1,12 @@
 # https://www.postgresql.org/docs/18/sql-createstatistics.html
 
+# CASE EXPRESSION
 CREATE STATISTICS [ IF NOT EXISTS ] [ name ]
     ON ( on )
     FROM table
 
-CREATE STATISTICS [ IF NOT EXISTS ] [ name ] [ ( kind [, ...] ) ]
+# CASE KIND
+CREATE STATISTICS [ IF NOT EXISTS ] [ name ]
+    [ ( kind [, ...] ) ]
     ON { colname | ( col_expression ) } [, ...]
     FROM table

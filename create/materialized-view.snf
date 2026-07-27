@@ -1,14 +1,14 @@
 # https://www.postgresql.org/docs/18/sql-creatematerializedview.html
 
-CREATE MATERIALIZED VIEW [ IF NOT EXISTS ] name 
-    [ (colname [, ...] ) ]
+CREATE MATERIALIZED VIEW [ IF NOT EXISTS ] name
+    [ ( colname [, ...] ) ]
     [ USING index_method ]
     [ WITH ( { storage_parameter [= value] } [, ...] ) ]
     [ TABLESPACE tablespace ]
     AS select_statement
     [ WITH [ NO ] DATA ]
 
-# STATEMEMT select_statement
+# STATEMENT select_statement
 SELECT
 TABLE
 VALUES

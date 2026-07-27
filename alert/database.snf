@@ -1,21 +1,30 @@
 # https://www.postgresql.org/docs/18/sql-alterdatabase.html
 
+# CASE OPTIONS
 ALTER DATABASE name [ [ WITH ] action ]
 
+# CASE REFRESH_COLLATION
 ALTER DATABASE name REFRESH COLLATION VERSION
 
+# CASE SET_CURRENT
 ALTER DATABASE name SET config_parameter FROM CURRENT
 
+# CASE SET
 ALTER DATABASE name SET config_parameter { TO | = } { value | DEFAULT }
 
+# CASE RESET
 ALTER DATABASE name RESET config_parameter
 
+# CASE RESET_ALL
 ALTER DATABASE name RESET ALL
 
+# CASE RENAME
 ALTER DATABASE name RENAME TO new_name
 
+# CASE OWNER
 ALTER DATABASE name OWNER TO role
 
+# CASE TABLESPACE
 ALTER DATABASE name SET TABLESPACE tablespace
 
 # WHERE action

@@ -71,12 +71,12 @@ GROUPING SETS ( group_by_expression [, ...] )
 # WHERE order_by_expression
 col_expression [ ASC | DESC | USING operator ] [ NULLS { FIRST | LAST } ]
 
-# STATEMEMT select_statement
+# STATEMENT select_statement
 SELECT
 TABLE
 VALUES
 
-# STATEMEMT query_statement
+# STATEMENT query_statement
 SELECT
 TABLE
 VALUES

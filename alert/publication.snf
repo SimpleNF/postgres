@@ -1,15 +1,21 @@
 # https://www.postgresql.org/docs/18/sql-alterpublication.html
 
+# CASE ADD
 ALTER PUBLICATION name ADD table [, ...]
 
+# CASE DROP
 ALTER PUBLICATION name DROP table [, ...]
 
+# CASE RENAME
 ALTER PUBLICATION name RENAME TO new_name
 
+# CASE SET_TABLES
 ALTER PUBLICATION name SET table [, ...]
 
+# CASE SET_OPTIONS
 ALTER PUBLICATION name SET ( { publication_parameter [= value] } [, ...] )
 
+# CASE OWNER
 ALTER PUBLICATION name OWNER TO role
 
 # ONEOFIS table

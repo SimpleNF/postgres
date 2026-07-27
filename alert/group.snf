@@ -1,9 +1,12 @@
 # https://www.postgresql.org/docs/18/sql-altergroup.html
 
+# CASE ADD_USER
 ALTER GROUP role ADD USER user [, ...]
 
+# CASE DROP_USER
 ALTER GROUP role DROP USER user [, ...]
 
+# CASE RENAME
 ALTER GROUP name RENAME TO new_name
 
 # WHERE role

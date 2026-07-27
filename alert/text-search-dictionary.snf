@@ -1,11 +1,16 @@
 # https://www.postgresql.org/docs/18/sql-altertsdictionary.html
 
-ALTER TEXT SEARCH DICTIONARY name ( { template_parameter [= value] } [, ...] )
+# CASE OPTIONS
+ALTER TEXT SEARCH DICTIONARY name
+    ( { template_parameter [= value] } [, ...] )
 
+# CASE RENAME
 ALTER TEXT SEARCH DICTIONARY name RENAME TO new_name
 
+# CASE OWNER
 ALTER TEXT SEARCH DICTIONARY name OWNER TO role
 
+# CASE SCHEMA
 ALTER TEXT SEARCH DICTIONARY name SET SCHEMA schema
 
 # WHERE role

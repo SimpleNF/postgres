@@ -1,12 +1,15 @@
 # https://www.postgresql.org/docs/18/sql-alterforeigndatawrapper.html
 
+# CASE OPTIONS
 ALTER FOREIGN DATA WRAPPER name
     [ HANDLER handler | NO HANDLER ]
     [ VALIDATOR validator | NO VALIDATOR ]
     [ OPTIONS ( option_expression [, ...]) ]
 
+# CASE RENAME
 ALTER FOREIGN DATA WRAPPER name RENAME TO new_name
 
+# CASE OWNER
 ALTER FOREIGN DATA WRAPPER name OWNER TO role
 
 # WHERE option_expression

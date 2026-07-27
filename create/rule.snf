@@ -1,12 +1,12 @@
 # https://www.postgresql.org/docs/18/sql-createrule.html
 
-CREATE [ OR REPLACE ] RULE name AS 
+CREATE [ OR REPLACE ] RULE name AS
     ON { SELECT | UPDATE | INSERT | DELETE }
     TO table
     [ WHERE boolean_expression ]
     DO [ ALSO | INSTEAD ] { NOTHING | ( rule_statement [; ...] ) }
 
-# STATEMEMT rule_statement
+# STATEMENT rule_statement
 SELECT
 INSERT
 UPDATE

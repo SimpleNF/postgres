@@ -93,9 +93,9 @@ Every item is marked complete only after comparing the file with its PostgreSQL 
 
 ## drop/
 
-- [x] `drop/access-metod.snf`
+- [x] `drop/access-method.snf`
 - [x] `drop/aggregate.snf`
-- [x] `drop/case.snf`
+- [x] `drop/cast.snf`
 - [x] `drop/collation.snf`
 - [x] `drop/conversion.snf`
 - [x] `drop/database.snf`

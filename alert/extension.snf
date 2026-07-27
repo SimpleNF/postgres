@@ -1,11 +1,15 @@
 # https://www.postgresql.org/docs/18/sql-alterextension.html
 
+# CASE ADD
 ALTER EXTENSION name ADD extension_target
 
+# CASE DROP
 ALTER EXTENSION name DROP extension_target
 
+# CASE UPDATE
 ALTER EXTENSION name UPDATE [ TO version ]
 
+# CASE SCHEMA
 ALTER EXTENSION name SET SCHEMA schema
 
 # ONEOFIS extension_target

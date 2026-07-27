@@ -1,19 +1,29 @@
 # https://www.postgresql.org/docs/18/sql-altertype.html
 
+# CASE OPTIONS
 ALTER TYPE name action [, ...]
 
-ALTER TYPE name ADD VALUE [ IF NOT EXISTS ] new_enum [ { BEFORE | AFTER } neighbor_enum ]
+# CASE ADD_VALUE
+ALTER TYPE name ADD VALUE [ IF NOT EXISTS ] new_enum
+    [ { BEFORE | AFTER } neighbor_enum ]
 
-ALTER TYPE name RENAME ATTRIBUTE attribute TO new_attribute [ CASCADE | RESTRICT ]
+# CASE RENAME_ATTRIBUTE
+ALTER TYPE name RENAME ATTRIBUTE attribute TO new_attribute
+    [ CASCADE | RESTRICT ]
 
+# CASE RENAME_VALUE
 ALTER TYPE name RENAME VALUE enum TO new_enum
 
+# CASE RENAME
 ALTER TYPE name RENAME TO new_name
 
+# CASE SET_OPTIONS
 ALTER TYPE name SET ( { type_parameter = value } [, ...] )
 
+# CASE OWNER
 ALTER TYPE name OWNER TO role
 
+# CASE SCHEMA
 ALTER TYPE name SET SCHEMA schema
 
 # ONEOFIS action

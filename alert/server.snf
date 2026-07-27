@@ -1,9 +1,14 @@
 # https://www.postgresql.org/docs/18/sql-alterserver.html
 
-ALTER SERVER name [ VERSION 'version' ] [ OPTIONS ( option_expression [, ...] ) ]
+# CASE OPTIONS
+ALTER SERVER name
+    [ VERSION 'version' ]
+    [ OPTIONS ( option_expression [, ...] ) ]
 
+# CASE RENAME
 ALTER SERVER name RENAME TO new_name
 
+# CASE OWNER
 ALTER SERVER name OWNER TO role
 
 # WHERE option_expression

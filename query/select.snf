@@ -1,5 +1,6 @@
 # https://www.postgresql.org/docs/18/sql-select.html
 
+# CASE SELECT
 [ WITH [ RECURSIVE ] with_query [, ...] ]
 SELECT [ ALL | DISTINCT [ ON ( col_expression [, ...] ) ] ]
     [ * | { col_expression [ [ AS ] col_alias ] } [, ...] ]
@@ -15,6 +16,7 @@ SELECT [ ALL | DISTINCT [ ON ( col_expression [, ...] ) ] ]
     [ FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF from_reference [, ...] ] [ NOWAIT ] [ SKIP LOCKED ] ]
     [ { UNION | INTERSECT | EXCEPT } [ ALL | DISTINCT ] select_statement ]
 
+# CASE TABLE
 TABLE [ ONLY ] table [ * ]
 
 # WHERE with_query
@@ -72,12 +74,12 @@ GROUPING SETS ( group_by_expression [, ...] )
 # WHERE order_by_expression
 col_expression [ ASC | DESC | USING operator ] [ NULLS { FIRST | LAST } ]
 
-# STATEMEMT select_statement
+# STATEMENT select_statement
 SELECT
 TABLE
 VALUES
 
-# STATEMEMT query_statement
+# STATEMENT query_statement
 SELECT
 TABLE
 VALUES

@@ -1,11 +1,15 @@
 # https://www.postgresql.org/docs/18/sql-altereventtrigger.html
 
+# CASE ENABLE
 ALTER EVENT TRIGGER name ENABLE [ REPLICA | ALWAYS ]
 
+# CASE DISABLE
 ALTER EVENT TRIGGER name DISABLE
 
+# CASE RENAME
 ALTER EVENT TRIGGER name RENAME TO new_name
 
+# CASE OWNER
 ALTER EVENT TRIGGER name OWNER TO role
 
 # WHERE role

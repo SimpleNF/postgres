@@ -1,9 +1,12 @@
 # https://www.postgresql.org/docs/18/sql-alteraggregate.html
 
+# CASE RENAME
 ALTER AGGREGATE name ( signature ) RENAME TO new_name
 
+# CASE OWNER
 ALTER AGGREGATE name ( signature ) OWNER TO role
 
+# CASE SCHEMA
 ALTER AGGREGATE name ( signature ) SET SCHEMA schema
 
 # WHERE signature

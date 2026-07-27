@@ -1,13 +1,18 @@
 # https://www.postgresql.org/docs/18/sql-alterfunction.html
 
+# CASE OPTIONS
 ALTER FUNCTION name [ ( arg [, ...] ) ] action [ RESTRICT ]
 
+# CASE RENAME
 ALTER FUNCTION name [ ( arg [, ...] ) ] RENAME TO new_name
 
+# CASE OWNER
 ALTER FUNCTION name [ ( arg [, ...] ) ] OWNER TO role
 
+# CASE SCHEMA
 ALTER FUNCTION name [ ( arg [, ...] ) ] SET SCHEMA schema
 
+# CASE DEPENDS_EXTENSION
 ALTER FUNCTION name [ ( arg [, ...] ) ] [ NO ] DEPENDS ON EXTENSION extension
 
 # WHERE action

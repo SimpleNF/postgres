@@ -8,27 +8,27 @@ ALTER DEFAULT PRIVILEGES
 # PARTOFIS grant_or_revoke_expression
 GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON TABLES
-    TO role_public [, ...] 
+    TO role_public [, ...]
     [ WITH GRANT OPTION ]
 
 GRANT { { USAGE | SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SEQUENCES
-    TO role_public [, ...] 
+    TO role_public [, ...]
     [ WITH GRANT OPTION ]
 
 GRANT { EXECUTE | ALL [ PRIVILEGES ] }
     ON { FUNCTIONS | ROUTINES }
-    TO role_public [, ...] 
+    TO role_public [, ...]
     [ WITH GRANT OPTION ]
 
 GRANT { USAGE | ALL [ PRIVILEGES ] }
     ON TYPES
-    TO role_public [, ...] 
+    TO role_public [, ...]
     [ WITH GRANT OPTION ]
 
 GRANT { { USAGE | CREATE } [, ...] | ALL [ PRIVILEGES ] }
     ON SCHEMAS
-    TO role_public [, ...] 
+    TO role_public [, ...]
     [ WITH GRANT OPTION ]
 
 GRANT { { SELECT | UPDATE } [, ...] | ALL [ PRIVILEGES ] }

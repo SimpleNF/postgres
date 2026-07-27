@@ -1,25 +1,39 @@
 # https://www.postgresql.org/docs/18/sql-altersubscription.html
 
+# CASE CONNECTION
 ALTER SUBSCRIPTION name CONNECTION 'connection'
 
+# CASE ENABLE
 ALTER SUBSCRIPTION name ENABLE
 
+# CASE DISABLE
 ALTER SUBSCRIPTION name DISABLE
 
-ALTER SUBSCRIPTION name SET PUBLICATION publication [, ...] [ WITH ( REFRESH [= refresh] ) ]
+# CASE SET_PUBLICATION
+ALTER SUBSCRIPTION name SET PUBLICATION publication [, ...]
+    [ WITH ( REFRESH [= refresh] ) ]
 
-ALTER SUBSCRIPTION name ADD PUBLICATION publication [, ...] [ WITH ( REFRESH [= refresh] ) ]
+# CASE ADD_PUBLICATION
+ALTER SUBSCRIPTION name ADD PUBLICATION publication [, ...]
+    [ WITH ( REFRESH [= refresh] ) ]
 
-ALTER SUBSCRIPTION name DROP PUBLICATION publication [, ...] [ WITH ( REFRESH [= refresh] ) ]
+# CASE DROP_PUBLICATION
+ALTER SUBSCRIPTION name DROP PUBLICATION publication [, ...]
+    [ WITH ( REFRESH [= refresh] ) ]
 
+# CASE REFRESH_PUBLICATION
 ALTER SUBSCRIPTION name REFRESH PUBLICATION [ WITH ( COPY_DATA [= copy_data] ) ]
 
+# CASE SKIP
 ALTER SUBSCRIPTION name SKIP ( LSN = lsn )
 
+# CASE OPTIONS
 ALTER SUBSCRIPTION name SET ( { subscription_parameter [= value] } [, ...] )
 
+# CASE RENAME
 ALTER SUBSCRIPTION name RENAME TO new_name
 
+# CASE OWNER
 ALTER SUBSCRIPTION name OWNER TO role
 
 # WHERE role

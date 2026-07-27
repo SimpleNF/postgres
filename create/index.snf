@@ -1,13 +1,15 @@
 # https://www.postgresql.org/docs/18/sql-createindex.html
 
-CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ IF NOT EXISTS ] [ name ] ON [ ONLY ] table [ USING index_method ] (
-    index_column_expression [, ...]
-)
-[ INCLUDE ( include [, ...] ) ]
-[ NULLS [ NOT ] DISTINCT ]
-[ WITH ( { storage_parameter [= value] } [, ...] ) ]
-[ TABLESPACE tablespace ]
-[ WHERE boolean_expression ]
+CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ IF NOT EXISTS ] [ name ]
+    ON [ ONLY ] table
+    [ USING index_method ] (
+        index_column_expression [, ...]
+    )
+    [ INCLUDE ( include [, ...] ) ]
+    [ NULLS [ NOT ] DISTINCT ]
+    [ WITH ( { storage_parameter [= value] } [, ...] ) ]
+    [ TABLESPACE tablespace ]
+    [ WHERE boolean_expression ]
 
 # WHERE index_column_expression
 { colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( { opclass_parameter = value } [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]

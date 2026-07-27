@@ -1,5 +1,6 @@
 # https://www.postgresql.org/docs/18/sql-alteroperator.html
 
+# CASE OPTIONS
 ALTER OPERATOR name ( { left | NONE }, right ) SET (
     [ RESTRICT = { restrict | NONE }, ]
     [ JOIN = { join | NONE }, ]
@@ -9,8 +10,10 @@ ALTER OPERATOR name ( { left | NONE }, right ) SET (
     [ MERGES, ]
 )
 
+# CASE OWNER
 ALTER OPERATOR name ( { left | NONE }, right ) OWNER TO role
 
+# CASE SCHEMA
 ALTER OPERATOR name ( { left | NONE }, right ) SET SCHEMA schema
 
 # WHERE role

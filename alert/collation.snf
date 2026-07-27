@@ -1,11 +1,15 @@
 # https://www.postgresql.org/docs/18/sql-altercollation.html
 
+# CASE REFRESH
 ALTER COLLATION name REFRESH VERSION
 
+# CASE RENAME
 ALTER COLLATION name RENAME TO new_name
 
+# CASE OWNER
 ALTER COLLATION name OWNER TO role
 
+# CASE SCHEMA
 ALTER COLLATION name SET SCHEMA schema
 
 # WHERE role

@@ -6,8 +6,8 @@ CREATE TYPE name AS (
 )
 
 # CASE ENUM
-CREATE TYPE name AS ENUM ( 
-    'label' [, ...] 
+CREATE TYPE name AS ENUM (
+    'label' [, ...]
 )
 
 # CASE RANGE
