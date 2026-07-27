@@ -5,5 +5,5 @@ CREATE PUBLICATION name
     [ WITH ( { publication_parameter [= value] } [, ...] ) ]
 
 # ONEOFIS table
-TABLE [ ONLY ] table [ * ] [ ( colname [, ...] ) ] [ WHERE ( boolean_expression ) ]
+TABLE [ ONLY ] table [ * | ( colname [, ...] ) ] [ WHERE ( boolean_expression ) ]
 TABLES IN SCHEMA { schema | CURRENT_SCHEMA }

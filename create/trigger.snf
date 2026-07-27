@@ -1,6 +1,7 @@
 # https://www.postgresql.org/docs/18/sql-createtrigger.html
 
-CREATE [ OR REPLACE ] [ CONSTRAINT ] TRIGGER name { BEFORE | AFTER | INSTEAD OF } event [OR ...]
+CREATE [ OR REPLACE ] [ CONSTRAINT ] TRIGGER name 
+    { BEFORE | AFTER | INSTEAD OF } event [OR ...]
     ON table
     [ FROM from ]
     [ DEFERRABLE | NOT DEFERRABLE ]
@@ -11,4 +12,4 @@ CREATE [ OR REPLACE ] [ CONSTRAINT ] TRIGGER name { BEFORE | AFTER | INSTEAD OF 
     EXECUTE { FUNCTION | PROCEDURE } function ( value [, ...] )
 
 # WHERE event
-INSERT | UPDATE [ OF colname [, ...] ] | DELETE | TRUNCATE
+{ INSERT | UPDATE [ OF colname [, ...] ] | DELETE | TRUNCATE }

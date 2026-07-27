@@ -1,12 +1,14 @@
 # https://www.postgresql.org/docs/18/sql-createtype.html
 
 # CASE COMPOSITE
-CREATE TYPE name AS
-    ( arg [, ...] )
+CREATE TYPE name AS (
+    arg [, ...]
+)
 
 # CASE ENUM
-CREATE TYPE name AS ENUM
-    ( 'label' [, ...] )
+CREATE TYPE name AS ENUM ( 
+    'label' [, ...] 
+)
 
 # CASE RANGE
 CREATE TYPE name AS RANGE (
