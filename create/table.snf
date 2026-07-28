@@ -1,12 +1,12 @@
 # https://www.postgresql.org/docs/18/sql-createtable.html
 
 # CASE NORMAL
-CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name ( 
-{
-    normal_col_config |
-    table_constraint |
-    LIKE like_table [ like_config ]
-} [, ...]
+CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name (
+    {
+        normal_col_config |
+        table_constraint |
+        LIKE like_table [ like_config ]
+    } [, ...]
 )
     [ INHERITS ( inherits [, ...] ) ]
     [ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
@@ -16,11 +16,11 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name (
     [ TABLESPACE tablespace ]
 
 # CASE TYPE
-CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name OF type 
-[ ( {
-    type_col_config |
-    table_constraint
-} [, ...] ) ]
+CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name OF type
+    [ ( {
+        type_col_config |
+        table_constraint
+    } [, ...] ) ]
     [ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
     [ USING index_method ]
     [ WITH ( { storage_parameter [= value] } [, ...] ) ]
@@ -28,11 +28,11 @@ CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name OF type
     [ TABLESPACE tablespace ]
 
 # CASE PARTITION
-CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name PARTITION OF parent 
-[ ( {
-    partition_col_config |
-    table_constraint
-} [, ...] ) ]
+CREATE [ TEMPORARY | TEMP | UNLOGGED ] TABLE [ IF NOT EXISTS ] name PARTITION OF parent
+    [ ( {
+        partition_col_config |
+        table_constraint
+    } [, ...] ) ]
     { FOR VALUES partition_values | DEFAULT }
     [ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
     [ USING index_method ]
