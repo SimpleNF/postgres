@@ -21,7 +21,8 @@ CREATE [ OR REPLACE ] FUNCTION name (
     [ sql_definition ]
 
 # WHERE arg
-[ argmode ] [ argname ] argtype [ { DEFAULT | = } value_expression ]
+[ argmode ] [ argname ] argtype
+[ { DEFAULT | = } value_expression ]
 
 # WHERE table_column_expression
 colname coltype

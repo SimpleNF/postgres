@@ -12,7 +12,6 @@ CREATE [ UNIQUE ] INDEX [ CONCURRENTLY ] [ IF NOT EXISTS ] [ name ]
     [ WHERE boolean_expression ]
 
 # WHERE index_column_expression
-{ colname | ( col_expression ) } 
-[ COLLATE collate ] 
-[ opclass [ ( { opclass_parameter = value } [, ...] ) ] ] 
+{ colname | ( col_expression ) } [ COLLATE collate ]
+[ opclass [ ( { opclass_parameter = value } [, ...] ) ] ]
 [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
