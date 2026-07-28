@@ -93,7 +93,8 @@ PRIMARY KEY ( colname [, ...] [ WITHOUT OVERLAPS ] )
 primary_key_index |
 EXCLUDE [ USING index_method ]
 (
-    exclude_column WITH operator [, ...]
+    exclude_column
+    WITH operator [, ...]
 )
 exclude_index
 [ WHERE ( boolean_expression ) ] |
