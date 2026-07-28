@@ -1,29 +1,35 @@
 # https://www.postgresql.org/docs/18/sql-createforeigntable.html
 
 # CASE NORMAL
-CREATE FOREIGN TABLE [ IF NOT EXISTS ] name ( {
-    colname coltype
-        [ OPTIONS ( { option 'value' } [, ...] ) ]
-        [ COLLATE collation ]
-        [ col_constraint [...] ] |
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] name (
+{
+    col_config |
     table_constraint |
     LIKE like_table [ like_config ]
-} [, ...] )
+} [, ...]
+)
     [ INHERITS ( inherit [, ...] ) ]
     SERVER server
     [ OPTIONS ( { option 'value' } [, ...] ) ]
 
 # CASE PARTITION
-CREATE FOREIGN TABLE [ IF NOT EXISTS ] name PARTITION OF parent [ ({
+CREATE FOREIGN TABLE [ IF NOT EXISTS ] name PARTITION OF parent
+[ ( {
     colname [ WITH OPTIONS ] [ col_constraint [...] ] |
     table_constraint
-} [, ...]) ]
+} [, ...] ) ]
     { FOR VALUES partition_values | DEFAULT }
     SERVER server
     [ OPTIONS ( { option 'value' } [, ...] ) ]
 
+# WHERE col_config
+colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ]
+[ COLLATE collation ]
+[ col_constraint [...] ]
+
 # WHERE col_constraint
-[ CONSTRAINT name ] {
+[ CONSTRAINT name ]
+{
     NOT NULL [ NO INHERIT ] |
     NULL |
     CHECK ( boolean_expression ) [ NO INHERIT ] |
@@ -33,10 +39,8 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] name PARTITION OF parent [ ({
 [ ENFORCED | NOT ENFORCED ]
 
 # WHERE table_constraint
-[ CONSTRAINT name ] {
-    NOT NULL colname [ NO INHERIT ] |
-    CHECK ( boolean_expression ) [ NO INHERIT ]
-}
+[ CONSTRAINT name ]
+{ NOT NULL colname [ NO INHERIT ] | CHECK ( boolean_expression ) [ NO INHERIT ] }
 [ ENFORCED | NOT ENFORCED ]
 
 # WHERE like_config
