@@ -1,6 +1,8 @@
 # https://www.postgresql.org/docs/18/sql-createprocedure.html
 
-CREATE [ OR REPLACE ] PROCEDURE name ( arg [, ...] )
+CREATE [ OR REPLACE ] PROCEDURE name (
+    arg [, ...]
+)
     [ LANGUAGE language ]
     [ TRANSFORM { FOR TYPE type } [, ...] ]
     [ [ EXTERNAL ] SECURITY { INVOKER | DEFINER } ]

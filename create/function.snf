@@ -1,6 +1,8 @@
 # https://www.postgresql.org/docs/18/sql-createfunction.html
 
-CREATE [ OR REPLACE ] FUNCTION name ( arg [, ...] )
+CREATE [ OR REPLACE ] FUNCTION name (
+    arg [, ...]
+)
     [ RETURNS returns | RETURNS TABLE ( table_column_expression [, ...] ) ]
     [ LANGUAGE language ]
     [ TRANSFORM { FOR TYPE type } [, ...] ]
