@@ -2,11 +2,11 @@
 
 # CASE NORMAL
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name (
-{
-    col_config |
-    table_constraint |
-    LIKE like_table [ like_config ]
-} [, ...]
+    {
+        normal_col_config |
+        table_constraint |
+        LIKE like_table [ like_config ]
+    } [, ...]
 )
     [ INHERITS ( inherit [, ...] ) ]
     SERVER server
@@ -14,17 +14,21 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] name (
 
 # CASE PARTITION
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name PARTITION OF parent
-[ ( {
-    colname [ WITH OPTIONS ] [ col_constraint [...] ] |
-    table_constraint
-} [, ...] ) ]
+    [ ( {
+        partition_col_config |
+        table_constraint
+    } [, ...] ) ]
     { FOR VALUES partition_values | DEFAULT }
     SERVER server
     [ OPTIONS ( { option 'value' } [, ...] ) ]
 
-# WHERE col_config
+# WHERE normal_col_config
 colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ]
 [ COLLATE collation ]
+[ col_constraint [...] ]
+
+# WHERE partition_col_config
+colname [ WITH OPTIONS ]
 [ col_constraint [...] ]
 
 # WHERE col_constraint

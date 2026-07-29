@@ -91,10 +91,10 @@ UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] [ WITHOUT OVERLAPS ] )
 unique_index |
 PRIMARY KEY ( colname [, ...] [ WITHOUT OVERLAPS ] )
 primary_key_index |
-EXCLUDE [ USING index_method ]
-(
-    exclude_column
-    WITH operator [, ...]
+EXCLUDE [ USING index_method ] (
+    { colname | ( col_expression ) } [ COLLATE collate ]
+    [ opclass [ ( { opclass_parameter = value } [, ...] ) ] ]
+    [ ASC | DESC ] [ NULLS { FIRST | LAST } ] WITH operator [, ...] 
 )
 exclude_index
 [ WHERE ( boolean_expression ) ] |
@@ -111,11 +111,6 @@ REFERENCES references
 [ INCLUDE ( include [, ...] ) ]
 [ WITH ( { storage_parameter [= value] } [, ...] ) ]
 [ USING INDEX TABLESPACE tablespace ]
-
-# WHERE exclude_column
-{ colname | ( col_expression ) } [ COLLATE collate ]
-[ opclass [ ( { opclass_parameter = value } [, ...] ) ] ]
-[ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
 # WHERE on_delete_action, on_update_action
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }
