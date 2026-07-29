@@ -12,4 +12,5 @@ CREATE [ OR REPLACE ] PROCEDURE name (
     [ sql_definition ]
 
 # WHERE arg
-[ argmode ] [ argname ] argtype [ { DEFAULT | = } value_expression ]
+[ argmode ] [ argname ] argtype
+[ { DEFAULT | = } value_expression ]
