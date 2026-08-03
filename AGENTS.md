@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository stores SNF definitions for PostgreSQL statements rather than application source code. Definitions are grouped by statement family: `create/`, `alert/`, `drop/`, `query/`, `transaction/`, `auth/`, and `other/`. Shared PostgreSQL option metadata lives in `defind/parameter.yaml`. Keep new definitions in the matching family and use one lowercase, hyphenated file per statement, such as `create/materialized-view.snf`.
+This repository stores SNF definitions for PostgreSQL statements rather than application source code. Definitions are grouped by statement family: `create/`, `alter/`, `drop/`, `query/`, `transaction/`, `auth/`, and `other/`. Shared PostgreSQL option metadata lives in `defind/parameter.yaml`. Keep new definitions in the matching family and use one lowercase, hyphenated file per statement, such as `create/materialized-view.snf`.
 
 Each SNF file should begin with a comment linking to the relevant PostgreSQL documentation. Preserve the existing sections (`CASE`, `WHERE`, and similar clauses) so definitions remain easy to compare with the upstream grammar.
 
@@ -19,6 +19,8 @@ Do not add undocumented tool commands to contributor workflows. If automation is
 ## Coding Style & Naming Conventions
 
 Write PostgreSQL keywords in uppercase and grammar placeholders in lowercase. Use four-space indentation for wrapped alternatives and YAML mappings; do not use tabs. Keep optional syntax in square brackets, alternatives separated by `|`, repetitions as `[...]`, and related helper productions close to the statement they support. Follow surrounding whitespace and section-comment patterns instead of reformatting unrelated definitions.
+
+Use `name` only for the primary object represented by the current definition and `new_name` only when that primary object is renamed. Every secondary object must use its semantic type, such as `constraint`, `index`, `new_index`, `colname`, `window`, or `tablespace`.
 
 ## Testing Guidelines
 

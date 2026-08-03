@@ -35,7 +35,7 @@ from_expression NATURAL join_type from_expression
 from_expression CROSS JOIN from_expression
 
 # WHERE window_expression
-[ name ]
+[ window ]
 [ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
 [ ORDER BY order_by_expression [, ...] ]
 [ frame_expression ]

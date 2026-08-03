@@ -14,7 +14,7 @@ Command synopsis sections are authoritative for accepted syntax. Parameter secti
 
 ## Migration Method
 
-Review definitions in this order: `create/`, `alert/`, `drop/`, `query/`, `transaction/`, `auth/`, and `other/`, followed by `defind/parameter.yaml`. Preserve the repository's existing directory names and SNF notation.
+Review definitions in this order: `create/`, `alter/`, `drop/`, `query/`, `transaction/`, `auth/`, and `other/`, followed by `defind/parameter.yaml`. Preserve the repository's existing directory names and SNF notation.
 
 For every `.snf` file:
 

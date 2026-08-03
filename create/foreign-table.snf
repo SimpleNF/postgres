@@ -32,7 +32,7 @@ colname [ WITH OPTIONS ]
 [ col_constraint [...] ]
 
 # WHERE col_constraint
-[ CONSTRAINT name ]
+[ CONSTRAINT constraint ]
 {
     NOT NULL [ NO INHERIT ] |
     NULL |
@@ -43,7 +43,7 @@ colname [ WITH OPTIONS ]
 [ ENFORCED | NOT ENFORCED ]
 
 # WHERE table_constraint
-[ CONSTRAINT name ]
+[ CONSTRAINT constraint ]
 { NOT NULL colname [ NO INHERIT ] | CHECK ( boolean_expression ) [ NO INHERIT ] }
 [ ENFORCED | NOT ENFORCED ]
 

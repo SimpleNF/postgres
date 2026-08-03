@@ -11,3 +11,5 @@
 - `# STATEMENT name`：可嵌套 statement 的类型说明，不作为当前文件的顶层语法。
 
 主语句的独立 clause 使用四个空格缩进并按行展示。`ONEOFIS` 的单个候选不能换行；需要换行时改用 `PARTOFIS`。
+
+当前定义的主对象使用 `name`，主对象的重命名目标使用 `new_name`。定义内部出现的其他对象不得复用 `name`，必须使用对应的语义类型，例如 `constraint`、`index`、`new_index`、`colname`、`window` 或 `tablespace`。

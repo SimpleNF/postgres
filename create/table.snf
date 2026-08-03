@@ -65,7 +65,7 @@ WITH ( MODULUS modulus, REMAINDER remainder )
 { colname | ( col_expression ) } [ COLLATE collate ] [ opclass ]
 
 # WHERE col_constraint
-[ CONSTRAINT name ] 
+[ CONSTRAINT constraint ]
 {
 NULL |
 NOT NULL [ NO INHERIT ] |
@@ -83,7 +83,7 @@ REFERENCES references [ ( colname ) ]
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ] [ ENFORCED | NOT ENFORCED ]
 
 # WHERE table_constraint
-[ CONSTRAINT name ] 
+[ CONSTRAINT constraint ]
 {
 CHECK ( boolean_expression ) [ NO INHERIT ] |
 NOT NULL colname [ NO INHERIT ] |

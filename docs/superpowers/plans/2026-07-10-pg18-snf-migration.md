@@ -13,7 +13,7 @@
 - PostgreSQL 18 is the only compatibility target; do not preserve PG 17 alternatives.
 - Review all 180 `.snf` files and `defind/parameter.yaml`, including files whose synopsis appears unchanged.
 - Use only fixed `https://www.postgresql.org/docs/18/` documentation links.
-- Preserve the existing `alert/` and `defind/` directory names and established SNF notation.
+- Preserve the existing `alter/` and `defind/` directory names and established SNF notation.
 - Do not run tests or type checks automatically.
 - Mark a checklist item complete only after its individual official-source comparison.
 
@@ -31,13 +31,13 @@
 
 ### Task 2: Alter statement definitions
 
-**Files:** Modify every `.snf` path under the `alert/` section of `docs/pg18-migration-checklist.md`; update the corresponding checklist entries.
+**Files:** Modify every `.snf` path under the `alter/` section of `docs/pg18-migration-checklist.md`; update the corresponding checklist entries.
 
 - [x] Compare every ALTER command page and all helper productions with PG 18.
 - [x] Update source URLs and PG 18-only syntax, including constraint, publication, subscription, and table changes.
-- [x] Mark all 41 `alert/` entries complete after individual review.
-- [x] Run `rg -n 'docs/(17|current)' alert` and expect no matches.
-- [x] Run `git diff --check -- alert docs/pg18-migration-checklist.md`, review the batch diff, and commit with `feat: update alter definitions for pg18`.
+- [x] Mark all 41 `alter/` entries complete after individual review.
+- [x] Run `rg -n 'docs/(17|current)' alter` and expect no matches.
+- [x] Run `git diff --check -- alter docs/pg18-migration-checklist.md`, review the batch diff, and commit with `feat: update alter definitions for pg18`.
 
 ### Task 3: Drop statement definitions
 
