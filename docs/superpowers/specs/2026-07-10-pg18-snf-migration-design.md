@@ -2,7 +2,7 @@
 
 ## Goal
 
-Make PostgreSQL 18 the sole authoritative syntax baseline for this repository. Review every one of the 180 `.snf` definitions and `defind/parameter.yaml` against the PostgreSQL 18 documentation, without preserving PostgreSQL 17 compatibility variants.
+Make PostgreSQL 18 the sole authoritative syntax baseline for this repository. Review every one of the 180 `.snf` definitions and `definition/parameter.yaml` against the PostgreSQL 18 documentation, without preserving PostgreSQL 17 compatibility variants.
 
 ## Authoritative Sources
 
@@ -14,7 +14,7 @@ Command synopsis sections are authoritative for accepted syntax. Parameter secti
 
 ## Migration Method
 
-Review definitions in this order: `create/`, `alter/`, `drop/`, `query/`, `transaction/`, `auth/`, and `other/`, followed by `defind/parameter.yaml`. Preserve the repository's existing directory names and SNF notation.
+Review definitions in this order: `create/`, `alter/`, `drop/`, `query/`, `transaction/`, `auth/`, and `other/`, followed by `definition/parameter.yaml`. Preserve the repository's existing directory names and SNF notation.
 
 For every `.snf` file:
 

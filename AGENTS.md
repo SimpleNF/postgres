@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository stores SNF definitions for PostgreSQL statements rather than application source code. Definitions are grouped by statement family: `create/`, `alter/`, `drop/`, `query/`, `transaction/`, `auth/`, and `other/`. Shared PostgreSQL option metadata lives in `defind/parameter.yaml`. Keep new definitions in the matching family and use one lowercase, hyphenated file per statement, such as `create/materialized-view.snf`.
+This repository stores SNF definitions for PostgreSQL statements rather than application source code. Definitions are grouped by statement family: `create/`, `alter/`, `drop/`, `query/`, `transaction/`, `auth/`, and `other/`. Shared PostgreSQL option metadata lives in `definition/parameter.yaml`. Keep new definitions in the matching family and use one lowercase, hyphenated file per statement, such as `create/materialized-view.snf`.
 
 Each SNF file should begin with a comment linking to the relevant PostgreSQL documentation. Preserve the existing sections (`CASE`, `WHERE`, and similar clauses) so definitions remain easy to compare with the upstream grammar.
 

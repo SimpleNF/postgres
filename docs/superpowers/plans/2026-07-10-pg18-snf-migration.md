@@ -11,9 +11,9 @@
 ## Global Constraints
 
 - PostgreSQL 18 is the only compatibility target; do not preserve PG 17 alternatives.
-- Review all 180 `.snf` files and `defind/parameter.yaml`, including files whose synopsis appears unchanged.
+- Review all 180 `.snf` files and `definition/parameter.yaml`, including files whose synopsis appears unchanged.
 - Use only fixed `https://www.postgresql.org/docs/18/` documentation links.
-- Preserve the existing `alter/` and `defind/` directory names and established SNF notation.
+- Preserve the existing `alter/` and `definition/` directory names and established SNF notation.
 - Do not run tests or type checks automatically.
 - Mark a checklist item complete only after its individual official-source comparison.
 
@@ -91,11 +91,11 @@
 
 ### Task 8: Shared parameters and final audit
 
-**Files:** Modify `defind/parameter.yaml`, `docs/pg18-migration-checklist.md`, and any definition found incomplete during the final cross-check.
+**Files:** Modify `definition/parameter.yaml`, `docs/pg18-migration-checklist.md`, and any definition found incomplete during the final cross-check.
 
 - [x] Compare every YAML option group with the PG 18 parameter sections used by its referenced commands.
 - [x] Add, remove, or update parameter values and `belong` metadata for PG 18.
-- [x] Mark `defind/parameter.yaml` complete.
+- [x] Mark `definition/parameter.yaml` complete.
 - [x] Confirm all 181 checklist items are marked `[x]`.
 - [x] Run `rg -n 'postgresql\\.org/docs/(17|current)/' -g '*.snf' -g '*.yaml'` and expect no matches.
 - [x] Resolve every `/docs/18/` URL and require HTTP success.

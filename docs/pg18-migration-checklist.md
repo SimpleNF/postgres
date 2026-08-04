@@ -203,6 +203,6 @@ Every item is marked complete only after comparing the file with its PostgreSQL 
 - [x] `other/unlisten.snf`
 - [x] `other/vacuum.snf`
 
-## defind/
+## definition/
 
-- [x] `defind/parameter.yaml`
+- [x] `definition/parameter.yaml`
