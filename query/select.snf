@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/18/sql-select.html
 
 # CASE SELECT
-[ WITH [ RECURSIVE ] with_query [, ...] ]
+[ WITH [ RECURSIVE ] with_query_definition [, ...] ]
 SELECT [ ALL | DISTINCT [ ON ( col_expression [, ...] ) ] ]
     [ * | { col_expression [ [ AS ] col_alias ] } [, ...] ]
     [ FROM from_expression [, ...] ]
@@ -13,13 +13,13 @@ SELECT [ ALL | DISTINCT [ ON ( col_expression [, ...] ) ] ]
     [ LIMIT { limit | ALL } ]
     [ OFFSET offset [ ROW | ROWS ] ]
     [ FETCH { FIRST | NEXT } [ fetch ] { ROW | ROWS } { ONLY | WITH TIES } ]
-    [ FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF from_reference [, ...] ] [ NOWAIT ] [ SKIP LOCKED ] ]
+    [ FOR { UPDATE | NO KEY UPDATE | SHARE | KEY SHARE } [ OF table [, ...] ] [ NOWAIT ] [ SKIP LOCKED ] ]
     [ { UNION | INTERSECT | EXCEPT } [ ALL | DISTINCT ] select_statement ]
 
 # CASE TABLE
 TABLE [ ONLY ] table [ * ]
 
-# WHERE with_query
+# WHERE with_query_definition
 with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )
     [ SEARCH { BREADTH | DEPTH } FIRST BY search_colname [, ...] SET search_path_colname ]
     [ CYCLE colname [, ...] SET cycle_colname [ TO mark_value DEFAULT mark_default ] USING cycle_path_colname ]
@@ -32,18 +32,18 @@ with_name [ [ AS ] with_alias [ ( col_alias [, ...] ) ] ]
 [ LATERAL ] function ( value_expression [, ...] ) AS ( { colname [ type ] } [, ...] )
 [ LATERAL ] function ( value_expression [, ...] ) [ AS ] function_alias ( { colname [ type ] } [, ...] )
 [ LATERAL ] function ( value_expression [, ...] ) WITH ORDINALITY [ [ AS ] function_alias [ ( col_alias [, ...] ) ] ]
-[ LATERAL ] ROWS FROM ( { function ( value_expression [, ...] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] alias [ ( col_alias [, ...] ) ] ]
+[ LATERAL ] ROWS FROM ( { function ( value_expression [, ...] ) [ AS ( { colname [ type ] } [, ...] ) ] } [, ...] ) [ WITH ORDINALITY ] [ [ AS ] rows_from_alias [ ( col_alias [, ...] ) ] ]
 from_expression join_type from_expression { ON boolean_expression | USING ( colname [, ...] ) [ AS join_alias ] }
 from_expression NATURAL join_type from_expression
 from_expression CROSS JOIN from_expression
 
 # WHERE window_expression
 [ window ]
-[ PARTITION BY { RANGE | LIST | HASH } ( partition_column [, ...] ) ]
+[ PARTITION BY { RANGE | LIST | HASH } ( partition_column_expression [, ...] ) ]
 [ ORDER BY order_by_expression [, ...] ]
 [ frame_expression ]
 
-# WHERE partition_column
+# WHERE partition_column_expression
 { colname | ( col_expression ) } [ COLLATE collate ] [ opclass ]
 
 # ONEOFIS frame_expression

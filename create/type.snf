@@ -2,7 +2,7 @@
 
 # CASE COMPOSITE
 CREATE TYPE name AS (
-    arg [, ...]
+    attribute_definition [, ...]
 )
 
 # CASE ENUM
@@ -46,5 +46,5 @@ CREATE TYPE name (
 # CASE BASE
 CREATE TYPE name
 
-# WHERE arg
-argname argtype [ COLLATE collation ]
+# WHERE attribute_definition
+attribute type [ COLLATE collate ]

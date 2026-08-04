@@ -4,7 +4,7 @@
 ALTER FOREIGN DATA WRAPPER name
     [ HANDLER handler | NO HANDLER ]
     [ VALIDATOR validator | NO VALIDATOR ]
-    [ OPTIONS ( option_expression [, ...]) ]
+    [ OPTIONS ( option_action [, ...]) ]
 
 # CASE RENAME
 ALTER FOREIGN DATA WRAPPER name RENAME TO new_name
@@ -12,7 +12,7 @@ ALTER FOREIGN DATA WRAPPER name RENAME TO new_name
 # CASE OWNER
 ALTER FOREIGN DATA WRAPPER name OWNER TO role
 
-# WHERE option_expression
+# WHERE option_action
 [ ADD | SET | DROP ] option ['value']
 
 # WHERE role

@@ -17,7 +17,7 @@ ALTER TABLE [ IF EXISTS ] name RENAME TO new_name
 # CASE ATTACH_PARTITION
 ALTER TABLE [ IF EXISTS ] name
     ATTACH PARTITION partition
-    { FOR VALUES partition_values | DEFAULT }
+    { FOR VALUES partition_bound_definition | DEFAULT }
 
 # CASE DETACH_PARTITION
 ALTER TABLE [ IF EXISTS ] name
@@ -34,7 +34,7 @@ ALTER TABLE ALL IN TABLESPACE tablespace
     [ NOWAIT ]
 
 # ONEOFIS action
-  ADD [ COLUMN ] [ IF NOT EXISTS ] colname type [ COLLATE collate ] col_constraint [...]
+  ADD [ COLUMN ] [ IF NOT EXISTS ] colname type [ COLLATE collate ] column_constraint_definition [...]
  DROP [ COLUMN ] [ IF EXISTS ] colname [ RESTRICT | CASCADE ]
 ALTER [ COLUMN ] colname [ SET DATA ] TYPE type [ COLLATE collate ] [ USING col_expression ]
 ALTER [ COLUMN ] colname SET DEFAULT value_expression
@@ -42,16 +42,16 @@ ALTER [ COLUMN ] colname DROP DEFAULT
 ALTER [ COLUMN ] colname { SET | DROP } NOT NULL
 ALTER [ COLUMN ] colname SET EXPRESSION AS ( col_expression )
 ALTER [ COLUMN ] colname DROP EXPRESSION [ IF EXISTS ]
-ALTER [ COLUMN ] colname ADD GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ]
-ALTER [ COLUMN ] colname { SET GENERATED { ALWAYS | BY DEFAULT } | SET generated | RESTART [ [ WITH ] restart ] } [...]
+ALTER [ COLUMN ] colname ADD GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity_options ) ]
+ALTER [ COLUMN ] colname { SET GENERATED { ALWAYS | BY DEFAULT } | SET generated_mode | RESTART [ [ WITH ] restart ] } [...]
 ALTER [ COLUMN ] colname DROP IDENTITY [ IF EXISTS ]
 ALTER [ COLUMN ] colname SET STATISTICS { statistics | DEFAULT }
 ALTER [ COLUMN ] colname SET ( attribute_parameter = value [, ...] )
 ALTER [ COLUMN ] colname RESET ( attribute_parameter [, ...] )
 ALTER [ COLUMN ] colname SET STORAGE { PLAIN | EXTERNAL | EXTENDED | MAIN | DEFAULT }
 ALTER [ COLUMN ] colname SET COMPRESSION compression
-ADD table_constraint [ NOT VALID ]
-ADD table_index_constraint
+ADD table_constraint_definition [ NOT VALID ]
+ADD table_index_constraint_definition
 ALTER CONSTRAINT constraint [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ] [ ENFORCED | NOT ENFORCED ]
 ALTER CONSTRAINT constraint [ INHERIT | NO INHERIT ]
 VALIDATE CONSTRAINT constraint
@@ -83,34 +83,34 @@ NOT OF
 OWNER TO role
 REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 
-# WHERE col_constraint
+# WHERE column_constraint_definition
 [ CONSTRAINT constraint ]
 {
   NOT NULL [ NO INHERIT ] |
   NULL |
   CHECK ( boolean_expression ) [ NO INHERIT ] |
   DEFAULT value_expression |
-  GENERATED ALWAYS AS ( generated ) [ STORED | VIRTUAL ] |
-  GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity ) ] |
-  UNIQUE [ NULLS [ NOT ] DISTINCT ] unique_index |
-  PRIMARY KEY primary_key_index |
-  REFERENCES references [ ( colname ) ]
+  GENERATED ALWAYS AS ( generated_expression ) [ STORED | VIRTUAL ] |
+  GENERATED { ALWAYS | BY DEFAULT } AS IDENTITY [ ( identity_options ) ] |
+  UNIQUE [ NULLS [ NOT ] DISTINCT ] unique_index_options |
+  PRIMARY KEY primary_key_index_options |
+  REFERENCES referenced_table [ ( refcolname ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
     [ ON DELETE on_delete_action ]
     [ ON UPDATE on_update_action ]
 }
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ] [ ENFORCED | NOT ENFORCED ]
 
-# WHERE table_constraint
+# WHERE table_constraint_definition
 [ CONSTRAINT constraint ]
 {
   CHECK ( boolean_expression ) [ NO INHERIT ] |
   NOT NULL colname [ NO INHERIT ] |
-  UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] [, colname WITHOUT OVERLAPS ] ) unique_index |
-  PRIMARY KEY ( colname [, ...] [, colname WITHOUT OVERLAPS ] ) primary_key_index |
-  EXCLUDE [ USING index_method ] ( exclude_column WITH operator [, ...] ) exclude_index [ WHERE ( boolean_expression ) ] |
+  UNIQUE [ NULLS [ NOT ] DISTINCT ] ( colname [, ...] [, colname WITHOUT OVERLAPS ] ) unique_index_options |
+  PRIMARY KEY ( colname [, ...] [, colname WITHOUT OVERLAPS ] ) primary_key_index_options |
+  EXCLUDE [ USING index_method ] ( exclude_column_expression WITH operator [, ...] ) exclude_index_options [ WHERE ( boolean_expression ) ] |
   FOREIGN KEY ( colname [, ...] [, PERIOD colname ] )
-    REFERENCES references [ ( refcolname [, ...] [, PERIOD refcolname ] ) ]
+    REFERENCES referenced_table [ ( refcolname [, ...] [, PERIOD refcolname ] ) ]
     [ MATCH FULL | MATCH PARTIAL | MATCH SIMPLE ]
     [ ON DELETE on_delete_action ]
     [ ON UPDATE on_update_action ]
@@ -119,25 +119,25 @@ REPLICA IDENTITY { DEFAULT | USING INDEX index | FULL | NOTHING }
 [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 [ ENFORCED | NOT ENFORCED ]
 
-# WHERE table_index_constraint
+# WHERE table_index_constraint_definition
 [ CONSTRAINT constraint ]
 { UNIQUE | PRIMARY KEY } USING INDEX index
 [ DEFERRABLE | NOT DEFERRABLE ] [ INITIALLY DEFERRED | INITIALLY IMMEDIATE ]
 
-# WHERE unique_index, primary_key_index, exclude_index
+# WHERE unique_index_options, primary_key_index_options, exclude_index_options
 [ INCLUDE ( colname [, ...] ) ]
 [ WITH ( storage_parameter [= value] [, ...] ) ]
 [ USING INDEX TABLESPACE tablespace ]
 
-# WHERE exclude_column
+# WHERE exclude_column_expression
 { colname | ( col_expression ) } [ COLLATE collate ] [ opclass [ ( opclass_parameter = value [, ...] ) ] ] [ ASC | DESC ] [ NULLS { FIRST | LAST } ]
 
 # WHERE on_delete_action, on_update_action
 { NO ACTION | RESTRICT | CASCADE | SET NULL [ ( colname [, ...] ) ] | SET DEFAULT [ ( colname [, ...] ) ] }
 
-# ONEOFIS partition_values
-  IN ( in [, ...] )
-FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
+# ONEOFIS partition_bound_definition
+  IN ( partition_bound_expression [, ...] )
+FROM ( { partition_bound_expression | MINVALUE | MAXVALUE } [, ...] ) TO ( { partition_bound_expression | MINVALUE | MAXVALUE } [, ...] )
 WITH ( MODULUS modulus, REMAINDER remainder )
 
 # WHERE role

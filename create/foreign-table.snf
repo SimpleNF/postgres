@@ -3,9 +3,9 @@
 # CASE NORMAL
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name (
     {
-        normal_col_config |
-        table_constraint |
-        LIKE like_table [ like_config ]
+        column_definition |
+        table_constraint_definition |
+        LIKE like_table [ like_option ]
     } [, ...]
 )
     [ INHERITS ( inherit [, ...] ) ]
@@ -15,42 +15,42 @@ CREATE FOREIGN TABLE [ IF NOT EXISTS ] name (
 # CASE PARTITION
 CREATE FOREIGN TABLE [ IF NOT EXISTS ] name PARTITION OF parent
     [ ( {
-        partition_col_config |
-        table_constraint
+        partition_column_definition |
+        table_constraint_definition
     } [, ...] ) ]
-    { FOR VALUES partition_values | DEFAULT }
+    { FOR VALUES partition_bound_definition | DEFAULT }
     SERVER server
     [ OPTIONS ( { option 'value' } [, ...] ) ]
 
-# WHERE normal_col_config
+# WHERE column_definition
 colname coltype [ OPTIONS ( { option 'value' } [, ...] ) ]
 [ COLLATE collation ]
-[ col_constraint [...] ]
+[ column_constraint_definition [...] ]
 
-# WHERE partition_col_config
+# WHERE partition_column_definition
 colname [ WITH OPTIONS ]
-[ col_constraint [...] ]
+[ column_constraint_definition [...] ]
 
-# WHERE col_constraint
+# WHERE column_constraint_definition
 [ CONSTRAINT constraint ]
 {
     NOT NULL [ NO INHERIT ] |
     NULL |
     CHECK ( boolean_expression ) [ NO INHERIT ] |
     DEFAULT value_expression |
-    GENERATED ALWAYS AS ( generation ) [ STORED | VIRTUAL ]
+    GENERATED ALWAYS AS ( generation_expression ) [ STORED | VIRTUAL ]
 }
 [ ENFORCED | NOT ENFORCED ]
 
-# WHERE table_constraint
+# WHERE table_constraint_definition
 [ CONSTRAINT constraint ]
 { NOT NULL colname [ NO INHERIT ] | CHECK ( boolean_expression ) [ NO INHERIT ] }
 [ ENFORCED | NOT ENFORCED ]
 
-# WHERE like_config
+# WHERE like_option
 { INCLUDING | EXCLUDING } { COMMENTS | CONSTRAINTS | DEFAULTS | GENERATED | STATISTICS | ALL }
 
-# ONEOFIS partition_values
-  IN ( in [, ...] )
-FROM ( { from | MINVALUE | MAXVALUE } [, ...] ) TO ( { to | MINVALUE | MAXVALUE } [, ...] )
+# ONEOFIS partition_bound_definition
+  IN ( partition_bound_expression [, ...] )
+FROM ( { partition_bound_expression | MINVALUE | MAXVALUE } [, ...] ) TO ( { partition_bound_expression | MINVALUE | MAXVALUE } [, ...] )
 WITH ( MODULUS modulus, REMAINDER remainder )

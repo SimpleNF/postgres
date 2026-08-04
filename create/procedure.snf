@@ -1,7 +1,7 @@
 # https://www.postgresql.org/docs/18/sql-createprocedure.html
 
 CREATE [ OR REPLACE ] PROCEDURE name (
-    arg [, ...]
+    argument_definition [, ...]
 )
     [ LANGUAGE language ]
     [ TRANSFORM { FOR TYPE type } [, ...] ]
@@ -11,6 +11,6 @@ CREATE [ OR REPLACE ] PROCEDURE name (
     [ AS pg_definition ]
     [ sql_definition ]
 
-# WHERE arg
+# WHERE argument_definition
 [ argmode ] [ argname ] argtype
 [ { DEFAULT | = } value_expression ]

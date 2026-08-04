@@ -5,7 +5,7 @@ COMMENT ON comment_target IS { 'comment' | NULL }
 # ONEOFIS comment_target
 ACCESS METHOD access_name
 AGGREGATE aggregate ( signature )
-CAST (source AS target)
+CAST (source_type AS target_type)
 COLLATION collation
 COLUMN table.colname
 CONSTRAINT table_constraint ON table

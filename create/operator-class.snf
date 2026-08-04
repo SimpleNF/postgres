@@ -3,14 +3,14 @@
 CREATE OPERATOR CLASS name [ DEFAULT ]
     FOR TYPE type
     USING index_method [ FAMILY family ] AS
-    { operator_config | func_config } [, ...]
+    { operator_definition | function_definition } [, ...]
     [ STORAGE storage ]
 
-# WHERE operator_config
+# WHERE operator_definition
 OPERATOR number operator
 [ ( left, right ) ] [ FOR SEARCH | FOR ORDER BY order ]
 
-# WHERE func_config
+# WHERE function_definition
 FUNCTION number
 [ ( left [, right ] ) ]
 func ( argtype [, ...] )

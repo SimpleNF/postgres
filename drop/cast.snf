@@ -1,3 +1,3 @@
 # https://www.postgresql.org/docs/18/sql-dropcast.html
 
-DROP CAST [ IF EXISTS ] (source AS target) [ CASCADE | RESTRICT ]
+DROP CAST [ IF EXISTS ] (source_type AS target_type) [ CASCADE | RESTRICT ]

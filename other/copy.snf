@@ -3,15 +3,15 @@
 # CASE FROM
 COPY table [ ( colname [, ...] ) ]
     FROM { 'file' | PROGRAM 'command' | STDIN }
-    [ WITH ( config ) ]
+    [ WITH ( copy_options ) ]
     [ WHERE boolean_expression ]
 
 # CASE TO
 COPY { table [ ( colname [, ...] ) ] | ( query_statement ) }
     TO { 'file' | PROGRAM 'command' | STDOUT }
-    [ WITH ( config ) ]
+    [ WITH ( copy_options ) ]
 
-# WHERE config
+# WHERE copy_options
 [ FORMAT format, ]
 [ FREEZE [ freeze ], ]
 [ DELIMITER 'delimiter', ]

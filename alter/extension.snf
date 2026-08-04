@@ -15,7 +15,7 @@ ALTER EXTENSION name SET SCHEMA schema
 # ONEOFIS extension_target
 ACCESS METHOD access_method
 AGGREGATE aggregate ( signature )
-CAST ( source AS target )
+CAST ( source_type AS target_type )
 COLLATION collation
 CONVERSION conversion
 DOMAIN domain

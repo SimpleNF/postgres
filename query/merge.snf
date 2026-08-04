@@ -1,26 +1,26 @@
 # https://www.postgresql.org/docs/18/sql-merge.html
 
-[ WITH with_query [, ...] ]
-MERGE INTO [ ONLY ] table [ * ] [ [ AS ] alias ]
+[ WITH with_query_definition [, ...] ]
+MERGE INTO [ ONLY ] table [ * ] [ [ AS ] target_alias ]
     USING from_expression ON boolean_expression
-    when_expression [...]
+    when_clause [...]
     [ RETURNING [ WITH ( { OLD | NEW } AS output_alias [, ...] ) ]
-        { * | col_expression [ [ AS ] alias ] } [, ...] ]
+        { * | col_expression [ [ AS ] col_alias ] } [, ...] ]
 
-# WHERE with_query
+# WHERE with_query_definition
 with_name [ ( colname [, ...] ) ] AS [ [ NOT ] MATERIALIZED ] ( query_statement )
     [ SEARCH { BREADTH | DEPTH } FIRST BY colname [, ...] SET search_path_colname ]
     [ CYCLE colname [, ...] SET cycle_colname [ TO mark_value DEFAULT mark_default ] USING cycle_path_colname ]
 
 # WHERE from_expression
-{ [ ONLY ] table [ * ] | ( select_statement ) } [ [ AS ] alias ]
+{ [ ONLY ] table [ * ] | ( select_statement ) } [ [ AS ] source_alias ]
 
-# ONEOFIS when_expression
-WHEN MATCHED [ AND boolean_expression ] THEN { update_statement | DELETE | DO NOTHING }
-WHEN NOT MATCHED BY SOURCE [ AND boolean_expression ] THEN { update_statement | DELETE | DO NOTHING }
-WHEN NOT MATCHED [ BY TARGET ] [ AND boolean_expression ] THEN { insert_statement | DO NOTHING }
+# ONEOFIS when_clause
+WHEN MATCHED [ AND boolean_expression ] THEN { update_action | DELETE | DO NOTHING }
+WHEN NOT MATCHED BY SOURCE [ AND boolean_expression ] THEN { update_action | DELETE | DO NOTHING }
+WHEN NOT MATCHED [ BY TARGET ] [ AND boolean_expression ] THEN { insert_action | DO NOTHING }
 
-# WHERE update_statement
+# WHERE update_action
 UPDATE SET
 {
   colname = { value_expression | DEFAULT } |
@@ -28,7 +28,7 @@ UPDATE SET
   ( colname [, ...] ) = ( select_statement )
 } [, ...]
 
-# WHERE insert_statement
+# WHERE insert_action
 INSERT [( colname [, ...] )]
 [ OVERRIDING { SYSTEM | USER } VALUE ]
 { VALUES ( { value_expression | DEFAULT } [, ...] ) | DEFAULT VALUES }

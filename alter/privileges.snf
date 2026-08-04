@@ -3,9 +3,9 @@
 ALTER DEFAULT PRIVILEGES
     [ FOR { ROLE | USER } role [, ...] ]
     [ IN SCHEMA schema [, ...] ]
-    grant_or_revoke_expression
+    grant_or_revoke_clause
 
-# PARTOFIS grant_or_revoke_expression
+# PARTOFIS grant_or_revoke_clause
 GRANT { { SELECT | INSERT | UPDATE | DELETE | TRUNCATE | REFERENCES | TRIGGER | MAINTAIN } [, ...] | ALL [ PRIVILEGES ] }
     ON TABLES
     TO role_public [, ...]

@@ -2,7 +2,7 @@
 
 # CASE NORMAL
 CREATE [ OR REPLACE ] AGGREGATE name (
-    arg [, ...]
+    argument_definition [, ...]
 ) (
     SFUNC = sfunc,
     STYPE = stype,
@@ -28,8 +28,8 @@ CREATE [ OR REPLACE ] AGGREGATE name (
 
 # CASE ORDERED_SET
 CREATE [ OR REPLACE ] AGGREGATE name (
-    arg [, ...]
-    ORDER BY order [, ...]
+    argument_definition [, ...]
+    ORDER BY order_argument_definition [, ...]
 ) (
     SFUNC = sfunc,
     STYPE = stype,
@@ -66,5 +66,5 @@ CREATE [ OR REPLACE ] AGGREGATE name (
     [ SORTOP = sortop, ]
 )
 
-# WHERE arg,order
+# WHERE argument_definition, order_argument_definition
 [ argmode ] [ argname ] argtype

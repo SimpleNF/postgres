@@ -1,16 +1,16 @@
 # https://www.postgresql.org/docs/18/sql-createcast.html
 
 # CASE FUNCTION
-CREATE CAST ( source AS target )
+CREATE CAST ( source_type AS target_type )
     WITH FUNCTION function [ ( argtype [, ...] ) ]
     [ AS { ASSIGNMENT | IMPLICIT } ]
 
 # CASE BINARY
-CREATE CAST ( source AS target )
+CREATE CAST ( source_type AS target_type )
     WITHOUT FUNCTION
     [ AS { ASSIGNMENT | IMPLICIT } ]
 
 # CASE INOUT
-CREATE CAST ( source AS target )
+CREATE CAST ( source_type AS target_type )
     WITH INOUT
     [ AS { ASSIGNMENT | IMPLICIT } ]

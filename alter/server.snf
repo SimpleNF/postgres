@@ -3,7 +3,7 @@
 # CASE OPTIONS
 ALTER SERVER name
     [ VERSION 'version' ]
-    [ OPTIONS ( option_expression [, ...] ) ]
+    [ OPTIONS ( option_action [, ...] ) ]
 
 # CASE RENAME
 ALTER SERVER name RENAME TO new_name
@@ -11,7 +11,7 @@ ALTER SERVER name RENAME TO new_name
 # CASE OWNER
 ALTER SERVER name OWNER TO role
 
-# WHERE option_expression
+# WHERE option_action
 [ ADD | SET | DROP ] option ['value']
 
 # WHERE role
